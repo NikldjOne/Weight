@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/nav_home"
+    android:icon="@drawable/ic_dreams"
+    android:title="Цели" />
+    <item
+        android:id="@+id/nav_eat"
+        android:icon="@drawable/ic_eat"
+        android:title="Питание"/>
+    <item
+        android:id="@+id/nav_traning_home"
+        android:icon="@drawable/ic_weight"
+        android:title="WEIGHT"/>
+    <item
+        android:id="@+id/nav_raz"
+        android:icon="@drawable/ic_lightbulb_outline_black_24dp"
+        android:title="Разум"/>
+    <item
+        android:id="@+id/nav_users"
+        android:icon="@drawable/ic_person"
+        android:title="Профиль"/>
+</menu>

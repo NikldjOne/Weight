@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:orientation="vertical"
+    android:background="@color/colorBack">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        app:srcCompat="@drawable/ic_logo" />
+
+    <TextView
+        android:id="@+id/twTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TitleEnter"
+        android:textColor="@color/colorText"
+        android:layout_marginTop="-20dp"
+        android:layout_gravity="center"
+        android:textSize="22sp"
+        android:fontFamily="@font/light"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:textColorHint="@color/colorHint"
+        android:backgroundTint="@color/colorText"
+        android:textColor="@color/colorText"
+        android:layout_marginTop="40dp"
+        app:errorEnabled="true">
+        <EditText
+            android:id="@+id/tiEmaillog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorHint"
+            android:backgroundTint="@color/colorText"
+            android:textColor="@color/colorText"
+            android:hint="E-Mail"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:drawableRight="@drawable/ic_email"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/light"
+            android:textSize="18sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        app:passwordToggleEnabled="true"
+        android:textColorHint="@color/colorHint"
+        android:backgroundTint="@color/colorText"
+        android:textColor="@color/colorText"
+        app:passwordToggleTint="@color/colorHint2"
+        android:layout_marginTop="30dp"
+        app:errorEnabled="true">
+
+        <EditText
+            android:id="@+id/text_input_password_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorHint"
+            android:backgroundTint="@color/colorText"
+            android:textColor="@color/colorText"
+            android:hint="Пароль"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/light"
+            android:textSize="18sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Забыли пароль?"
+        android:textColor="@color/colorHint2"
+        android:layout_gravity="right"
+        android:layout_marginRight="20dp"
+        android:linksClickable="true"
+        android:onClick="tvPass"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:id="@+id/tvPass"
+        android:fontFamily="@font/light"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Нажимая Войти, Вы соглашаетесь с "
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="13.5dp"
+            android:textColor="@color/colorHint"
+            android:fontFamily="@font/light"/>
+
+        <TextView
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="22dp"
+            android:text="пользовательским"
+            android:id="@+id/tvpol"
+            android:onClick="tvpol"
+            android:textColor="@color/colorHint2"
+            android:fontFamily="@font/light"
+            android:textSize="13.5dp" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="соглашением "
+            android:onClick="tvpol2"
+            android:layout_marginLeft="40dp"
+            android:textSize="13.5dp"
+            android:textColor="@color/colorHint2"
+            android:fontFamily="@font/light"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="и "
+            android:layout_marginLeft="121dp"
+            android:textSize="13.5dp"
+            android:textColor="@color/colorHint"
+            android:fontFamily="@font/light"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="политикой конфиденциальности"
+android:onClick="konf"
+            android:layout_marginLeft="131dp"
+            android:textSize="13.5dp"
+            android:textColor="@color/colorHint2"
+            android:fontFamily="@font/light"/>
+    </RelativeLayout>
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btEnter"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/light"
+        android:textColor="@color/colorHint2"
+        android:background="@drawable/inset" />
+    <!--        android:background="@android:color/transparent"-->
+
+</LinearLayout>

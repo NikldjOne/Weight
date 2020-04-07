@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorBack">#16141F</color>
+    <color name="colorText">#FDF5E6</color>
+    <color name="colorHint">#778899</color>
+    <color name="colorHintOpacity">#80778899</color>
+    <color name="colorHint2">#BEBEBE</color>
+    <color name="colorHint2Opacity">#14BEBEBE</color>
+
+    <color name="color1">#16141F</color>
+    <color name="color2">#16141F</color>
+    <color name="color3">#16141F</color>
+    <color name="color4">#16141F</color>
+
+    <color name="active_dots">#BD0847</color>
+    <color name="inactive_dots">#83878b</color>
+
+
+    <color name="colordreams">#155555</color>
+
+
+    <color name="colorPrimary2">#e10404</color>
+    <color name="colorPrimaryDark2">#b40101</color>
+    <color name="colorAccent2">@android:color/holo_blue_light</color>
+</resources>
