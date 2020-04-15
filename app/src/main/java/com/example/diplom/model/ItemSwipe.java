@@ -1,12 +1,14 @@
 package com.example.diplom.model;
 
 public class ItemSwipe {
-    private String name, price, image;
+    private String name;
+
+
 
     public ItemSwipe(String name) {
         this.name = name;
-
     }
+
 
 
     public String getName() {

@@ -34,7 +34,7 @@ public class Registration extends AppCompatActivity {
     }
     @Override
     public void onBackPressed(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
         finish();
     }
@@ -52,7 +52,8 @@ public class Registration extends AppCompatActivity {
             Toast.makeText(this, "Введите пароль, который больше 6 символов", Toast.LENGTH_LONG).show();
         }
         else {
-            mAuth.createUserWithEmailAndPassword(email_2, pass_2)
+
+                        mAuth.createUserWithEmailAndPassword(email_2, pass_2)
                     .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {

@@ -9,13 +9,11 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -108,6 +106,7 @@ return  false;
         attachSwipe();
 
     }
+
 
     private void attachSwipe() {
     ItemTouchHelper itemTouchHelper = new ItemTouchHelper(this);
