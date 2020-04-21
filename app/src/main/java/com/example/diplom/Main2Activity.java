@@ -18,18 +18,18 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        BottomNavigationView bottomNav=findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new HomeFragment()).commit();
     }
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener=
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    Fragment selectedFragment= null;
-
-                    switch (menuItem.getItemId()){
+                    Fragment selectedFragment = null;
+                    switch (menuItem.getItemId()) {
                         case nav_home:
                             selectedFragment = new HomeFragment();
                             break;
@@ -49,7 +49,7 @@ public class Main2Activity extends AppCompatActivity {
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             selectedFragment).commit();
-                    return  true;
+                    return true;
                 }
             };
 

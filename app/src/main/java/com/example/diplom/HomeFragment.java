@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,44 +35,37 @@ import java.util.List;
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
 public class HomeFragment extends Fragment {
-    RecyclerView recyclerView;
-    MyAdapterSwipe adapterSwipe;
-    LinearLayoutManager layoutManager;
-    Context globalContext = null;
-    Button dreams;
-    String name;
-
+    private RecyclerView recyclerView;
+    private MyAdapterSwipe adapterSwipe;
+    private LinearLayoutManager layoutManager;
+    private Context globalContext = null;
+    private Button dreams;
+    private String name, name_upd, key, item;
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private DatabaseReference myRef, dreamlist;
-    private FirebaseAuth mAuth;
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseDatabase mDatabase;
-    int upd_pos;
     private List<ItemSwipe> itemSwipes = new ArrayList<>();
-    TextView cart;
-
+    private List<String> keys = new ArrayList<>();
+    private List<String> items = new ArrayList<>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup
             container, @Nullable Bundle savedInstanceState) {
-
-
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_test);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         dreams = (Button) view.findViewById(R.id.dreams_btn);
         myRef = FirebaseDatabase.getInstance().getReference();
         globalContext = this.getActivity();
-        cart = view.findViewById(R.id.cart_item_name);
         mDatabase = FirebaseDatabase.getInstance();
         dreamlist = mDatabase.getReference("Dreams").child(user.getUid());
 
-
-        MySwipeHelper swipeHelper = new MySwipeHelper(getActivity().getApplicationContext(), recyclerView, 100) {
+       MySwipeHelper swipeHelper = new MySwipeHelper(getActivity(), recyclerView, 100) {
             @Override
             public void instantiateMyButton(RecyclerView.ViewHolder viewHolder, List<MySwipeHelper.MyButton> buffer) {
-                buffer.add(new MyButton(getActivity().getApplicationContext(),
+                buffer.add(new MyButton(getActivity(),
                         "Delete",
                         30,
                         R.drawable.ic_delete_black_24dp,
@@ -81,10 +73,8 @@ public class HomeFragment extends Fragment {
                         new MyButtonClickListener() {
                             @Override
                             public void onClick(int pos) {
-                                Toast.makeText(getActivity(), "Delete click", Toast.LENGTH_SHORT).show();
-                                DeleteDreams(pos);
-                                itemSwipes.remove(pos);
-                                recyclerView.setAdapter(adapterSwipe);
+                                key = keys.get(pos);
+                                DeleteDreams(key);
                             }
                         }));
                 buffer.add(new MyButton(getActivity().getApplicationContext(),
@@ -94,33 +84,42 @@ public class HomeFragment extends Fragment {
                         Color.parseColor("#008000"),
                         new MyButtonClickListener() {
                             @Override
-                            public void onClick( int pos) {
-                                Toast.makeText(getActivity(), "Update click", Toast.LENGTH_SHORT).show();
-                                DialogUpdate();
-                                  upd_pos = pos;
+                            public void onClick(final int pos) {
+                                key = keys.get(pos);
+                                name = items.get(pos);
+                                DialogUpdate(key, name);
                             }
                         }));
             }
-
         };
 
         dreams.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DialogShow();
-
             }
         });
+        ClearDreams();
         ReadDreams();
         return view;
     }
 
-    private void DeleteDreams(int pos) {
-        dreamlist.child(String.valueOf(pos)).setValue(null)
+    private void ClearDreams() {
+        keys.clear();
+        items.clear();
+        itemSwipes.clear();
+        adapterSwipe = new MyAdapterSwipe(getActivity(), itemSwipes);
+        recyclerView.setAdapter(adapterSwipe);
+    }
+
+
+    private void DeleteDreams(String key) {
+        ClearDreams();
+        dreamlist.child(key).setValue(null)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-
+                        Toast.makeText(globalContext, "Ваша цель была удалена!", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -129,52 +128,64 @@ public class HomeFragment extends Fragment {
         dreamlist.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                itemSwipes.clear();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    name = snapshot.getValue(String.class);
-                    itemSwipes.add(new ItemSwipe(name));
-                    adapterSwipe = new MyAdapterSwipe(getActivity().getApplicationContext(), itemSwipes);
+                for (DataSnapshot snapshot_key : dataSnapshot.getChildren()) {
+                    keys.add(snapshot_key.getKey());
+                    item = snapshot_key.getValue(String.class);
+                    items.add(item);
+                    itemSwipes.add(new ItemSwipe(item));
+                    adapterSwipe = new MyAdapterSwipe(getActivity(), itemSwipes);
                     recyclerView.setAdapter(adapterSwipe);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Toast.makeText(globalContext, "Не удалось загрузить список целей,перезайдите", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
 
-    private void DialogUpdate() {
+    private void DialogUpdate(final String key, final String name) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         final EditText ed = new EditText(getActivity());
-        itemSwipes.get(upd_pos).getName();
-        name = ItemSwipe.class.getName();
         builder.setCancelable(false);
         builder.setView(ed);
         ed.setText(name);
-        builder.setPositiveButton("Создать", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Изменить", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
-//                dreamlist.child(String.valueOf(pos)).setValue(name).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void aVoid) {
-//
-//                    }
-//                });
+                if (ed.getText().toString().equals("")) {
+                    Toast.makeText(getActivity(), "Вы не изменили цель", Toast.LENGTH_SHORT).show();
+                    DialogUpdate(key, name);
+                } else
+                    if(ed.getText().toString() == name){
+                        Toast.makeText(globalContext, "Вы не изменили данные!", Toast.LENGTH_SHORT).show();
+                        DialogUpdate(key, name);
+                    }
+                    else{
+                    ClearDreams();
+                    name_upd = ed.getText().toString();
+                    dreamlist.child(key).setValue(name_upd).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(globalContext, "Ваши данные были обновлены!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         });
         builder.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                adapterSwipe = new MyAdapterSwipe(getActivity(), itemSwipes);
+                recyclerView.setAdapter(adapterSwipe);
                 dialogInterface.cancel();
             }
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.getWindow().setBackgroundDrawableResource(R.color.colorBack);
-        alertDialog.setTitle("Добавить цель");
+        alertDialog.setTitle("Изменить цель");
         alertDialog.show();
 
     }
@@ -201,15 +212,18 @@ public class HomeFragment extends Fragment {
                     Toast.makeText(getActivity(), "Вы не ввели цель", Toast.LENGTH_SHORT).show();
                     DialogShow();
                 } else {
+                    ClearDreams();
                     name = ed.getText().toString();
-                    myRef.child("Dreams").child(user.getUid()).push().setValue(name);
-                    generateItem();
+                    String key = dreamlist.push().getKey();
+                    dreamlist.child(key).setValue(name);
                 }
             }
         });
         builder.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                adapterSwipe = new MyAdapterSwipe(getActivity(), itemSwipes);
+                recyclerView.setAdapter(adapterSwipe);
                 dialogInterface.cancel();
             }
         });
@@ -218,14 +232,6 @@ public class HomeFragment extends Fragment {
         alertDialog.setTitle("Добавить цель");
         alertDialog.show();
 
-    }
-
-
-    private void generateItem() {
-
-        itemSwipes.add(new ItemSwipe(name));
-        adapterSwipe = new MyAdapterSwipe(getActivity().getApplicationContext(), itemSwipes);
-        recyclerView.setAdapter(adapterSwipe);
     }
 }
 
