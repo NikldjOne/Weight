@@ -33,6 +33,7 @@ public class Main2Activity extends AppCompatActivity {
                         case nav_home:
                             selectedFragment = new HomeFragment();
                             break;
+
                         case R.id.nav_eat:
                             selectedFragment = new EatFragment();
                             break;

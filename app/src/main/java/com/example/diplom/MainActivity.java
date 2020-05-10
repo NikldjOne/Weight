@@ -18,19 +18,16 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
 
 public class MainActivity extends AppCompatActivity {
-ViewPager viewPager;
-Adapter adapter;
-List<Model> models;
-Integer[] colors =null;
-ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-private Timer timer;
-private  int current_postition;
-private LinearLayout dotsLayout;
-private  int custom_position=0;
-private  int colors2=0;
+    ViewPager viewPager;
+    Adapter adapter;
+    List<Model> models;
+    Integer[] colors = null;
+    ArgbEvaluator argbEvaluator = new ArgbEvaluator();
+    private int current_postition;
+    private LinearLayout dotsLayout;
+    private int custom_position = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,20 +37,19 @@ private  int colors2=0;
         dotsLayout = findViewById(R.id.dotsContainer);
 
         models = new ArrayList<>();
-        models.add(new Model("ТРАНСФОРМАЦИЯ ТЕЛА","Тренировки нового уровня. Наращивай\n" +
+        models.add(new Model("ТРАНСФОРМАЦИЯ ТЕЛА", "Тренировки нового уровня. Наращивай\n" +
                 "мышцы и пали жир, построй тело атлета."));
-        models.add(new Model("Test2","TEST_TEST_TEST_TEST_TEST"));
-        models.add(new Model("Test2","TEST_TEST_TEST_TEST_TEST"));
-        models.add(new Model("Test2","TEST_TEST_TEST_TEST_TEST"));
+        models.add(new Model("Test2", "TEST_TEST_TEST_TEST_TEST"));
+        models.add(new Model("Test2", "TEST_TEST_TEST_TEST_TEST"));
+        models.add(new Model("Test2", "TEST_TEST_TEST_TEST_TEST"));
 
-        adapter = new Adapter(models,this);
+        adapter = new Adapter(models, this);
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
-
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-           startActivity(new Intent(MainActivity.this, Main2Activity.class));
-           finish();
+            startActivity(new Intent(MainActivity.this, Main2Activity.class));
+            finish();
         }
 
 
@@ -70,25 +66,26 @@ private  int colors2=0;
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                if(position<(adapter.getCount()-1)&&position<(colors.length-1)){
+                if (position < (adapter.getCount() - 1) && position < (colors.length - 1)) {
                     viewPager.setBackgroundColor(
                             (Integer) argbEvaluator.evaluate(
                                     positionOffset,
                                     colors[position],
-                                    colors[position+1]
+                                    colors[position + 1]
                             )
 
                     );
-                }else {
-                    viewPager.setBackgroundColor(colors[colors.length-1]);
+                } else {
+                    viewPager.setBackgroundColor(colors[colors.length - 1]);
                 }
             }
 
             @Override
             public void onPageSelected(int position) {
 
-                prepareDots(custom_position=position);
+                prepareDots(custom_position = position);
             }
+
             @Override
             public void onPageScrollStateChanged(int state) {
 
@@ -116,14 +113,16 @@ private  int colors2=0;
                 finish();
         }
     }
-    private void createSlideShow(){
+
+
+    private void createSlideShow() {
         final Handler handler = new Handler();
-        final  Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                if(current_postition==models.size())
+                if (current_postition == models.size())
                     current_postition = 0;
-                viewPager.setCurrentItem(current_postition++,true);
+                viewPager.setCurrentItem(current_postition++, true);
 
             }
         };

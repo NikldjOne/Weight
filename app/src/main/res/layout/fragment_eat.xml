@@ -1,15 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/colorBack">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBack"
+    android:orientation="vertical">
 
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarid"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/ripple_effect"
+        app:elevation="0dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/light"
+            android:text="Завтрак"
+            android:textSize="20sp" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        android:id="@+id/tablayout_id"
+        app:tabTextColor="@color/colorPrimary"
+        android:background="@drawable/ripple_effect"
+        app:tabIndicatorColor="@color/colorPrimary"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewpager_2" />
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_marginLeft="125dp"
-        android:text="eat"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="225dp"
+        android:background="@drawable/inset"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/breakfast"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_effect"
+            android:fontFamily="@font/light"
+            android:text="Завтрак"
+            android:textColor="@color/colorHint2"
+            android:textSize="16sp" />
+    </LinearLayout>
 
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/inset"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/launch"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_effect"
+            android:fontFamily="@font/light"
+            android:text="Обед"
+            android:textColor="@color/colorHint2"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/inset"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/yzin"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_effect"
+            android:fontFamily="@font/light"
+            android:text="Ужин"
+            android:textColor="@color/colorHint2"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+</LinearLayout>
