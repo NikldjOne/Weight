@@ -1,14 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:background="@color/colorBack"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Syhka Fragment"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/perekys"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textviewsyhka"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/light"
+                android:textColor="@color/colorHint"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/about_syhka"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="1dp"
+                android:clickable="true"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:text="ещё"
+                android:textAllCaps="false"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#7b7b7b" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/light"
+            android:text="Выберите меню"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="155dp"
+                android:layout_height="125dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp">
+
+                <ImageView
+                    android:layout_width="155dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/zavtrak" />
+
+                <Button
+                    android:id="@+id/btn_zavtrak"
+                    android:layout_width="155dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/ripple_effect"
+                    android:gravity="bottom"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Завтрак"
+                    android:textAllCaps="false" />
+            </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="155dp"
+                    android:layout_height="125dp"
+                    android:layout_marginRight="20dp">
+
+                    <ImageView
+                        android:layout_width="155dp"
+                        android:layout_height="125dp"
+                        android:background="@drawable/yogert" />
+                    <Button
+                        android:id="@+id/btn_perekys"
+                        android:layout_width="155dp"
+                        android:layout_height="125dp"
+                        android:background="@drawable/ripple_effect"
+                        android:gravity="bottom"
+                        android:paddingLeft="10dp"
+                        android:paddingBottom="5dp"
+                        android:text="Перекус"
+                        android:textAllCaps="false" />
+                </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="155dp"
+                    android:layout_height="125dp">
+
+                    <ImageView
+                        android:layout_width="155dp"
+                        android:layout_height="125dp"
+                        android:background="@drawable/obed" />
+
+                    <Button
+                        android:layout_width="155dp"
+                        android:layout_height="125dp"
+                        android:background="@drawable/ripple_effect"
+                        android:gravity="bottom"
+                        android:paddingLeft="10dp"
+                        android:paddingBottom="5dp"
+                        android:text="Обед"
+                        android:textAllCaps="false" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="155dp"
+                    android:layout_height="125dp">
+
+                    <ImageView
+                        android:layout_width="155dp"
+                        android:layout_height="125dp"
+                        android:background="@drawable/yjin" />
+
+                    <Button
+                        android:layout_width="155dp"
+                        android:layout_height="125dp"
+                        android:background="@drawable/ripple_effect"
+                        android:gravity="bottom"
+                        android:paddingLeft="10dp"
+                        android:paddingBottom="5dp"
+                        android:text="Ужин"
+                        android:textAllCaps="false" />
+                </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

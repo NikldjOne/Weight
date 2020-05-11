@@ -10,34 +10,40 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarid"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/ripple_effect"
-        app:elevation="0dp"
-        android:gravity="center">
+        android:gravity="center"
+        app:elevation="0dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
             android:fontFamily="@font/light"
-            android:text="Завтрак"
-            android:textSize="20sp" />
+            android:text="Питание"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
     </com.google.android.material.appbar.AppBarLayout>
+
     <com.google.android.material.tabs.TabLayout
+
+        android:id="@+id/tablayout_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabGravity="fill"
+        app:tabIndicatorColor="@color/colorPrimary"
         app:tabMode="fixed"
-        android:id="@+id/tablayout_id"
-        app:tabTextColor="@color/colorPrimary"
-        android:background="@drawable/ripple_effect"
-        app:tabIndicatorColor="@color/colorPrimary"/>
+        app:tabRippleColor="@color/colorPrimary"
+        app:tabTextAppearance="@style/tab_text"
+        app:tabTextColor="@color/colorPrimary" />
 
     <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager_2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewpager_2" />
+        android:layout_height="match_parent" />
 
 
     <LinearLayout
