@@ -28,5 +28,4 @@
         <item name="android:textSize">17sp</item>
         <item name="android:fontFamily">@font/light</item>
     </style>
-
 </resources>

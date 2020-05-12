@@ -26,16 +26,16 @@
 
             <TextView
                 android:id="@+id/textviewsyhka"
-                android:layout_width="310dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:fontFamily="@font/light"
                 android:textColor="@color/colorHint"
-                android:textSize="13sp" />
+                android:textSize="12.5sp" />
 
             <TextView
                 android:id="@+id/about_syhka"
-                android:layout_width="30dp"
+                android:layout_width="40dp"
                 android:layout_height="20dp"
                 android:layout_gravity="bottom"
                 android:layout_marginTop="1dp"
@@ -53,11 +53,11 @@
             android:background="#7b7b7b" />
 
         <TextView
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/light"
             android:text="Выберите меню"
             android:textAllCaps="false"
@@ -73,7 +73,8 @@
                 android:layout_width="155dp"
                 android:layout_height="125dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="10dp">
 
                 <ImageView
                     android:layout_width="155dp"
@@ -85,35 +86,40 @@
                     android:layout_width="155dp"
                     android:layout_height="125dp"
                     android:background="@drawable/ripple_effect"
+                    android:fontFamily="@font/light"
                     android:gravity="bottom"
                     android:paddingLeft="10dp"
                     android:paddingBottom="5dp"
                     android:text="Завтрак"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
 
-                <androidx.cardview.widget.CardView
+            <androidx.cardview.widget.CardView
+                android:layout_width="155dp"
+                android:layout_height="125dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
                     android:layout_width="155dp"
                     android:layout_height="125dp"
-                    android:layout_marginRight="20dp">
+                    android:background="@drawable/yogert_2" />
 
-                    <ImageView
-                        android:layout_width="155dp"
-                        android:layout_height="125dp"
-                        android:background="@drawable/yogert" />
-                    <Button
-                        android:id="@+id/btn_perekys"
-                        android:layout_width="155dp"
-                        android:layout_height="125dp"
-                        android:background="@drawable/ripple_effect"
-                        android:gravity="bottom"
-                        android:paddingLeft="10dp"
-                        android:paddingBottom="5dp"
-                        android:text="Перекус"
-                        android:textAllCaps="false" />
-                </androidx.cardview.widget.CardView>
-
+                <Button
+                    android:id="@+id/btn_perekys"
+                    android:layout_width="155dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/ripple_effect"
+                    android:fontFamily="@font/light"
+                    android:gravity="bottom"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Перекус"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>
@@ -122,50 +128,58 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
+            <androidx.cardview.widget.CardView
+                android:layout_width="155dp"
+                android:layout_height="125dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginRight="10dp">
+
+                <ImageView
                     android:layout_width="155dp"
-                    android:layout_height="125dp">
+                    android:layout_height="125dp"
+                    android:background="@drawable/obed" />
 
-                    <ImageView
-                        android:layout_width="155dp"
-                        android:layout_height="125dp"
-                        android:background="@drawable/obed" />
-
-                    <Button
-                        android:layout_width="155dp"
-                        android:layout_height="125dp"
-                        android:background="@drawable/ripple_effect"
-                        android:gravity="bottom"
-                        android:paddingLeft="10dp"
-                        android:paddingBottom="5dp"
-                        android:text="Обед"
-                        android:textAllCaps="false" />
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="20dp"
+                <Button
+                    android:id="@+id/btn_obed"
                     android:layout_width="155dp"
-                    android:layout_height="125dp">
+                    android:layout_height="125dp"
+                    android:background="@drawable/ripple_effect"
+                    android:fontFamily="@font/light"
+                    android:gravity="bottom"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Обед"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="155dp"
-                        android:layout_height="125dp"
-                        android:background="@drawable/yjin" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="155dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginRight="20dp">
 
-                    <Button
-                        android:layout_width="155dp"
-                        android:layout_height="125dp"
-                        android:background="@drawable/ripple_effect"
-                        android:gravity="bottom"
-                        android:paddingLeft="10dp"
-                        android:paddingBottom="5dp"
-                        android:text="Ужин"
-                        android:textAllCaps="false" />
-                </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:layout_width="155dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/yjin" />
+
+                <Button
+                    android:id="@+id/btn_yjin"
+                    android:layout_width="155dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/ripple_effect"
+                    android:fontFamily="@font/light"
+                    android:gravity="bottom"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Ужин"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
     </LinearLayout>

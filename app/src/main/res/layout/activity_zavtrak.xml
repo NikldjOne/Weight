@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBack"
+    tools:context=".eat.menu_eat_syhka.Perekys">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/sendvich" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Сэндвич с овощами и яйцом"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/light"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/yaichnica" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Яичница-болтунья со шпинатом и сыром"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/light"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/smyzi_2" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Клубнично-банановый смузи"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/light"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/tost" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Тост с авакадо и копченым лососем"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/light"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/yaichnica_2" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Яичница в болгарском перце"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/light"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/ruletiki" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Рулетики из омлета с копченым лососем"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/light"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/grek" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Греческий салат с сыром фета"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/light"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
