@@ -21,17 +21,15 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
-                    android:id="@+id/kyrica_ovohi"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/inset_default" />
+                    android:background="@drawable/musli" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Курица с овощами"
+                    android:text="Бирхер-мюсли"
                     android:textAllCaps="true"
                     android:gravity="center"
-
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/light"
@@ -41,7 +39,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="438 ккал"
+                    android:text="330 ккал"
                     android:textAllCaps="true"
                     android:gravity="center"
                     android:layout_gravity="bottom"
@@ -59,17 +57,15 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
-                    android:id="@+id/kyrica_shpinat"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/inset_default" />
+                    android:background="@drawable/kyrica_ric" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Запеченная курица со шпинатом"
+                    android:text="Курица с болгарским перцем и рисом"
                     android:textAllCaps="true"
                     android:gravity="center"
-
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/light"
@@ -79,7 +75,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="474 ккал"
+                    android:text="509 ккал"
                     android:textAllCaps="true"
                     android:gravity="center"
                     android:layout_gravity="bottom"
@@ -97,14 +93,13 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
-                    android:id="@+id/salat"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/inset_default" />
+                    android:background="@drawable/yaichnica" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Салат из помидоров и моцареллы с куриной грудкой"
+                    android:text="Яичница-болтунья со шпинатом и сыром"
                     android:textAllCaps="true"
                     android:gravity="center"
 
@@ -117,7 +112,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="549 ккал"
+                    android:text="546 ккал"
                     android:textAllCaps="true"
                     android:gravity="center"
                     android:layout_gravity="bottom"
@@ -135,14 +130,13 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
-                    android:id="@+id/salat_2"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/salat_2" />
+                    android:background="@drawable/tost" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Салат из тунца с авокадо и яйцами"
+                    android:text="Тост с авакадо и копченым лососем"
                     android:textAllCaps="true"
                     android:gravity="center"
 
@@ -155,7 +149,81 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="626 ккал"
+                    android:text="486 ккал"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/light"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/yaichnica_2" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Яичница в болгарском перцем с гарниром"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/light"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="540 ккал"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/light"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/ruletiki" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Рулетики из омлета с копченым лососем"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/light"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="644 ккал"
                     android:textAllCaps="true"
                     android:gravity="center"
                     android:layout_gravity="bottom"

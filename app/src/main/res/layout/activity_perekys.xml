@@ -21,9 +21,10 @@
         app:cardCornerRadius="10dp">
 
     <ImageView
+        android:id="@+id/yogert_3"
         android:layout_width="320dp"
         android:layout_height="200dp"
-        android:background="@drawable/yogert_3" />
+        android:background="@drawable/inset_default" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,6 +38,17 @@
             android:textSize="22sp"
             android:textColor="@color/colorText"
             android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="170 ккал"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/light"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_marginTop="20dp"
@@ -47,9 +59,10 @@
         app:cardCornerRadius="10dp">
 
         <ImageView
+            android:id="@+id/smyzi_22"
             android:layout_width="320dp"
             android:layout_height="200dp"
-            android:background="@drawable/smyzi_2" />
+            android:background="@drawable/inset_default" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,6 +76,17 @@
             android:textSize="22sp"
             android:textColor="@color/colorText"
             android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="150 ккал"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/light"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"/>
     </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:layout_marginTop="20dp"
@@ -73,9 +97,10 @@
             app:cardCornerRadius="10dp">
 
             <ImageView
+                android:id="@+id/smyzi"
                 android:layout_width="320dp"
                 android:layout_height="200dp"
-                android:background="@drawable/smyzi" />
+                android:background="@drawable/inset_default" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,6 +112,17 @@
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/light"
                 android:textSize="22sp"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="189 ккал"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:layout_gravity="bottom"
+                android:fontFamily="@font/light"
+                android:textSize="16sp"
                 android:textColor="@color/colorText"
                 android:textStyle="bold"/>
         </androidx.cardview.widget.CardView>

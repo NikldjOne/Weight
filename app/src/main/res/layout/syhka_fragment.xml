@@ -77,9 +77,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+
+                    android:id="@+id/image_zavtrak"
                     android:layout_width="155dp"
-                    android:layout_height="125dp"
-                    android:background="@drawable/zavtrak" />
+                    android:layout_height="125dp" />
 
                 <Button
                     android:id="@+id/btn_zavtrak"
@@ -103,9 +104,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/image_perekys"
                     android:layout_width="155dp"
                     android:layout_height="125dp"
-                    android:background="@drawable/yogert_2" />
+                    android:background="@drawable/inset_default" />
 
                 <Button
                     android:id="@+id/btn_perekys"
@@ -133,13 +135,14 @@
                 android:layout_height="125dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                app:cardCornerRadius="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/image_obed"
                     android:layout_width="155dp"
                     android:layout_height="125dp"
-                    android:background="@drawable/obed" />
+                    android:background="@drawable/inset_default" />
 
                 <Button
                     android:id="@+id/btn_obed"
@@ -159,13 +162,14 @@
                 android:layout_width="155dp"
                 android:layout_height="125dp"
                 android:layout_marginTop="10dp"
-                app:cardCornerRadius="10dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/image_yjin"
                     android:layout_width="155dp"
                     android:layout_height="125dp"
-                    android:background="@drawable/yjin" />
+                    android:background="@drawable/inset_default" />
 
                 <Button
                     android:id="@+id/btn_yjin"

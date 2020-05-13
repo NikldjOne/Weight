@@ -11,9 +11,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".eat.menu_eat_massa.Yjin_massa"
+            android:parentActivityName=".Login"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".eat.menu_eat_massa.Poldnik_massa"
+            android:parentActivityName=".Login"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".eat.menu_eat_massa.Obed_massa"
+            android:parentActivityName=".Login"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".eat.menu_eat_massa.Perekys_massa"
+            android:parentActivityName=".Login"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".eat.menu_eat_massa.Zavtrak_massa"
+            android:parentActivityName=".Login"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
             android:name=".eat.menu_eat_syhka.Yjin"
             android:parentActivityName=".Login"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity
             android:name=".eat.menu_eat_syhka.Obed"
             android:parentActivityName=".Login"

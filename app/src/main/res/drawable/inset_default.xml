@@ -5,6 +5,6 @@
     android:insetRight="4dp"
     android:insetTop="6dp">
 
-    <stroke android:width="3dip" android:color="@color/colorPrimary"/>
+    <stroke android:width="180dip" android:color="@color/colorPrimary"/>
     <corners android:radius="0dp"/>
 </shape>

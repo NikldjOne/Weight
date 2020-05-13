@@ -21,20 +21,31 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/sendvich"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/sendvich" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Сэндвич с овощами и яйцом"
                     android:textAllCaps="true"
                     android:gravity="center"
-
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/light"
                     android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="240 ккал"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/light"
+                    android:textSize="16sp"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"/>
             </androidx.cardview.widget.CardView>
@@ -47,20 +58,31 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/yaichnica"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/yaichnica" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Яичница-болтунья со шпинатом и сыром"
                     android:textAllCaps="true"
                     android:gravity="center"
-
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/light"
                     android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="546 ккал"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/light"
+                    android:textSize="16sp"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"/>
             </androidx.cardview.widget.CardView>
@@ -73,9 +95,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/smyzi_2"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/smyzi_2" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -89,6 +112,17 @@
                     android:textSize="22sp"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="150 ккал"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/light"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_marginTop="20dp"
@@ -99,9 +133,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/tost"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/tost" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -115,6 +150,17 @@
                     android:textSize="22sp"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="486 ккал"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/light"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_marginTop="20dp"
@@ -125,9 +171,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/yaichnica_2"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/yaichnica_2" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -141,6 +188,17 @@
                     android:textSize="22sp"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="271 ккал"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/light"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_marginTop="20dp"
@@ -151,9 +209,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/ruletiki"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/ruletiki" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -167,6 +226,17 @@
                     android:textSize="22sp"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="352 ккал"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/light"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_marginTop="20dp"
@@ -177,9 +247,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/grek"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/grek" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -191,6 +262,17 @@
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/light"
                     android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="226 ккал"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/light"
+                    android:textSize="16sp"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"/>
             </androidx.cardview.widget.CardView>
