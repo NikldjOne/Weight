@@ -77,9 +77,9 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/zavtrak_2"
                     android:layout_width="155dp"
-                    android:layout_height="125dp"
-                    android:background="@drawable/zavtrak_2" />
+                    android:layout_height="125dp" />
 
                 <Button
                     android:id="@+id/btn_zavtrak_2"
@@ -103,9 +103,9 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/perekys_22"
                     android:layout_width="155dp"
-                    android:layout_height="125dp"
-                    android:background="@drawable/perekys_2" />
+                    android:layout_height="125dp" />
 
                 <Button
                     android:id="@+id/btn_perekys_2"
@@ -137,9 +137,9 @@
                 android:layout_marginRight="10dp">
 
                 <ImageView
+                    android:id="@+id/poldnik"
                     android:layout_width="155dp"
-                    android:layout_height="125dp"
-                    android:background="@drawable/poldnik" />
+                    android:layout_height="125dp" />
 
                 <Button
                     android:id="@+id/btn_poldnik"
@@ -163,9 +163,9 @@
                 android:layout_marginRight="20dp">
 
                 <ImageView
+                    android:id="@+id/obed_2"
                     android:layout_width="155dp"
-                    android:layout_height="125dp"
-                    android:background="@drawable/obed_2" />
+                    android:layout_height="125dp" />
 
                 <Button
                     android:id="@+id/btn_obed_2"
@@ -190,9 +190,9 @@
             android:layout_marginLeft="20dp">
 
             <ImageView
+                android:id="@+id/yjin_2"
                 android:layout_width="155dp"
-                android:layout_height="125dp"
-                android:background="@drawable/yjin_2" />
+                android:layout_height="125dp" />
 
             <Button
                 android:id="@+id/btn_yjin_2"

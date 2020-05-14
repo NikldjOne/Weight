@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBack"
-    tools:context=".eat.menu_eat_syhka.Perekys">
+    tools:context=".eat.menu_eat_syhka.Zavtrak_massa">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -21,9 +21,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/musli"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/musli" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -57,9 +58,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/kyrica_ric"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/kyrica_ric" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -93,9 +95,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/yaichnica_22"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/yaichnica" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -130,9 +133,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/tost_2"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/tost" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -167,9 +171,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/yaichnica_222"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/yaichnica_2" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -204,9 +209,10 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
+                    android:id="@+id/ruletiki_2"
                     android:layout_width="320dp"
                     android:layout_height="200dp"
-                    android:background="@drawable/ruletiki" />
+                    android:background="@drawable/inset_default" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

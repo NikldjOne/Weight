@@ -30,9 +30,9 @@ public class Obed extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout_3);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        imageView = (ImageView) findViewById(R.id.kyrica);
-        imageView2= (ImageView) findViewById(R.id.grek_2);
-        imageView3= (ImageView) findViewById(R.id.omlet);
+        imageView = findViewById(R.id.kyrica);
+        imageView2= findViewById(R.id.grek_2);
+        imageView3= findViewById(R.id.omlet);
     }
 
     @Override

@@ -34,13 +34,13 @@ public class Zavtrak extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout_2);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        imageView = (ImageView) findViewById(R.id.sendvich);
-        imageView2= (ImageView) findViewById(R.id.yaichnica);
-        imageView3= (ImageView) findViewById(R.id.smyzi_2);
-        imageView4 = (ImageView)findViewById(R.id.tost);
-        imageView5= (ImageView) findViewById(R.id.yaichnica_2);
-        imageView6= (ImageView) findViewById(R.id.ruletiki);
-        imageView7= (ImageView) findViewById(R.id.grek);
+        imageView = findViewById(R.id.sendvich);
+        imageView2= findViewById(R.id.yaichnica);
+        imageView3= findViewById(R.id.smyzi_2);
+        imageView4 =findViewById(R.id.tost);
+        imageView5= findViewById(R.id.yaichnica_2);
+        imageView6= findViewById(R.id.ruletiki);
+        imageView7= findViewById(R.id.grek);
     }
 
     @Override

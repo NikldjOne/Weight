@@ -24,6 +24,7 @@ public class Registration extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseDatabase db;
     private DatabaseReference users;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +33,9 @@ public class Registration extends AppCompatActivity {
         db = FirebaseDatabase.getInstance();
         users = db.getReference("Users");
     }
+
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
         finish();
@@ -44,16 +46,13 @@ public class Registration extends AppCompatActivity {
         final EditText pass = findViewById(R.id.text_input_password);
         final String email_2 = email.getText().toString();
         final String pass_2 = pass.getText().toString();
-        if(TextUtils.isEmpty(email_2)){
+        if (TextUtils.isEmpty(email_2)) {
             Toast.makeText(this, "Введите вашу почту!", Toast.LENGTH_LONG).show();
-        }
-        else
-        if(pass_2.length()<6){
+        } else if (pass_2.length() < 6) {
             Toast.makeText(this, "Введите пароль, который больше 6 символов", Toast.LENGTH_LONG).show();
-        }
-        else {
+        } else {
 
-                        mAuth.createUserWithEmailAndPassword(email_2, pass_2)
+            mAuth.createUserWithEmailAndPassword(email_2, pass_2)
                     .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
@@ -76,7 +75,7 @@ public class Registration extends AppCompatActivity {
                 }
             });
         }
-        }
+    }
 
 
     public void tvpol(View view) {
@@ -91,7 +90,8 @@ public class Registration extends AppCompatActivity {
     public void tvkonf2(View view) {
         konf();
     }
-    public void konf(){
+
+    public void konf() {
         Intent intent = new Intent(this, Konfidentional.class);
         startActivity(intent);
     }

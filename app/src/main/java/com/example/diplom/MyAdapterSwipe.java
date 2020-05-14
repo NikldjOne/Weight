@@ -12,9 +12,9 @@ import com.example.diplom.model.ItemSwipe;
 
 import java.util.List;
 
-public class MyAdapterSwipe extends RecyclerView.Adapter <MyViewHolderSwipe>{
-Context context;
-List<ItemSwipe> itemList;
+public class MyAdapterSwipe extends RecyclerView.Adapter<MyViewHolderSwipe> {
+    Context context;
+    List<ItemSwipe> itemList;
 
     public MyAdapterSwipe(Context context, List<ItemSwipe> itemList) {
         this.context = context;
@@ -25,7 +25,7 @@ List<ItemSwipe> itemList;
     @Override
     public MyViewHolderSwipe onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(context)
-                .inflate(R.layout.item_layout,parent,false);
+                .inflate(R.layout.item_layout, parent, false);
         return new MyViewHolderSwipe(itemView);
     }
 

@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment {
         mDatabase = FirebaseDatabase.getInstance();
         dreamlist = mDatabase.getReference("Dreams").child(user.getUid());
 
-       MySwipeHelper swipeHelper = new MySwipeHelper(getActivity(), recyclerView, 100) {
+        MySwipeHelper swipeHelper = new MySwipeHelper(getActivity(), recyclerView, 100) {
             @Override
             public void instantiateMyButton(RecyclerView.ViewHolder viewHolder, List<MySwipeHelper.MyButton> buffer) {
                 buffer.add(new MyButton(getActivity(),
@@ -158,12 +158,10 @@ public class HomeFragment extends Fragment {
                 if (ed.getText().toString().equals("")) {
                     Toast.makeText(getActivity(), "Вы не изменили цель", Toast.LENGTH_SHORT).show();
                     DialogUpdate(key, name);
-                } else
-                    if(ed.getText().toString() == name){
-                        Toast.makeText(globalContext, "Вы не изменили данные!", Toast.LENGTH_SHORT).show();
-                        DialogUpdate(key, name);
-                    }
-                    else{
+                } else if (ed.getText().toString() == name) {
+                    Toast.makeText(globalContext, "Вы не изменили данные!", Toast.LENGTH_SHORT).show();
+                    DialogUpdate(key, name);
+                } else {
                     ClearDreams();
                     name_upd = ed.getText().toString();
                     dreamlist.child(key).setValue(name_upd).addOnSuccessListener(new OnSuccessListener<Void>() {

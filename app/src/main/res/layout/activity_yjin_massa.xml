@@ -1,9 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".eat.menu_eat_massa.Yjin_massa">
+    android:background="@color/colorBack"
+    tools:context=".eat.menu_eat_syhka.Poldnik_massa">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/semga"
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/inset_default" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Семга с рисом"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/light"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="930 ккал"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/light"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/ovsyanka"
+                    android:layout_width="320dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/inset_default" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ночная овсянка с арахисовым маслом"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/light"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="605 ккал"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/light"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

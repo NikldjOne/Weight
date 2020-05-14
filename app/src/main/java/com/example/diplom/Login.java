@@ -24,6 +24,7 @@ public class Login extends AppCompatActivity {
     private FirebaseDatabase db;
     private DatabaseReference users;
     Button btnSignIn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,14 +34,15 @@ public class Login extends AppCompatActivity {
         db = FirebaseDatabase.getInstance();
         users = db.getReference("Users");
         btnSignIn.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-showSignInWindow();
+            @Override
+            public void onClick(View view) {
+                showSignInWindow();
+            }
+        });
     }
-});
-    }
+
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
@@ -49,22 +51,22 @@ showSignInWindow();
     private void showSignInWindow() {
         final EditText email = findViewById(R.id.tiEmaillog);
         final EditText pass = findViewById(R.id.text_input_password_log);
-        if(TextUtils.isEmpty(email.getText().toString())){
+        if (TextUtils.isEmpty(email.getText().toString())) {
             Toast.makeText(this, "Введите вашу почту!", Toast.LENGTH_LONG).show();
             return;
         }
-        if(pass.getText().toString().length()<6){
+        if (pass.getText().toString().length() < 6) {
             Toast.makeText(this, "Введите пароль, который больше 6 символов", Toast.LENGTH_LONG).show();
             return;
         }
-        mAuth.signInWithEmailAndPassword(email.getText().toString(),pass.getText().toString())
-        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                startActivity(new Intent(Login.this,Main2Activity.class));
-                finish();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
+        mAuth.signInWithEmailAndPassword(email.getText().toString(), pass.getText().toString())
+                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                        startActivity(new Intent(Login.this, Main2Activity.class));
+                        finish();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(Login.this, "Ошибка авторизации,проверьте данные", Toast.LENGTH_SHORT).show();
@@ -72,7 +74,7 @@ showSignInWindow();
         });
     }
 
-    public void politikaShow(){
+    public void politikaShow() {
         Intent intent = new Intent(this, Politika.class);
         startActivity(intent);
     }

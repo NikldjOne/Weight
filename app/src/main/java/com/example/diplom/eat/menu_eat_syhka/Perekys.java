@@ -29,9 +29,9 @@ public class Perekys extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        imageView = (ImageView) findViewById(R.id.yogert_3);
-        imageView2= (ImageView) findViewById(R.id.smyzi_22);
-        imageView3= (ImageView) findViewById(R.id.smyzi);
+        imageView = findViewById(R.id.yogert_3);
+        imageView2= findViewById(R.id.smyzi_22);
+        imageView3= findViewById(R.id.smyzi);
     }
 
     @Override

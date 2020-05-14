@@ -28,15 +28,9 @@ public class EatFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_eat, container, false);
-        tabLayout = (TabLayout) view.findViewById(R.id.tablayout_id);
-        appBarLayout = (AppBarLayout) view.findViewById(R.id.appbarid);
-        viewPager = (ViewPager) view.findViewById(R.id.viewpager_2);
-        return view;
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
+        tabLayout =  view.findViewById(R.id.tablayout_id);
+        appBarLayout =  view.findViewById(R.id.appbarid);
+        viewPager =  view.findViewById(R.id.viewpager_2);
         adapter = new ViewPagerAdapter(getChildFragmentManager());
         adapter.AddFragment(new Syhka_Fragment(), "Сушка");
         adapter.AddFragment(new Massa_Fragment(), "Масса");
@@ -44,5 +38,7 @@ public class EatFragment extends Fragment {
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setSelectedTabIndicatorHeight((int) (5 * getResources().getDisplayMetrics().density));
         tabLayout.setTabTextColors(Color.parseColor("#80778899"), Color.parseColor("#008577"));
+
+        return view;
     }
 }

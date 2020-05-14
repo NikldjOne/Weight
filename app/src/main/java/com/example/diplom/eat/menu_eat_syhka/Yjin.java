@@ -16,7 +16,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class Yjin extends AppCompatActivity {
-    private ImageView imageView,imageView2,imageView3,imageView4;    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private ImageView imageView, imageView2, imageView3, imageView4;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference().child("Image");
     private DatabaseReference first = databaseReference.child("17");
     private DatabaseReference two = databaseReference.child("18");
@@ -30,10 +31,10 @@ public class Yjin extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout_4);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        imageView = (ImageView) findViewById(R.id.kyrica_ovohi);
-        imageView2= (ImageView) findViewById(R.id.kyrica_shpinat);
-        imageView3= (ImageView) findViewById(R.id.salat);
-        imageView4 = (ImageView)findViewById(R.id.salat_2);
+        imageView = findViewById(R.id.kyrica_ovohi);
+        imageView2 = findViewById(R.id.kyrica_shpinat);
+        imageView3 = findViewById(R.id.salat);
+        imageView4 = findViewById(R.id.salat_2);
     }
 
     @Override

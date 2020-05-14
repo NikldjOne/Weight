@@ -3,7 +3,7 @@ package com.example.diplom;
 public class Model {
 
     private String title;
-    private  String  deck;
+    private String deck;
 
     public Model(String title, String deck) {
         this.title = title;

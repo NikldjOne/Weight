@@ -44,34 +44,29 @@ public class Syhka_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.syhka_fragment, container, false);
-        imageView = (ImageView) view.findViewById(R.id.perekys);
-        im_zav = (ImageView) view.findViewById(R.id.image_zavtrak);
-        im_per = (ImageView) view.findViewById(R.id.image_perekys);
-        im_obed = (ImageView) view.findViewById(R.id.image_obed);
-        im_yjin = (ImageView) view.findViewById(R.id.image_yjin);
-        syhka = (TextView) view.findViewById(R.id.textviewsyhka);
+        imageView =  view.findViewById(R.id.perekys);
+        im_zav =  view.findViewById(R.id.image_zavtrak);
+        im_per =  view.findViewById(R.id.image_perekys);
+        im_obed =  view.findViewById(R.id.image_obed);
+        im_yjin =  view.findViewById(R.id.image_yjin);
+        syhka =  view.findViewById(R.id.textviewsyhka);
         imageView.setImageResource(R.drawable.inset_default);
         im_zav.setImageResource(R.drawable.inset_default);
         im_per.setImageResource(R.drawable.inset_default);
         im_obed.setImageResource(R.drawable.inset_default);
         im_yjin.setImageResource(R.drawable.inset_default);
         syhka.setText("Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight");
-        bt_syhka = (TextView) view.findViewById(R.id.about_syhka);
-        btn_zavtrak = (Button) view.findViewById(R.id.btn_zavtrak);
-        btn_perekys = (Button) view.findViewById(R.id.btn_perekys);
-        btn_obed = (Button) view.findViewById(R.id.btn_obed);
-        btn_yjin = (Button) view.findViewById(R.id.btn_yjin);
+        bt_syhka =  view.findViewById(R.id.about_syhka);
+        btn_zavtrak =  view.findViewById(R.id.btn_zavtrak);
+        btn_perekys =  view.findViewById(R.id.btn_perekys);
+        btn_obed = view.findViewById(R.id.btn_obed);
+        btn_yjin = view.findViewById(R.id.btn_yjin);
         bt_syhka.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 bt_syhka.setVisibility(View.INVISIBLE);
                 syhka.setText("Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight" +
                         " Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight" +
-                        "Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight" +
-                        "Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight" +
-                        "Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight" +
-                        "Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight" +
-                        "Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight" +
                         "Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight" +
                         "Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight");
             }
@@ -94,6 +89,7 @@ public class Syhka_Fragment extends Fragment {
                 startActivity(new Intent(getActivity(), Obed.class));
             }
         });
+
         btn_yjin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
