@@ -101,7 +101,7 @@
                     android:layout_height="150dp" />
 
                 <Button
-                    android:id="@+id/btn_opf"
+                    android:id="@+id/btn_ofp"
                     android:layout_width="320dp"
                     android:layout_height="150dp"
                     android:background="@drawable/ripple_effect"

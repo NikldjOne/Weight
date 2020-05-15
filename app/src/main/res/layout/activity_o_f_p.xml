@@ -6,30 +6,12 @@
     android:layout_height="match_parent"
     android:background="@color/colorBack"
     android:orientation="vertical">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbarid"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/ripple_effect"
-        android:gravity="center"
-        app:elevation="0dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:fontFamily="@font/light"
-            android:text="Питание"
-            android:textSize="24sp"
-            android:textStyle="bold"/>
-    </com.google.android.material.appbar.AppBarLayout>
-
+<HorizontalScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayout_id"
+        android:id="@+id/tablayout_id_ofp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabGravity="fill"
@@ -38,15 +20,11 @@
         app:tabRippleColor="@color/colorPrimary"
         app:tabTextAppearance="@style/tab_text"
         app:tabTextColor="@color/colorPrimary" />
-
+</HorizontalScrollView>
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager_2"
+        android:id="@+id/viewpager_ofp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-
-
-
 
 
 </LinearLayout>

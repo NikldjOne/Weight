@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".traning.ofp.Traning">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/inset">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="93dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/ic_lock_outline_black_24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/light"
+                    android:text="День 1"
+                    android:textColor="@color/colorHint"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_day1"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ripple_effect"
+                    android:fontFamily="@font/light"
+                    android:gravity="bottom"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="10dp"
+                    android:text="Ноги"
+                    android:textColor="@color/colorText"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/inset">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="93dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/ic_lock_outline_black_24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/light"
+                    android:text="День 2"
+                    android:textColor="@color/colorHint"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_shil"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ripple_effect"
+                    android:fontFamily="@font/light"
+                    android:gravity="bottom"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="10dp"
+                    android:text="Отдых"
+                    android:textColor="@color/colorText"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/inset">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="93dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/ic_lock_outline_black_24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/light"
+                    android:text="День 3"
+                    android:textColor="@color/colorHint"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_day3"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ripple_effect"
+                    android:fontFamily="@font/light"
+                    android:gravity="bottom"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="10dp"
+                    android:text="Спина"
+                    android:textColor="@color/colorText"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/inset">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="93dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/ic_lock_outline_black_24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/light"
+                    android:text="День 4"
+                    android:textColor="@color/colorHint"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_shil2"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ripple_effect"
+                    android:fontFamily="@font/light"
+                    android:gravity="bottom"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="10dp"
+                    android:text="отдых"
+
+                    android:textColor="@color/colorText"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/inset">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="93dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/ic_lock_outline_black_24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/light"
+                    android:text="День 5"
+                    android:textColor="@color/colorHint"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_day5"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ripple_effect"
+                    android:fontFamily="@font/light"
+                    android:gravity="bottom"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="10dp"
+                    android:text="Верх"
+                    android:textColor="@color/colorText"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/inset">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="93dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/ic_lock_outline_black_24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/light"
+                    android:text="День 6"
+                    android:textColor="@color/colorHint"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_shil3"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ripple_effect"
+                    android:fontFamily="@font/light"
+                    android:gravity="bottom"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="10dp"
+                    android:text="отдых"
+                    android:textColor="@color/colorText"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/inset">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="93dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/ic_lock_outline_black_24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/light"
+                    android:text="День 7"
+                    android:textColor="@color/colorHint"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_day7"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ripple_effect"
+                    android:fontFamily="@font/light"
+                    android:gravity="bottom"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="10dp"
+                    android:text="Пресс"
+                    android:textColor="@color/colorText"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager_ofp_traning"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

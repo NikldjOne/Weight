@@ -1,15 +1,18 @@
 package com.example.diplom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.diplom.traning.ofp.OFP;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,7 +28,7 @@ public class TraningFragment extends Fragment {
     private DatabaseReference first = databaseReference.child("38");
     private DatabaseReference two = databaseReference.child("39");
     private DatabaseReference three = databaseReference.child("40");
-
+Button btn_ofp,btn_cila;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,6 +37,14 @@ public class TraningFragment extends Fragment {
         imageView.setImageResource(R.drawable.inset_default);
         imageView2 = view.findViewById(R.id.img_ofp);
         imageView3 = view.findViewById(R.id.img_sila);
+        btn_ofp= view.findViewById(R.id.btn_ofp);
+
+        btn_ofp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), OFP.class));
+            }
+        });
         return view;
     }
 

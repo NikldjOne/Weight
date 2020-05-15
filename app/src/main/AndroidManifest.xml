@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".traning.ofp.OFP"
+            android:parentActivityName=".Login"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
             android:name=".eat.menu_eat_massa.Yjin_massa"
             android:parentActivityName=".Login"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
