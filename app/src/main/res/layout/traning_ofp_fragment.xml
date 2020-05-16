@@ -19,10 +19,11 @@
             android:layout_marginLeft="5dp">
 
             <RelativeLayout
+                android:id="@+id/day1_rel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
-                android:background="@drawable/inset">
+                android:background="@drawable/inset_inactive">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -56,10 +57,11 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/day2_rel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
-                android:background="@drawable/inset">
+                android:background="@drawable/inset_inactive">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -93,10 +95,11 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/day3_rel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
-                android:background="@drawable/inset">
+                android:background="@drawable/inset_inactive">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -130,10 +133,11 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/day4_rel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
-                android:background="@drawable/inset">
+                android:background="@drawable/inset_inactive">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -168,10 +172,11 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/day5_rel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
-                android:background="@drawable/inset">
+                android:background="@drawable/inset_inactive">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -205,10 +210,11 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/day6_rel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
-                android:background="@drawable/inset">
+                android:background="@drawable/inset_inactive">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -242,10 +248,11 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/day7_rel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
-                android:background="@drawable/inset">
+                android:background="@drawable/inset_inactive">
 
                 <ImageView
                     android:layout_width="13dp"
@@ -283,8 +290,8 @@
 
     </HorizontalScrollView>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager_ofp_traning"
+    <FrameLayout
+        android:id="@+id/frame_ofp_traning"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

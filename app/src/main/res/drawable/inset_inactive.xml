@@ -1,0 +1,10 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    android:insetBottom="6dp"
+    android:insetLeft="4dp"
+    android:insetRight="4dp"
+    android:insetTop="6dp">
+
+    <stroke android:width="3dip" android:color="@color/colorHint"/>
+    <corners android:radius="5dp"/>
+</shape>
