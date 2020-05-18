@@ -158,7 +158,7 @@ public class HomeFragment extends Fragment {
                 if (ed.getText().toString().equals("")) {
                     Toast.makeText(getActivity(), "Вы не изменили цель", Toast.LENGTH_SHORT).show();
                     DialogUpdate(key, name);
-                } else if (ed.getText().toString() == name) {
+                } else if (ed.getText().toString().equals(name)) {
                     Toast.makeText(globalContext, "Вы не изменили данные!", Toast.LENGTH_SHORT).show();
                     DialogUpdate(key, name);
                 } else {
