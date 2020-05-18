@@ -25,6 +25,7 @@ public class OFP extends AppCompatActivity {
         tabLayout = findViewById(R.id.tablayout_id_ofp);
         viewPager = findViewById(R.id.viewpager_ofp);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.AddFragment(new Traning_vvedenie(),"Рекорды");
         adapter.AddFragment(new Traning(), "Неделя 1");
         adapter.AddFragment(new Traning(), "Неделя 2");
         adapter.AddFragment(new Traning(), "Неделя 3");

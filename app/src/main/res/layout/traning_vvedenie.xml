@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout_focus">
+<EditText
+    android:id="@+id/ed_focus"
+    android:visibility="invisible"
+    android:layout_width="1dp"
+    android:layout_height="1dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/light"
+            android:text="Максимальный рывок:"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="80dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:fontFamily="@font/light"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/light"
+            android:text="кг"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/light"
+            android:text="Максимальный толчок:"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/ed_clean_jerk"
+            android:layout_width="80dp"
+            android:gravity="center"
+            android:fontFamily="@font/light"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/light"
+            android:text="кг"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/light"
+            android:text="Максимальный присед на спине:"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edit_squat"
+            android:layout_width="80dp"
+            android:gravity="center"
+            android:fontFamily="@font/light"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/light"
+            android:text="кг"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сохранить"
+        android:fontFamily="@font/light"
+        android:textSize="20sp"
+        android:textColor="@color/colorText"
+        android:background="@drawable/ripple_effect"/>
+</LinearLayout>

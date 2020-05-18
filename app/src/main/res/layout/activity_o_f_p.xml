@@ -14,9 +14,9 @@
         android:id="@+id/tablayout_id_ofp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabGravity="fill"
+        app:tabGravity="center"
         app:tabIndicatorColor="@color/colorPrimary"
-        app:tabMode="fixed"
+        app:tabMode="auto"
         app:tabRippleColor="@color/colorPrimary"
         app:tabTextAppearance="@style/tab_text"
         app:tabTextColor="@color/colorPrimary" />

@@ -5,11 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 <LinearLayout
+    android:layout_marginTop="15dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
     <androidx.cardview.widget.CardView
-        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         app:cardCornerRadius="8dp">
@@ -19,6 +19,7 @@
             android:layout_height="match_parent"
             />
         <Button
+            android:id="@+id/btn_squat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/light"
@@ -32,7 +33,7 @@
 
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         app:cardCornerRadius="8dp">
@@ -55,7 +56,7 @@
 
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         app:cardCornerRadius="8dp">
@@ -74,6 +75,52 @@
             android:paddingLeft="10dp"
             android:paddingBottom="10dp"
             android:text="Выходы на носки"
+            android:background="@drawable/ripple_effect"/>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    app:cardCornerRadius="8dp">
+    <ImageView
+        android:id="@+id/img_snatch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/light"
+        android:textSize="20sp"
+        android:gravity="bottom"
+        android:textColor="@color/colorText"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:text="Отработка рывка на технику"
+        android:background="@drawable/ripple_effect"/>
+
+</androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardCornerRadius="8dp">
+        <ImageView
+            android:id="@+id/img_jerk"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/light"
+            android:textSize="20sp"
+            android:gravity="bottom"
+            android:textColor="@color/colorText"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
+            android:text="Отработка толчка на технику"
             android:background="@drawable/ripple_effect"/>
 
     </androidx.cardview.widget.CardView>
