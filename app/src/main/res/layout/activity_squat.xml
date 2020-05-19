@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/colorBack"
     android:orientation="vertical"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     tools:context=".traning.ofp.Squat">
 
     <ImageView
@@ -136,11 +138,13 @@
                         android:textSize="15sp" />
                 </LinearLayout>
             </RelativeLayout>
+
             <LinearLayout
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/colorHint2Opacity">
+
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
@@ -150,6 +154,7 @@
                     android:text="Последний результат"
                     android:textColor="@color/colorText"
                     android:textSize="15sp" />
+
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
@@ -159,6 +164,7 @@
                     android:text="Текущий результат"
                     android:textColor="@color/colorText"
                     android:textSize="15sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -171,10 +177,11 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="45dp"
@@ -184,37 +191,193 @@
                     android:text="0"
                     android:textColor="@color/colorText"
                     android:textSize="19sp" />
-                <LinearLayout
-                    android:layout_marginLeft="45dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
 
-                <EditText
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp">
+
+                    <ImageView
+                        android:id="@+id/img_squat_left"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="18dp"
+                        app:srcCompat="@drawable/left" />
+
+                    <Button
+                        android:id="@+id/btn_squat_back"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ripple_effect"
+                        android:fontFamily="@font/light"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_result_squat"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/light"
+                        android:gravity="center"
+                        android:textColor="@color/colorText"
+                        android:textSize="19sp" />
+                    <EditText
+                        android:id="@+id/ed_result"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:fontFamily="@font/light"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/colorText"
+                        android:textSize="19sp" />
+
+                    <ImageView
+                        android:id="@+id/img_squat_right"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="53dp"
+                        android:layout_marginTop="18dp"
+                        app:srcCompat="@drawable/right" />
+
+                    <Button
+                        android:id="@+id/btn_squat_add"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:background="@drawable/ripple_effect"
+                        android:fontFamily="@font/light"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="53dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/round2">
+
+                    <Button
+                        android:id="@+id/btn_squat_done"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/ripple_effect_kryg"
+                        android:fontFamily="@font/light"
+                        android:gravity="center"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#7b7b7b" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="30dp"
                     android:fontFamily="@font/light"
-                    android:backgroundTint="@color/colorPrimaryDark"
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@color/colorText"
                     android:textSize="19sp" />
+
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp">
+
+                    <ImageView
+                        android:id="@+id/img_squat_left2"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="18dp"
+                        app:srcCompat="@drawable/left" />
+
+                    <Button
+                        android:id="@+id/btn_squat_back2"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ripple_effect"
+                        android:fontFamily="@font/light"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_result_squat2"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/light"
+                        android:gravity="center"
+                        android:textColor="@color/colorText"
+                        android:textSize="19sp" />
+                    <EditText
+                        android:id="@+id/ed_result2"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:fontFamily="@font/light"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/colorText"
+                        android:textSize="19sp" />
+
+                    <ImageView
+                        android:id="@+id/img_squat_right2"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="53dp"
+                        android:layout_marginTop="18dp"
+                        app:srcCompat="@drawable/right" />
+
+                    <Button
+                        android:id="@+id/btn_squat_add2"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:background="@drawable/ripple_effect"
+                        android:fontFamily="@font/light"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_done2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="53dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/round2">
+
+                    <Button
+                        android:id="@+id/btn_squat_done2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/ripple_effect_kryg"
+                        android:fontFamily="@font/light"
+                        android:gravity="center"
+                        android:textSize="15sp" />
+
                 </LinearLayout>
-                <Button
-                    android:layout_marginTop="-2dp"
-                    android:background="@drawable/round2"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="60dp"
-                    android:fontFamily="@font/light"
-                    android:gravity="center"
-                    android:textSize="15sp" />
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#7b7b7b" />
         </LinearLayout>
-
 
 
     </ScrollView>
