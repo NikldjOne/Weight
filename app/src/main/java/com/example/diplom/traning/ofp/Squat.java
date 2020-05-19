@@ -26,9 +26,10 @@ public class Squat extends AppCompatActivity {
     private DatabaseReference databaseReference = firebaseDatabase.getReference().child("Image");
     private DatabaseReference first = databaseReference.child("41");
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private DatabaseReference weightList = firebaseDatabase2.getReference("Records").child(user.getUid()) ;
-    private DatabaseReference weight = weightList.child("max_squat");
-    double weight_dec;
+    private DatabaseReference weightList;
+    private DatabaseReference weight;
+    Double weight_dec;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,8 @@ public class Squat extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.action_bar_layout_7);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView = findViewById(R.id.img_squat2);
+        tv_weight = findViewById(R.id.tv_weight);
+        weightList = firebaseDatabase2.getReference("Records").child(user.getUid());
     }
 
     @Override
@@ -54,13 +57,13 @@ public class Squat extends AppCompatActivity {
 
             }
         });
-        weight.addValueEventListener(new ValueEventListener() {
+        weightList.child("max_squat").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Double weight = dataSnapshot.getValue(Double.class);
-                weight_dec = weight*0.85;
-                tv_weight.setText((int) weight_dec);
-            }
+                String weight = dataSnapshot.getValue(String.class);
+                weight_dec = Double.parseDouble(weight) * 0.85;
+                String stringdouble = Double.toString(weight_dec);
+                tv_weight.setText(stringdouble); }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
