@@ -8,10 +8,10 @@
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context=".traning.ofp.Squat">
+    tools:context=".traning.ofp.Vihodi">
 
     <ImageView
-        android:id="@+id/img_squat2"
+        android:id="@+id/img_vihodi2"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
 
@@ -22,7 +22,7 @@
         android:layout_marginRight="15dp"
         android:fontFamily="@font/light"
         android:gravity="center"
-        android:text="Приседания будем выполнять по возрастающей. То есть, 1 подход = 1 повторение, 2 подход = 2 повторения."
+        android:text="Наклоны будем выполнять в фиксированных повторениях."
         android:textColor="@color/colorHint"
         android:textSize="15sp" />
 
@@ -50,9 +50,9 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tv_weight"
+                        android:id="@+id/tv_weight3"
                         android:layout_width="46dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginLeft="20dp"
                         android:fontFamily="@font/light"
                         android:gravity="center"
@@ -61,12 +61,12 @@
                         android:textSize="15sp" />
 
                     <TextView
-                        android:layout_width="62dp"
+                        android:layout_width="54dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:fontFamily="@font/light"
                         android:gravity="center"
-                        android:text="5"
+                        android:text="3"
                         android:textColor="@color/colorText"
                         android:textSize="15sp" />
 
@@ -76,7 +76,7 @@
                         android:layout_marginLeft="10dp"
                         android:fontFamily="@font/light"
                         android:gravity="center"
-                        android:text="1, 2, 3, 4, 5"
+                        android:text="20"
                         android:textColor="@color/colorText"
                         android:textSize="15sp" />
 
@@ -113,7 +113,7 @@
                         android:layout_marginLeft="10dp"
                         android:fontFamily="@font/light"
                         android:gravity="center"
-                        android:text="Подходов"
+                        android:text="Подхода"
                         android:textColor="@color/colorHint"
                         android:textSize="15sp" />
 
@@ -198,7 +198,7 @@
                     android:layout_marginLeft="35dp">
 
                     <ImageView
-                        android:id="@+id/img_squat_left"
+                        android:id="@+id/img_vihodi_left"
                         android:layout_width="12dp"
                         android:layout_height="12dp"
                         android:layout_marginLeft="15dp"
@@ -206,7 +206,7 @@
                         app:srcCompat="@drawable/left" />
 
                     <Button
-                        android:id="@+id/btn_squat_back"
+                        android:id="@+id/btn_vihodi_back"
                         android:layout_width="40dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/ripple_effect"
@@ -214,7 +214,7 @@
                         android:textSize="15sp" />
 
                     <TextView
-                        android:id="@+id/tv_result_squat"
+                        android:id="@+id/tv_result_vihodi"
                         android:layout_width="60dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -224,7 +224,7 @@
                         android:textSize="19sp" />
 
                     <EditText
-                        android:id="@+id/ed_result"
+                        android:id="@+id/ed_result_vihodi"
                         android:layout_width="60dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -236,7 +236,7 @@
                         android:textSize="19sp" />
 
                     <ImageView
-                        android:id="@+id/img_squat_right"
+                        android:id="@+id/img_vihodi_right"
                         android:layout_width="12dp"
                         android:layout_height="12dp"
                         android:layout_marginLeft="53dp"
@@ -244,7 +244,7 @@
                         app:srcCompat="@drawable/right" />
 
                     <Button
-                        android:id="@+id/btn_squat_add"
+                        android:id="@+id/btn_vihodi_add"
                         android:layout_width="40dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="40dp"
@@ -254,7 +254,7 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:id="@+id/layout_done"
+                    android:id="@+id/layout_done_vihodi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="53dp"
@@ -262,7 +262,7 @@
                     android:background="@drawable/round2">
 
                     <Button
-                        android:id="@+id/btn_squat_done"
+                        android:id="@+id/btn_vihodi_done"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:background="@drawable/ripple_effect_kryg"
@@ -300,7 +300,7 @@
                     android:layout_marginLeft="35dp">
 
                     <ImageView
-                        android:id="@+id/img_squat_left2"
+                        android:id="@+id/img_vihodi_left2"
                         android:layout_width="12dp"
                         android:layout_height="12dp"
                         android:layout_marginLeft="15dp"
@@ -308,7 +308,7 @@
                         app:srcCompat="@drawable/left" />
 
                     <Button
-                        android:id="@+id/btn_squat_back2"
+                        android:id="@+id/btn_vihodi_back2"
                         android:layout_width="40dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/ripple_effect"
@@ -316,7 +316,7 @@
                         android:textSize="15sp" />
 
                     <TextView
-                        android:id="@+id/tv_result_squat2"
+                        android:id="@+id/tv_result_vihodi2"
                         android:layout_width="60dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -326,7 +326,7 @@
                         android:textSize="19sp" />
 
                     <EditText
-                        android:id="@+id/ed_result2"
+                        android:id="@+id/ed_result_vihodi2"
                         android:layout_width="60dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -338,7 +338,7 @@
                         android:textSize="19sp" />
 
                     <ImageView
-                        android:id="@+id/img_squat_right2"
+                        android:id="@+id/img_vihodi_right2"
                         android:layout_width="12dp"
                         android:layout_height="12dp"
                         android:layout_marginLeft="53dp"
@@ -346,7 +346,7 @@
                         app:srcCompat="@drawable/right" />
 
                     <Button
-                        android:id="@+id/btn_squat_add2"
+                        android:id="@+id/btn_vihodi_add2"
                         android:layout_width="40dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="40dp"
@@ -356,7 +356,7 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:id="@+id/layout_done2"
+                    android:id="@+id/layout_done_vihodi2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="53dp"
@@ -364,7 +364,7 @@
                     android:background="@drawable/round2">
 
                     <Button
-                        android:id="@+id/btn_squat_done2"
+                        android:id="@+id/btn_vihodi_done2"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:background="@drawable/ripple_effect_kryg"
@@ -402,7 +402,7 @@
                     android:layout_marginLeft="35dp">
 
                     <ImageView
-                        android:id="@+id/img_squat_left3"
+                        android:id="@+id/img_vihodi_left3"
                         android:layout_width="12dp"
                         android:layout_height="12dp"
                         android:layout_marginLeft="15dp"
@@ -410,7 +410,7 @@
                         app:srcCompat="@drawable/left" />
 
                     <Button
-                        android:id="@+id/btn_squat_back3"
+                        android:id="@+id/btn_vihodi_back3"
                         android:layout_width="40dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/ripple_effect"
@@ -418,7 +418,7 @@
                         android:textSize="15sp" />
 
                     <TextView
-                        android:id="@+id/tv_result_squat3"
+                        android:id="@+id/tv_result_vihodi3"
                         android:layout_width="60dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -428,7 +428,7 @@
                         android:textSize="19sp" />
 
                     <EditText
-                        android:id="@+id/ed_result3"
+                        android:id="@+id/ed_result_vihodi3"
                         android:layout_width="60dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -440,7 +440,7 @@
                         android:textSize="19sp" />
 
                     <ImageView
-                        android:id="@+id/img_squat_right3"
+                        android:id="@+id/img_vihodi_right3"
                         android:layout_width="12dp"
                         android:layout_height="12dp"
                         android:layout_marginLeft="53dp"
@@ -448,7 +448,7 @@
                         app:srcCompat="@drawable/right" />
 
                     <Button
-                        android:id="@+id/btn_squat_add3"
+                        android:id="@+id/btn_vihodi_add3"
                         android:layout_width="40dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="40dp"
@@ -458,7 +458,7 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:id="@+id/layout_done3"
+                    android:id="@+id/layout_done_vihodi3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="53dp"
@@ -466,7 +466,7 @@
                     android:background="@drawable/round2">
 
                     <Button
-                        android:id="@+id/btn_squat_done3"
+                        android:id="@+id/btn_vihodi_done3"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:background="@drawable/ripple_effect_kryg"
@@ -482,221 +482,18 @@
                 android:layout_height="1dp"
                 android:background="#7b7b7b" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="30dp"
-                    android:fontFamily="@font/light"
-                    android:gravity="center"
-                    android:text="0"
-                    android:textColor="@color/colorText"
-                    android:textSize="19sp" />
-
-                <RelativeLayout
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp">
-
-                    <ImageView
-                        android:id="@+id/img_squat_left4"
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="18dp"
-                        app:srcCompat="@drawable/left" />
-
-                    <Button
-                        android:id="@+id/btn_squat_back4"
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/ripple_effect"
-                        android:fontFamily="@font/light"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/tv_result_squat4"
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:fontFamily="@font/light"
-                        android:gravity="center"
-                        android:textColor="@color/colorText"
-                        android:textSize="19sp" />
-
-                    <EditText
-                        android:id="@+id/ed_result4"
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:backgroundTint="@color/colorPrimaryDark"
-                        android:fontFamily="@font/light"
-                        android:gravity="center"
-                        android:text="0"
-                        android:textColor="@color/colorText"
-                        android:textSize="19sp" />
-
-                    <ImageView
-                        android:id="@+id/img_squat_right4"
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_marginLeft="53dp"
-                        android:layout_marginTop="18dp"
-                        app:srcCompat="@drawable/right" />
-
-                    <Button
-                        android:id="@+id/btn_squat_add4"
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="40dp"
-                        android:background="@drawable/ripple_effect"
-                        android:fontFamily="@font/light"
-                        android:textSize="15sp" />
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_done4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="53dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/round2">
-
-                    <Button
-                        android:id="@+id/btn_squat_done4"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/ripple_effect_kryg"
-                        android:fontFamily="@font/light"
-                        android:gravity="center"
-                        android:textSize="15sp" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#7b7b7b" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="30dp"
-                    android:fontFamily="@font/light"
-                    android:gravity="center"
-                    android:text="0"
-                    android:textColor="@color/colorText"
-                    android:textSize="19sp" />
-
-                <RelativeLayout
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp">
-
-                    <ImageView
-                        android:id="@+id/img_squat_left5"
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="18dp"
-                        app:srcCompat="@drawable/left" />
-
-                    <Button
-                        android:id="@+id/btn_squat_back5"
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/ripple_effect"
-                        android:fontFamily="@font/light"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/tv_result_squat5"
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:fontFamily="@font/light"
-                        android:gravity="center"
-                        android:textColor="@color/colorText"
-                        android:textSize="19sp" />
-
-                    <EditText
-                        android:id="@+id/ed_result5"
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:backgroundTint="@color/colorPrimaryDark"
-                        android:fontFamily="@font/light"
-                        android:gravity="center"
-                        android:text="0"
-                        android:textColor="@color/colorText"
-                        android:textSize="19sp" />
-
-                    <ImageView
-                        android:id="@+id/img_squat_right5"
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_marginLeft="53dp"
-                        android:layout_marginTop="18dp"
-                        app:srcCompat="@drawable/right" />
-
-                    <Button
-                        android:id="@+id/btn_squat_add5"
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="40dp"
-                        android:background="@drawable/ripple_effect"
-                        android:fontFamily="@font/light"
-                        android:textSize="15sp" />
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_done5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="53dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/round2">
-
-                    <Button
-                        android:id="@+id/btn_squat_done5"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/ripple_effect_kryg"
-                        android:fontFamily="@font/light"
-                        android:gravity="center"
-                        android:textSize="15sp" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#7b7b7b" />
-
-            <LinearLayout
+                android:id="@+id/layout_done_vihodi6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:id="@+id/layout_done6"
                 android:background="@drawable/inset">
 
                 <Button
-                    android:id="@+id/close_ypr"
+                    android:id="@+id/close_ypr3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/ripple_effect"

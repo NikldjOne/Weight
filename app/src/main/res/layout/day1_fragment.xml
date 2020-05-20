@@ -13,10 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         app:cardCornerRadius="8dp">
+
         <ImageView
             android:id="@+id/img_squat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            />
+        <ImageView
+            android:id="@+id/img_squat_done"
+            android:layout_width="40dp"
+            app:srcCompat="@drawable/round2"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
             />
         <Button
             android:id="@+id/btn_squat"
@@ -42,7 +51,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
+        <ImageView
+            android:id="@+id/img_squat_done2"
+            android:layout_width="40dp"
+            app:srcCompat="@drawable/round2"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
+            />
         <Button
+            android:id="@+id/btn_nakloni_day1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/light"
@@ -65,7 +83,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
+        <ImageView
+            android:id="@+id/img_squat_done3"
+            android:layout_width="40dp"
+            app:srcCompat="@drawable/round2"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
+            />
         <Button
+            android:id="@+id/btn_vihodi_day1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/light"
@@ -88,7 +115,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
+        <ImageView
+            android:id="@+id/img_squat_done4"
+            android:layout_width="40dp"
+            app:srcCompat="@drawable/round2"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
+            />
     <Button
+        android:id="@+id/btn_snatch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fontFamily="@font/light"
@@ -110,6 +146,14 @@
             android:id="@+id/img_jerk"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            />
+        <ImageView
+            android:id="@+id/img_squat_done5"
+            android:layout_width="40dp"
+            app:srcCompat="@drawable/round2"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
             />
         <Button
             android:layout_width="match_parent"

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.diplom.R;
+import com.google.android.material.tabs.TabLayout;
 
 public class Traning extends Fragment {
     View view;
@@ -24,7 +26,10 @@ public class Traning extends Fragment {
     Day5_fragment fragmentFive = new Day5_fragment();
     Day3_fragment fragmentThree = new Day3_fragment();
     Day1_fragment fragmentOne = new Day1_fragment();
+    TabLayout tabLayout;
     RelativeLayout rel_day1, rel_day2, rel_day3, rel_day4, rel_day5, rel_day6, rel_day7;
+    Integer position;
+    ImageView block_day1;
 
     @Nullable
     @Override
@@ -44,6 +49,8 @@ public class Traning extends Fragment {
         rel_day5 = view.findViewById(R.id.day5_rel);
         rel_day6 = view.findViewById(R.id.day6_rel);
         rel_day7 = view.findViewById(R.id.day7_rel);
+        tabLayout = view.findViewById(R.id.tablayout_id_ofp);
+
         btn_day1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,7 +111,7 @@ public class Traning extends Fragment {
         return view;
     }
 
-    private void inactive(){
+    private void inactive() {
         rel_day1.setBackgroundResource(R.drawable.inset_inactive);
         rel_day2.setBackgroundResource(R.drawable.inset_inactive);
         rel_day3.setBackgroundResource(R.drawable.inset_inactive);
@@ -113,6 +120,7 @@ public class Traning extends Fragment {
         rel_day6.setBackgroundResource(R.drawable.inset_inactive);
         rel_day7.setBackgroundResource(R.drawable.inset_inactive);
     }
+
     private void Day_shil() {
         fTrans = getChildFragmentManager().beginTransaction();
         fTrans.replace(R.id.frame_ofp_traning, fragmentShil);
@@ -150,4 +158,5 @@ public class Traning extends Fragment {
         fTrans.replace(R.id.frame_ofp_traning, fragmentOne);
         fTrans.commit();
     }
+
 }

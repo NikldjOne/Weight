@@ -25,12 +25,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Traning_vvedenie extends Fragment {
     Button btn_save;
-    EditText ed_sqaut, ed_clean_jerk;
-    String squat;
+    EditText ed_sqaut, ed_clean_jerk,ed_nakloni;
+    String squat,nakloni;
     LinearLayout layout;
     private FirebaseDatabase mDatabase;
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private DatabaseReference Recordlist;
+    private DatabaseReference Recordlist,ListNakloni;
 
     @Nullable
     @Override
@@ -39,18 +39,24 @@ public class Traning_vvedenie extends Fragment {
         btn_save = view.findViewById(R.id.btn_save);
         ed_sqaut = view.findViewById(R.id.edit_squat);
         ed_clean_jerk = view.findViewById(R.id.ed_clean_jerk);
-        layout = view.findViewById(R.id.layout_focus);
+        ed_nakloni = view.findViewById(R.id.edit_nakloni);
         mDatabase = FirebaseDatabase.getInstance();
         Recordlist = mDatabase.getReference("Records").child(user.getUid());
+        ListNakloni = mDatabase.getReference("Records").child(user.getUid());
         loadWeight();
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                exitKeybord();
                 loadSquat();
+                loadNakloni();
             }
         });
         return view;
+    }
+
+    private void loadNakloni() {
+        nakloni = ed_nakloni.getText().toString();
+        ListNakloni.child("max_nakloni").setValue(nakloni);
     }
 
     private void loadWeight() {
@@ -66,6 +72,18 @@ public class Traning_vvedenie extends Fragment {
 
             }
         });
+        ListNakloni.child("max_nakloni").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String weight = dataSnapshot.getValue(String.class);
+                ed_nakloni.setText(weight);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void loadSquat() {
@@ -74,11 +92,8 @@ public class Traning_vvedenie extends Fragment {
     }
 
     private void exitKeybord() {
-        View view = getActivity().getCurrentFocus();
-        if (view != null) {
             InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(layout.getWindowToken(), 0);
         }
     }
 
-}
