@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBack"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".traning.ofp.Shil2">
+
+    <ImageView
+        android:id="@+id/img_shil2_window"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:fontFamily="@font/light"
+        android:gravity="center"
+        android:text="Сегодня день восстановлений! Возобновляй силы и за работу!"
+        android:textColor="@color/colorHint"
+        android:textSize="15sp" />
+
+
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#7b7b7b" />
+    <RelativeLayout
+        android:id="@+id/layout_done_shil26"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/inset">
+        <TextView
+            android:id="@+id/tv_ypr_shil2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/light"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"/>
+        <Button
+            android:id="@+id/close_ypr_shil2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_effect"
+            android:fontFamily="@font/light"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:text="Завершить отдых"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</LinearLayout>

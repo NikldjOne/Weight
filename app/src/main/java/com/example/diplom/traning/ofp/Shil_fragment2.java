@@ -22,8 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-public class Shil_fragment extends Fragment {
-View view;
+public class Shil_fragment2 extends Fragment {
+    View view;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference().child("Image");
     private DatabaseReference first = databaseReference.child("46");
@@ -34,15 +34,15 @@ View view;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.shil_fragment,container,false);
-        imageView = view.findViewById(R.id.img_shil);
+        view = inflater.inflate(R.layout.shil_fragment2,container,false);
+        imageView = view.findViewById(R.id.img_shil2);
         resultsList = firebaseDatabase.getReference("Results").child(user.getUid()).child("Week1");
-        btn_shil = view.findViewById(R.id.btn_shil);
-        imageView2 = view.findViewById(R.id.img_shil_done);
+        btn_shil = view.findViewById(R.id.btn_shil22);
+        imageView2 = view.findViewById(R.id.img_shil2_done);
         btn_shil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), Shil.class));
+                startActivity(new Intent(getActivity(), Shil2.class));
             }
         });
         return view;
@@ -65,7 +65,7 @@ View view;
         });
 
 
-        resultsList.child("day2_done").addValueEventListener(new ValueEventListener() {
+        resultsList.child("day4_done").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);

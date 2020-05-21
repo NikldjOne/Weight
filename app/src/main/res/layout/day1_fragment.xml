@@ -156,6 +156,7 @@
             android:layout_height="40dp"
             />
         <Button
+            android:id="@+id/btn_jerk"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/light"

@@ -24,7 +24,8 @@ import com.squareup.picasso.Picasso;
 
 public class Day1_fragment extends Fragment {
     View view;
-    private ImageView imageView, imageView2, imageView3, imageView4, imageView5, imageView_done,block_day1,imageView_done2,imageView_done3;
+    private ImageView imageView, imageView2, imageView3, imageView4, imageView5, imageView_done,block_day1,imageView_done2,imageView_done3,
+            imageView_done4,imageView_done5;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference().child("Image");
     private DatabaseReference first = databaseReference.child("41");
@@ -37,7 +38,7 @@ public class Day1_fragment extends Fragment {
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     Integer weight2;
 
-    Button btn_squat, btn_nakloni, btn_vihodi,btn_snatch;
+    Button btn_squat, btn_nakloni, btn_vihodi,btn_snatch,btn_jerk;
 
     @Nullable
     @Override
@@ -55,9 +56,14 @@ public class Day1_fragment extends Fragment {
         imageView_done = view.findViewById(R.id.img_squat_done);
         imageView_done2 = view.findViewById(R.id.img_squat_done2);
         imageView_done3 = view.findViewById(R.id.img_squat_done3);
+        imageView_done4 = view.findViewById(R.id.img_squat_done4);
+        imageView_done5 = view.findViewById(R.id.img_squat_done5);
+        btn_jerk = view.findViewById(R.id.btn_jerk);
         resultsList = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1").child("Squat");
         resultsList2 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1").child("Nakloni");
         resultsList3 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1").child("Vihodi");
+        resultsList4 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1").child("Snatch");
+        resultsList5 =  firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1").child("Jerk");
         btn_squat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,6 +86,12 @@ public class Day1_fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), Snatch.class));
+            }
+        });
+        btn_jerk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Jerk.class));
             }
         });
         return view;
@@ -184,6 +196,34 @@ public class Day1_fragment extends Fragment {
                     imageView_done3.setBackgroundResource(R.drawable.done);
                 }else
                     imageView_done3.setBackgroundResource(R.drawable.round2);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+        resultsList4.child("snatch_done").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String weight = dataSnapshot.getValue(String.class);
+                if (weight!=null){
+                    imageView_done4.setBackgroundResource(R.drawable.done);
+                }else
+                    imageView_done4.setBackgroundResource(R.drawable.round2);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+        resultsList5.child("jerk_done").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String weight = dataSnapshot.getValue(String.class);
+                if (weight!=null){
+                    imageView_done5.setBackgroundResource(R.drawable.done);
+                }else
+                    imageView_done5.setBackgroundResource(R.drawable.round2);
             }
 
             @Override

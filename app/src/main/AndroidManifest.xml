@@ -10,11 +10,83 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".traning.ofp.Snatch"
+        <activity android:name=".traning.ofp.Triceps"
             android:parentActivityName=".Login"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
             android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".traning.ofp.Biceps"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".traning.ofp.Bench_Press"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".traning.ofp.Dead_Press"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".traning.ofp.Bench"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".traning.ofp.Shil2"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".traning.ofp.Podt"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".traning.ofp.Deadlift_Clean"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".traning.ofp.Deadlift_Snatch"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".traning.ofp.FrontSquat"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".traning.ofp.Shil"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".traning.ofp.Jerk"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".traning.ofp.Snatch"
+            android:parentActivityName=".Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".traning.ofp.Vihodi"
             android:parentActivityName=".Login"

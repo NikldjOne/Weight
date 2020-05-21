@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-public class Snatch extends AppCompatActivity {
+public class Jerk extends AppCompatActivity {
     private ImageView imageView, img_squat_left, img_squat_right, img_squat_left2, img_squat_left3,
             img_squat_right2, img_squat_right3;
     private LinearLayout layout, layout2, layout3,layout6;
@@ -34,9 +34,9 @@ public class Snatch extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private FirebaseDatabase firebaseDatabase2 = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference().child("Image");
-    private DatabaseReference first = databaseReference.child("44");
+    private DatabaseReference first = databaseReference.child("45");
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private DatabaseReference weightList,resultsList,kolvoList;
+    private DatabaseReference weightList,resultsList,kolvoList,weekList;
     String stringdouble;
     private DatabaseReference weight;
     private Double weight_dec;
@@ -47,20 +47,21 @@ public class Snatch extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_snatch);
+        setContentView(R.layout.activity_jerk);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout_10);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        imageView = findViewById(R.id.img_snatch2);
-        tv_weight = findViewById(R.id.tv_weight4);
+        imageView = findViewById(R.id.img_jerk2);
+        tv_weight = findViewById(R.id.tv_weight5);
         weightList = firebaseDatabase2.getReference("Records").child(user.getUid());
-        resultsList = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1").child("Snatch");
-        kolvoList = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1").child("Snatch");
+        resultsList = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1").child("Jerk");
+        kolvoList = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1").child("Jerk");
+        weekList = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1");
         resultPodhod();
         SquatPodhod();
         SquatPodhod2();
         SquatPodhod3();
-        close_ypr = findViewById(R.id.close_ypr4);
+        close_ypr = findViewById(R.id.close_ypr5);
         close_ypr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,11 +70,12 @@ public class Snatch extends AppCompatActivity {
                     resultsList.child("kol-vo").setValue(ed_result);
                     resultsList.child("kol-vo2").setValue(ed_result2);
                     resultsList.child("kol-vo3").setValue(ed_result3);
-                    resultsList.child("snatch_done").setValue("1");
+                    resultsList.child("jerk_done").setValue("1");
+                    weekList.child("day1_done").setValue("1");
                     finish();
                 }
                 else
-                    Toast.makeText(Snatch.this, "Вы не закончили все подходы", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Jerk.this, "Вы не закончили все подходы", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -124,7 +126,7 @@ public class Snatch extends AppCompatActivity {
         });
 
 
-        resultsList.child("snatch_done").addValueEventListener(new ValueEventListener() {
+        resultsList.child("jerk_done").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
@@ -158,7 +160,7 @@ public class Snatch extends AppCompatActivity {
                     tv_result_squat.setText(ed_result);
                     tv_result_squat2.setText(ed_result2);
                     tv_result_squat3.setText(ed_result3);
-                    layout6 = findViewById(R.id.layout_done_snatch6);
+                    layout6 = findViewById(R.id.layout_done_jerk6);
                     layout6.setVisibility(View.INVISIBLE);
                     close_ypr.setVisibility(View.INVISIBLE);
                 }
@@ -171,14 +173,14 @@ public class Snatch extends AppCompatActivity {
     }
 
     private void SquatPodhod3() {
-        tv_result_squat3 = findViewById(R.id.tv_result_snatch3);
-        edit_result3 = findViewById(R.id.ed_result_snatch3);
-        btn_squat_add3 = findViewById(R.id.btn_snatch_add3);
-        btn_squat_back3 = findViewById(R.id.btn_snatch_back3);
-        btn_squat_done3 = findViewById(R.id.btn_snatch_done3);
-        layout3 = findViewById(R.id.layout_done_snatch3);
-        img_squat_left3 = findViewById(R.id.img_snatch_left3);
-        img_squat_right3 = findViewById(R.id.img_snatch_right3);
+        tv_result_squat3 = findViewById(R.id.tv_result_jerk3);
+        edit_result3 = findViewById(R.id.ed_result_jerk3);
+        btn_squat_add3 = findViewById(R.id.btn_jerk_add3);
+        btn_squat_back3 = findViewById(R.id.btn_jerk_back3);
+        btn_squat_done3 = findViewById(R.id.btn_jerk_done3);
+        layout3 = findViewById(R.id.layout_done_jerk3);
+        img_squat_left3 = findViewById(R.id.img_jerk_left3);
+        img_squat_right3 = findViewById(R.id.img_jerk_right3);
 
 
         btn_squat_add3.setOnClickListener(new View.OnClickListener() {
@@ -202,14 +204,14 @@ public class Snatch extends AppCompatActivity {
     }
 
     private void SquatPodhod2() {
-        tv_result_squat2 = findViewById(R.id.tv_result_snatch2);
-        edit_result2 = findViewById(R.id.ed_result_snatch2);
-        btn_squat_add2 = findViewById(R.id.btn_snatch_add2);
-        btn_squat_back2 = findViewById(R.id.btn_snatch_back2);
-        btn_squat_done2 = findViewById(R.id.btn_snatch_done2);
-        layout2 = findViewById(R.id.layout_done_snatch2);
-        img_squat_left2 = findViewById(R.id.img_snatch_left2);
-        img_squat_right2 = findViewById(R.id.img_snatch_right2);
+        tv_result_squat2 = findViewById(R.id.tv_result_jerk2);
+        edit_result2 = findViewById(R.id.ed_result_jerk2);
+        btn_squat_add2 = findViewById(R.id.btn_jerk_add2);
+        btn_squat_back2 = findViewById(R.id.btn_jerk_back2);
+        btn_squat_done2 = findViewById(R.id.btn_jerk_done2);
+        layout2 = findViewById(R.id.layout_done_jerk2);
+        img_squat_left2 = findViewById(R.id.img_jerk_left2);
+        img_squat_right2 = findViewById(R.id.img_jerk_right2);
 
 
         btn_squat_add2.setOnClickListener(new View.OnClickListener() {
@@ -233,14 +235,14 @@ public class Snatch extends AppCompatActivity {
     }
 
     private void SquatPodhod() {
-        tv_result_squat = findViewById(R.id.tv_result_snatch);
-        edit_result = findViewById(R.id.ed_result_snatch);
-        btn_squat_add = findViewById(R.id.btn_snatch_add);
-        btn_squat_back = findViewById(R.id.btn_snatch_back);
-        btn_squat_done = findViewById(R.id.btn_snatch_done);
-        layout = findViewById(R.id.layout_done_snatch);
-        img_squat_left = findViewById(R.id.img_snatch_left);
-        img_squat_right = findViewById(R.id.img_snatch_right);
+        tv_result_squat = findViewById(R.id.tv_result_jerk);
+        edit_result = findViewById(R.id.ed_result_jerk);
+        btn_squat_add = findViewById(R.id.btn_jerk_add);
+        btn_squat_back = findViewById(R.id.btn_jerk_back);
+        btn_squat_done = findViewById(R.id.btn_jerk_done);
+        layout = findViewById(R.id.layout_done_jerk);
+        img_squat_left = findViewById(R.id.img_jerk_left);
+        img_squat_right = findViewById(R.id.img_jerk_right);
 
         btn_squat_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -419,7 +421,8 @@ public class Snatch extends AppCompatActivity {
             }
         });
 
-        stringdouble = "20";
+        stringdouble = "30";
         tv_weight.setText(stringdouble);
     }
 }
+
