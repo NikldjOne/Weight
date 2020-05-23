@@ -5,6 +5,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion "29.0.2"
     defaultConfig {
+        multiDexEnabled true
         applicationId "com.example.diplom"
         minSdkVersion 16
         targetSdkVersion 28
@@ -45,7 +46,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
+    implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'com.google.firebase:firebase-database:19.2.1'
 }

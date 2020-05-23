@@ -160,6 +160,7 @@ public class Day5_fragment extends Fragment {
 
             }
         });
+
         resultsList.child("bench_done").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

@@ -3,21 +3,34 @@ package com.example.diplom.traning.ofp;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.HorizontalScrollView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.diplom.R;
 import com.example.diplom.eat.ViewPagerAdapter;
-import com.example.diplom.models.Model_pos;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class OFP extends AppCompatActivity {
     private TabLayout tabLayout;
-    private ViewPager viewPager, viewPager2;
-    ViewPagerAdapter adapter, adapter2;
-    int position;
+    private ViewPager viewPager;
+    ViewPagerAdapter adapter;
+    HorizontalScrollView sv;
+    int position, position2;
+    private FirebaseDatabase mDatabase;
+    private FirebaseUser user;
+    private DatabaseReference ListResult;
+
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -26,6 +39,12 @@ public class OFP extends AppCompatActivity {
         setContentView(R.layout.activity_o_f_p);
         tabLayout = findViewById(R.id.tablayout_id_ofp);
         viewPager = findViewById(R.id.viewpager_ofp);
+        mDatabase = FirebaseDatabase.getInstance();
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        ListResult = mDatabase.getReference("Results").child(user.getUid());
+        Bundle arguments = getIntent().getExtras();
+        position = arguments.getInt("pos");
+        sv = findViewById(R.id.scrool_ofp);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.AddFragment(new Traning_vvedenie(), "Рекорды");
         adapter.AddFragment(new Traning(), "Неделя 1");
@@ -38,27 +57,42 @@ public class OFP extends AppCompatActivity {
         adapter.AddFragment(new Traning(), "Неделя 8");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-       // selectPage(1);
         tabLayout.setSelectedTabIndicatorHeight((int) (5 * getResources().getDisplayMetrics().density));
         tabLayout.setTabTextColors(Color.parseColor("#80778899"), Color.parseColor("#008577"));
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout_6);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        loadPos();
+
     }
 
-    void selectPage(int pageIndex) {
-        tabLayout.setScrollPosition(pageIndex, 0f, true);
-        viewPager.setCurrentItem(pageIndex);
-    }
+    private void loadPos() {
+        ListResult.child("Week_done").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String weight = dataSnapshot.getValue(String.class);
+                if(weight!=null) {
+                    position = Integer.parseInt(weight);
+                    selectPage(position);
+                }
+                else {
+                    position = 1;
+                    selectPage(position);
+                }
+            }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                position = tab.getPosition();
-                new Model_pos().setPosition(position);
+                position2 = tab.getPosition();
+                String pos = Integer.toString(position2);
+                ListResult.child("Week_done").setValue(pos);
             }
 
             @Override
@@ -72,5 +106,16 @@ public class OFP extends AppCompatActivity {
             }
 
         });
+    }
+
+    void selectPage(int pageIndex) {
+        tabLayout.setScrollPosition(pageIndex, 0f, true);
+        viewPager.setCurrentItem(pageIndex);
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 }

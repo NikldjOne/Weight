@@ -35,10 +35,10 @@ public class Shil_fragment2 extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.shil_fragment2,container,false);
-        imageView = view.findViewById(R.id.img_shil2);
+        imageView = view.findViewById(R.id.img_shil2_week2);
         resultsList = firebaseDatabase.getReference("Results").child(user.getUid()).child("Week1");
-        btn_shil = view.findViewById(R.id.btn_shil22);
-        imageView2 = view.findViewById(R.id.img_shil2_done);
+        btn_shil = view.findViewById(R.id.btn_shil2_week2);
+        imageView2 = view.findViewById(R.id.img_shil2_done_week2);
         btn_shil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

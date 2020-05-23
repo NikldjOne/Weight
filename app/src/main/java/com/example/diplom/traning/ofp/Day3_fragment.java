@@ -137,6 +137,7 @@ public class Day3_fragment extends Fragment {
 
             }
         });
+
         resultsList.child("front_done").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
