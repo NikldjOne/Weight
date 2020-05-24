@@ -1,15 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/colorBack">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="25dp"
+    android:background="@color/colorBack"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
 
-    <TextView
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/light"
+            android:gravity="center_horizontal"
+            android:text="Техника"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_marginLeft="125dp"
-        android:text="intel"/>
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_squat_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_squat"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_squat_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Приседания"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_squat"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
 
 
-</RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_nakloni_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_nakloni"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_nakloni_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Наклоны стоя 90 градусов"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_nakloni"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_snatch_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_snatch"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_snatch_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Рывок"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_snatch"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>
+
+    </LinearLayout>
+

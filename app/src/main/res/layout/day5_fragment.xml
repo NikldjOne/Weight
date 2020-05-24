@@ -165,7 +165,7 @@
                 android:textColor="@color/colorText"
                 android:paddingLeft="10dp"
                 android:paddingBottom="10dp"
-                android:text="Трицепс"
+                android:text="Французкий жим штанги лежа"
                 android:background="@drawable/ripple_effect"/>
 
         </androidx.cardview.widget.CardView>
