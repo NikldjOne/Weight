@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Diplom</string>
+    <string name="app_name">Weight</string>
     <string name="TitleEnter">ВХОД В АККАУНТ</string>
     <string name="btEnter">Войти</string>
     <string name="title_activity_main2">Main2Activity</string>

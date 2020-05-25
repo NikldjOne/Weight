@@ -1,42 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="25dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/colorBack"
-    android:descendantFocusability="blocksDescendants"
+    android:layout_marginTop="25dp"
+    android:id="@+id/scrool_tehnic"
     android:orientation="vertical">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/light"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center_horizontal"
-            android:text="Техника"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-    </LinearLayout>
-
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/light"
+                android:gravity="center_horizontal"
+                android:text="Техника"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+        </LinearLayout>
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -73,7 +66,6 @@
 
 
         </androidx.cardview.widget.CardView>
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -111,7 +103,6 @@
 
 
         </androidx.cardview.widget.CardView>
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -149,8 +140,488 @@
 
 
         </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_clean_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_clean"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_clean_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Взятие на грудь"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_clean"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_jerk_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_jerk"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_jerk_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Техника толчка с груди"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_jerk"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_front_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_front"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_front_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Приседания со штангой на груди"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_front"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_deadsn_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_deadsn"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_deadsn_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Тяга рывковая с подрывом"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_deadsn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_deadcl_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_deadcl"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_deadcl_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Тяга толчковая с подрывом"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_deadcl"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_podt_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_podt"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_podt_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Подтягивания"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_podt"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_bench_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_bench"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_bench_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Жим стоя"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_bench"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_deadpr_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_deadpr"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_deadpr_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Тяга штанги к подбородку"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_deadpr"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_benchpr_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_benchpr"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_benchpr_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Жим лежа"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_benchpr"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_biceps_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_biceps"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_biceps_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Бицепс"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_biceps"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_tripes_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_tripes"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_tripes_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Трицепс"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_tripes"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_scr_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_scr"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_scr_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Скручивания"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_scr"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/img_planka_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/vv_planka"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/tv_planka_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/light"
+                android:gravity="bottom"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text="Планка"
+                android:textColor="@color/colorText"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/start_planka"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/play" />
+
+
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
+
+
 </ScrollView>
-
-    </LinearLayout>
-

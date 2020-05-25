@@ -27,10 +27,12 @@ public class ForgotPassword extends AppCompatActivity {
     public void tvlog(View view) {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
+        finish();
     }
 
     public void recoveryPass(View view) {
         recoveryPasswordWithEmail();
+        finish();
     }
 
     private void recoveryPasswordWithEmail() {

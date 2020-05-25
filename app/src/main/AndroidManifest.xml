@@ -10,37 +10,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-<!--        <activity-->
-<!--            android:name=".traning.ofp.week2.Jerk_week2"-->
-<!--            android:parentActivityName=".Login"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"-->
-<!--            android:windowSoftInputMode="stateHidden" />-->
-<!--        <activity-->
-<!--            android:name=".traning.ofp.week2.Snatch_week2"-->
-<!--            android:parentActivityName=".Login"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"-->
-<!--            android:windowSoftInputMode="stateHidden" />-->
-<!--        <activity-->
-<!--            android:name=".traning.ofp.week2.Vihodi_week2"-->
-<!--            android:parentActivityName=".Login"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"-->
-<!--            android:windowSoftInputMode="stateHidden" />-->
-
-<!--        <activity-->
-<!--            android:name=".traning.ofp.week2.Nakloni_week2"-->
-<!--            android:parentActivityName=".Login"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"-->
-<!--            android:windowSoftInputMode="stateHidden" />-->
-<!--        <activity-->
-<!--            android:name=".traning.ofp.week2.Squat2"-->
-<!--            android:parentActivityName=".Login"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"-->
-<!--            android:windowSoftInputMode="stateHidden" />-->
         <activity
             android:name=".traning.ofp.Planka"
             android:parentActivityName=".Login"

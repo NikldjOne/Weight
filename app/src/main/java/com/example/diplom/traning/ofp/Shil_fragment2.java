@@ -30,13 +30,14 @@ public class Shil_fragment2 extends Fragment {
     ImageView imageView,imageView2;
     Button btn_shil;
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private DatabaseReference resultsList;
+    private DatabaseReference resultsList_week1, resultsList2, resultsList_week2, resultsList_week3, resultsList_week4,
+            resultsList_week5, resultsList_week6, resultsList_week7, resultsList_week8;
+    int pos;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.shil_fragment2,container,false);
         imageView = view.findViewById(R.id.img_shil2_week2);
-        resultsList = firebaseDatabase.getReference("Results").child(user.getUid()).child("Week1");
         btn_shil = view.findViewById(R.id.btn_shil2_week2);
         imageView2 = view.findViewById(R.id.img_shil2_done_week2);
         btn_shil.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +46,15 @@ public class Shil_fragment2 extends Fragment {
                 startActivity(new Intent(getActivity(), Shil2.class));
             }
         });
+        resultsList_week1 = firebaseDatabase.getReference("Results").child(user.getUid()).child("Week1");
+        resultsList_week2 = firebaseDatabase.getReference("Results").child(user.getUid()).child("Week2");
+        resultsList_week3 = firebaseDatabase.getReference("Results").child(user.getUid()).child("Week3");
+        resultsList_week4 = firebaseDatabase.getReference("Results").child(user.getUid()).child("Week4");
+        resultsList_week5 = firebaseDatabase.getReference("Results").child(user.getUid()).child("Week5");
+        resultsList_week6 = firebaseDatabase.getReference("Results").child(user.getUid()).child("Week6");
+        resultsList_week7 = firebaseDatabase.getReference("Results").child(user.getUid()).child("Week7");
+        resultsList_week8 = firebaseDatabase.getReference("Results").child(user.getUid()).child("Week8");
+        resultsList2 = firebaseDatabase.getReference("Results").child(user.getUid());
         return view;
     }
 
@@ -65,18 +75,148 @@ public class Shil_fragment2 extends Fragment {
         });
 
 
-        resultsList.child("day4_done").addValueEventListener(new ValueEventListener() {
+        resultsList2.child("Week_done").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
-                if (weight!=null){
-                    imageView2.setBackgroundResource(R.drawable.done);
-                }else
-                    imageView2.setBackgroundResource(R.drawable.round2);
+                if (weight != null) {
+                    pos = Integer.parseInt(weight);
+                    switch (pos) {
+                        case 1:
+                            resultsList_week1.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        imageView2.setBackgroundResource(R.drawable.done);
+                                    } else
+                                        imageView2.setBackgroundResource(R.drawable.round2);
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                            });
+                            break;
+                        case 2:
+                            resultsList_week2.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        imageView2.setBackgroundResource(R.drawable.done);
+                                    } else
+                                        imageView2.setBackgroundResource(R.drawable.round2);
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                            });
+                            break;
+                        case 3:
+                            resultsList_week3.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        imageView2.setBackgroundResource(R.drawable.done);
+                                    } else
+                                        imageView2.setBackgroundResource(R.drawable.round2);
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                            });
+                            break;
+                        case 4:
+                            resultsList_week4.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        imageView2.setBackgroundResource(R.drawable.done);
+                                    } else
+                                        imageView2.setBackgroundResource(R.drawable.round2);
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                            });
+                            break;
+                        case 5:
+                            resultsList_week5.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        imageView2.setBackgroundResource(R.drawable.done);
+                                    } else
+                                        imageView2.setBackgroundResource(R.drawable.round2);
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                            });
+                            break;
+                        case 6:
+                            resultsList_week6.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        imageView2.setBackgroundResource(R.drawable.done);
+                                    } else
+                                        imageView2.setBackgroundResource(R.drawable.round2);
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                            });
+                            break;
+                        case 7:
+                            resultsList_week7.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        imageView2.setBackgroundResource(R.drawable.done);
+                                    } else
+                                        imageView2.setBackgroundResource(R.drawable.round2);
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                            });
+                            break;
+                        case 8:
+                            resultsList_week8.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        imageView2.setBackgroundResource(R.drawable.done);
+                                    } else
+                                        imageView2.setBackgroundResource(R.drawable.round2);
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                            });
+                            break;
+                    }
+                }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }

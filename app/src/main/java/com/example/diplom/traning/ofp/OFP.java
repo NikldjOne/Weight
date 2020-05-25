@@ -29,7 +29,7 @@ public class OFP extends AppCompatActivity {
     int position, position2;
     private FirebaseDatabase mDatabase;
     private FirebaseUser user;
-    private DatabaseReference ListResult;
+    private DatabaseReference ListResult, done_week1, done_week2, done_week3, done_week4, done_week5, done_week6, done_week7, done_week8;
 
 
     @SuppressLint("ResourceAsColor")
@@ -42,6 +42,14 @@ public class OFP extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         ListResult = mDatabase.getReference("Results").child(user.getUid());
+        done_week1 = mDatabase.getReference("Results").child(user.getUid()).child("Week1");
+        done_week2 = mDatabase.getReference("Results").child(user.getUid()).child("Week2");
+        done_week3 = mDatabase.getReference("Results").child(user.getUid()).child("Week3");
+        done_week4 = mDatabase.getReference("Results").child(user.getUid()).child("Week4");
+        done_week5 = mDatabase.getReference("Results").child(user.getUid()).child("Week5");
+        done_week6 = mDatabase.getReference("Results").child(user.getUid()).child("Week6");
+        done_week7 = mDatabase.getReference("Results").child(user.getUid()).child("Week7");
+        done_week8 = mDatabase.getReference("Results").child(user.getUid()).child("Week8");
         Bundle arguments = getIntent().getExtras();
         position = arguments.getInt("pos");
         sv = findViewById(R.id.scrool_ofp);
@@ -71,16 +79,14 @@ public class OFP extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
-                if(weight!=null) {
+                if (weight != null) {
                     position = Integer.parseInt(weight);
                     selectPage(position);
-                }
-                else {
+                } else {
                     position = 1;
                     selectPage(position);
                 }
             }
-
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -106,6 +112,8 @@ public class OFP extends AppCompatActivity {
             }
 
         });
+
+
     }
 
     void selectPage(int pageIndex) {

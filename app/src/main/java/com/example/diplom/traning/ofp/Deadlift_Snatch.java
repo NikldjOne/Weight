@@ -26,7 +26,7 @@ import com.squareup.picasso.Picasso;
 public class Deadlift_Snatch extends AppCompatActivity {
     private ImageView imageView, img_squat_left, img_squat_right, img_squat_left2, img_squat_left3, img_squat_left4,
             img_squat_left5, img_squat_right2, img_squat_right3, img_squat_right4, img_squat_right5, img_squat_done;
-    private LinearLayout layout, layout2, layout3, layout4, layout5,layout6;
+    private LinearLayout layout, layout2, layout3, layout4, layout5, layout6;
     private TextView tv_weight, tv_result_squat, tv_result_squat2, tv_result_squat3, tv_result_squat4, tv_result_squat5;
     private Button btn_squat_back, btn_squat_back2, btn_squat_back3, btn_squat_back4, btn_squat_back5,
             btn_squat_add, btn_squat_add2, btn_squat_add3, btn_squat_add4, btn_squat_add5, close_ypr,
@@ -36,7 +36,11 @@ public class Deadlift_Snatch extends AppCompatActivity {
     private DatabaseReference databaseReference = firebaseDatabase.getReference().child("Image");
     private DatabaseReference first = databaseReference.child("48");
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private DatabaseReference weightList, resultsList, kolvoList;
+    private DatabaseReference weightList, resultsList, resultsList2, resultsList3, resultsList_week2,
+            resultsList_week3, resultsList_week4, resultsList_week5, resultsList_week6, resultsList_week7, resultsList_week8,
+            done_week1, done_week2, done_week3, done_week4, done_week5, done_week6, done_week7, done_week8;
+    int position, position2;
+
     private Double weight_dec;
     private Integer result = 0, result2 = 0, result3 = 0, result4 = 0, result5 = 0;
     private String ed_result, ed_result2, ed_result3, ed_result4, ed_result5;
@@ -55,20 +59,403 @@ public class Deadlift_Snatch extends AppCompatActivity {
         tv_weight = findViewById(R.id.tv_weight_deadsn);
         weightList = firebaseDatabase2.getReference("Records").child(user.getUid());
         resultsList = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1").child("Deadlift_Snatch");
-        kolvoList = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1").child("Deadlift_Snatch");
+
+        done_week1 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1");
+        done_week2 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week2");
+        done_week3 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week3");
+        done_week4 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week4");
+        done_week5 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week5");
+        done_week6 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week6");
+        done_week7 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week7");
+        done_week8 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week8");
+        resultsList2 = firebaseDatabase2.getReference("Results").child(user.getUid());
+        resultsList_week2 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week2").child("Deadlift_Snatch");
+        resultsList_week3 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week3").child("Deadlift_Snatch");
+        resultsList_week4 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week4").child("Deadlift_Snatch");
+        resultsList_week5 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week5").child("Deadlift_Snatch");
+        resultsList_week6 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week6").child("Deadlift_Snatch");
+        resultsList_week7 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week7").child("Deadlift_Snatch");
+        resultsList_week8 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week8").child("Deadlift_Snatch");
         close_ypr = findViewById(R.id.close_ypr_deadsn);
         close_ypr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (podhod == true && podhod2 == true && podhod3 == true && podhod4 == true) {
-                    resultsList.child("weight").setValue(stringdouble);
-                    resultsList.child("kol-vo").setValue(ed_result);
-                    resultsList.child("kol-vo2").setValue(ed_result2);
-                    resultsList.child("kol-vo3").setValue(ed_result3);
-                    resultsList.child("kol-vo4").setValue(ed_result4);
-                    resultsList.child("kol-vo5").setValue(ed_result5);
-                    resultsList.child("deadsn_done").setValue("1");
-                    finish();
+                    resultsList2.child("Week_done").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            String weight = dataSnapshot.getValue(String.class);
+                            if (weight != null) {
+                                position = Integer.parseInt(weight);
+                                switch (position) {
+                                    case 1:
+                                        done_week1.child("Week1_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    resultsList.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                                        @Override
+                                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                            String weight = dataSnapshot.getValue(String.class);
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
+                                                                position = Integer.parseInt(weight);
+                                                            }
+                                                            if (position == 1) {
+                                                            }
+                                                            if (position == 0) {
+                                                                resultsList.child("weight").setValue(stringdouble);
+                                                                resultsList.child("kol-vo").setValue(ed_result);
+                                                                resultsList.child("kol-vo2").setValue(ed_result2);
+                                                                resultsList.child("kol-vo3").setValue(ed_result3);
+                                                                resultsList.child("kol-vo4").setValue(ed_result4);
+                                                                resultsList.child("deadsn_done").setValue("1");
+                                                                finish();
+                                                            }
+
+
+                                                        }
+
+                                                        @Override
+                                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                        }
+                                                    });
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        break;
+                                    case 2:
+                                        done_week2.child("Week2_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    resultsList_week2.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                                        @Override
+                                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                            String weight = dataSnapshot.getValue(String.class);
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
+                                                                position = Integer.parseInt(weight);
+                                                            }
+                                                            if (position == 1) {
+                                                            }
+                                                            if (position == 0) {
+                                                                resultsList_week2.child("weight").setValue(stringdouble);
+                                                                resultsList_week2.child("kol-vo").setValue(ed_result);
+                                                                resultsList_week2.child("kol-vo2").setValue(ed_result2);
+                                                                resultsList_week2.child("kol-vo3").setValue(ed_result3);
+                                                                resultsList_week2.child("kol-vo4").setValue(ed_result4);
+                                                                resultsList_week2.child("deadsn_done").setValue("1");
+                                                                finish();
+                                                            }
+
+
+                                                        }
+
+                                                        @Override
+                                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                        }
+                                                    });
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        break;
+                                    case 3:
+                                        done_week3.child("Week3_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    resultsList_week3.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                                        @Override
+                                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                            String weight = dataSnapshot.getValue(String.class);
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
+                                                                position = Integer.parseInt(weight);
+                                                            }
+                                                            if (position == 1) {
+                                                            }
+                                                            if (position == 0) {
+                                                                resultsList_week3.child("weight").setValue(stringdouble);
+                                                                resultsList_week3.child("kol-vo").setValue(ed_result);
+                                                                resultsList_week3.child("kol-vo2").setValue(ed_result2);
+                                                                resultsList_week3.child("kol-vo3").setValue(ed_result3);
+                                                                resultsList_week3.child("kol-vo4").setValue(ed_result4);
+                                                                resultsList_week3.child("deadsn_done").setValue("1");
+                                                                finish();
+                                                            }
+
+
+                                                        }
+
+                                                        @Override
+                                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                        }
+                                                    });
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        break;
+                                    case 4:
+                                        done_week4.child("Week4_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    resultsList_week4.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                                        @Override
+                                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                            String weight = dataSnapshot.getValue(String.class);
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
+                                                                position = Integer.parseInt(weight);
+                                                            }
+                                                            if (position == 1) {
+                                                            }
+                                                            if (position == 0) {
+                                                                resultsList_week4.child("weight").setValue(stringdouble);
+                                                                resultsList_week4.child("kol-vo").setValue(ed_result);
+                                                                resultsList_week4.child("kol-vo2").setValue(ed_result2);
+                                                                resultsList_week4.child("kol-vo3").setValue(ed_result3);
+                                                                resultsList_week4.child("kol-vo4").setValue(ed_result4);
+                                                                resultsList_week4.child("deadsn_done").setValue("1");
+                                                                finish();
+                                                            }
+
+
+                                                        }
+
+                                                        @Override
+                                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                        }
+                                                    });
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        break;
+                                    case 5:
+                                        done_week5.child("Week5_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    resultsList_week5.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                                        @Override
+                                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                            String weight = dataSnapshot.getValue(String.class);
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
+                                                                position = Integer.parseInt(weight);
+                                                            }
+                                                            if (position == 1) {
+                                                            }
+                                                            if (position == 0) {
+                                                                resultsList_week5.child("weight").setValue(stringdouble);
+                                                                resultsList_week5.child("kol-vo").setValue(ed_result);
+                                                                resultsList_week5.child("kol-vo2").setValue(ed_result2);
+                                                                resultsList_week5.child("kol-vo3").setValue(ed_result3);
+                                                                resultsList_week5.child("kol-vo4").setValue(ed_result4);
+                                                                resultsList_week5.child("deadsn_done").setValue("1");
+                                                                finish();
+                                                            }
+
+
+                                                        }
+
+                                                        @Override
+                                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                        }
+                                                    });
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        break;
+                                    case 6:
+                                        done_week6.child("Week6_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    resultsList_week6.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                                        @Override
+                                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                            String weight = dataSnapshot.getValue(String.class);
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
+                                                                position = Integer.parseInt(weight);
+                                                            }
+                                                            if (position == 1) {
+                                                            }
+                                                            if (position == 0) {
+                                                                resultsList_week6.child("weight").setValue(stringdouble);
+                                                                resultsList_week6.child("kol-vo").setValue(ed_result);
+                                                                resultsList_week6.child("kol-vo2").setValue(ed_result2);
+                                                                resultsList_week6.child("kol-vo3").setValue(ed_result3);
+                                                                resultsList_week6.child("kol-vo4").setValue(ed_result4);
+                                                                resultsList_week6.child("deadsn_done").setValue("1");
+                                                                finish();
+                                                            }
+
+
+                                                        }
+
+                                                        @Override
+                                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                        }
+                                                    });
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        break;
+                                    case 7:
+                                        done_week7.child("Week7_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    resultsList_week7.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                                        @Override
+                                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                            String weight = dataSnapshot.getValue(String.class);
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
+                                                                position = Integer.parseInt(weight);
+                                                            }
+                                                            if (position == 1) {
+                                                            }
+                                                            if (position == 0) {
+                                                                resultsList_week7.child("weight").setValue(stringdouble);
+                                                                resultsList_week7.child("kol-vo").setValue(ed_result);
+                                                                resultsList_week7.child("kol-vo2").setValue(ed_result2);
+                                                                resultsList_week7.child("kol-vo3").setValue(ed_result3);
+                                                                resultsList_week7.child("kol-vo4").setValue(ed_result4);
+                                                                resultsList_week7.child("deadsn_done").setValue("1");
+                                                                finish();
+                                                            }
+
+
+                                                        }
+
+                                                        @Override
+                                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                        }
+                                                    });
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        break;
+                                    case 8:
+                                        done_week8.child("Week8_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    resultsList_week8.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                                        @Override
+                                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                            String weight = dataSnapshot.getValue(String.class);
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
+                                                                position = Integer.parseInt(weight);
+                                                            }
+                                                            if (position == 1) {
+                                                            }
+                                                            if (position == 0) {
+                                                                resultsList_week8.child("weight").setValue(stringdouble);
+                                                                resultsList_week8.child("kol-vo").setValue(ed_result);
+                                                                resultsList_week8.child("kol-vo2").setValue(ed_result2);
+                                                                resultsList_week8.child("kol-vo3").setValue(ed_result3);
+                                                                resultsList_week8.child("kol-vo4").setValue(ed_result4);
+                                                                resultsList_week8.child("deadsn_done").setValue("1");
+                                                                finish();
+                                                            }
+
+
+                                                        }
+
+                                                        @Override
+                                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                        }
+                                                    });
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        break;
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                        }
+                    });
                 } else
                     Toast.makeText(Deadlift_Snatch.this, "Вы не закончили все подходы", Toast.LENGTH_SHORT).show();
             }
@@ -82,132 +469,1012 @@ public class Deadlift_Snatch extends AppCompatActivity {
     }
 
     private void resultPodhod() {
-        kolvoList.child("kol-vo").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String povtor = dataSnapshot.getValue(String.class);
-                if (povtor != null) {
-                    ed_result = povtor;
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        kolvoList.child("kol-vo2").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String povtor = dataSnapshot.getValue(String.class);
-                if (povtor != null) {
-                    ed_result2 = povtor;
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        kolvoList.child("kol-vo3").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String povtor = dataSnapshot.getValue(String.class);
-                if (povtor!=null){
-                    ed_result3 = povtor;
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        kolvoList.child("kol-vo4").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String povtor = dataSnapshot.getValue(String.class);
-                if (povtor!=null){
-                    ed_result4 = povtor;
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        kolvoList.child("kol-vo5").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String povtor = dataSnapshot.getValue(String.class);
-                if (povtor!=null){
-                    ed_result5 = povtor;
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        resultsList.child("front_done").addValueEventListener(new ValueEventListener() {
+        resultsList2.child("Week_done").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
                 if (weight != null) {
-                    btn_squat_back.setVisibility(View.INVISIBLE);
-                    btn_squat_add.setVisibility(View.INVISIBLE);
-                    img_squat_right.setVisibility(View.INVISIBLE);
-                    img_squat_left.setVisibility(View.INVISIBLE);
-                    edit_result.setVisibility(View.INVISIBLE);
-                    tv_result_squat.setVisibility(View.VISIBLE);
+                    position2 = Integer.parseInt(weight);
+                    switch (position2) {
+                        case 1:
+                            done_week1.child("Week1_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result = povtor;
+                                                }
+                                            }
 
-                    btn_squat_back2.setVisibility(View.INVISIBLE);
-                    btn_squat_add2.setVisibility(View.INVISIBLE);
-                    img_squat_right2.setVisibility(View.INVISIBLE);
-                    img_squat_left2.setVisibility(View.INVISIBLE);
-                    edit_result2.setVisibility(View.INVISIBLE);
-                    tv_result_squat2.setVisibility(View.VISIBLE);
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    btn_squat_back3.setVisibility(View.INVISIBLE);
-                    btn_squat_add3.setVisibility(View.INVISIBLE);
-                    img_squat_right3.setVisibility(View.INVISIBLE);
-                    img_squat_left3.setVisibility(View.INVISIBLE);
-                    edit_result3.setVisibility(View.INVISIBLE);
-                    tv_result_squat3.setVisibility(View.VISIBLE);
+                                            }
+                                        });
+                                        resultsList.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result2 = povtor;
+                                                }
+                                            }
 
-                    btn_squat_back4.setVisibility(View.INVISIBLE);
-                    btn_squat_add4.setVisibility(View.INVISIBLE);
-                    img_squat_right4.setVisibility(View.INVISIBLE);
-                    img_squat_left4.setVisibility(View.INVISIBLE);
-                    edit_result4.setVisibility(View.INVISIBLE);
-                    tv_result_squat4.setVisibility(View.VISIBLE);
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result3 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList.child("kol-vo4").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result4 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    btn_squat_back.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add.setVisibility(View.INVISIBLE);
+                                                    img_squat_right.setVisibility(View.INVISIBLE);
+                                                    img_squat_left.setVisibility(View.INVISIBLE);
+                                                    edit_result.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back2.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add2.setVisibility(View.INVISIBLE);
+                                                    img_squat_right2.setVisibility(View.INVISIBLE);
+                                                    img_squat_left2.setVisibility(View.INVISIBLE);
+                                                    edit_result2.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat2.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back3.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add3.setVisibility(View.INVISIBLE);
+                                                    img_squat_right3.setVisibility(View.INVISIBLE);
+                                                    img_squat_left3.setVisibility(View.INVISIBLE);
+                                                    edit_result3.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat3.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back4.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add4.setVisibility(View.INVISIBLE);
+                                                    img_squat_right4.setVisibility(View.INVISIBLE);
+                                                    img_squat_left4.setVisibility(View.INVISIBLE);
+                                                    edit_result4.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat4.setVisibility(View.VISIBLE);
 
 
-                    layout.setBackgroundResource(R.drawable.done);
-                    layout2.setBackgroundResource(R.drawable.done);
-                    layout3.setBackgroundResource(R.drawable.done);
-                    layout4.setBackgroundResource(R.drawable.done);
+                                                    layout.setBackgroundResource(R.drawable.done);
+                                                    layout2.setBackgroundResource(R.drawable.done);
+                                                    layout3.setBackgroundResource(R.drawable.done);
+                                                    layout4.setBackgroundResource(R.drawable.done);
 
-                    tv_result_squat.setText(ed_result);
-                    tv_result_squat2.setText(ed_result2);
-                    tv_result_squat3.setText(ed_result3);
-                    tv_result_squat4.setText(ed_result4);
-                    layout6 = findViewById(R.id.layout_done_deadsn6);
-                    layout6.setVisibility(View.INVISIBLE);
-                    close_ypr.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat.setText(ed_result);
+                                                    tv_result_squat2.setText(ed_result2);
+                                                    tv_result_squat3.setText(ed_result3);
+                                                    tv_result_squat4.setText(ed_result4);
+                                                    layout6 = findViewById(R.id.layout_done_deadsn6);
+                                                    layout6.setVisibility(View.INVISIBLE);
+                                                    close_ypr.setVisibility(View.INVISIBLE);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            }
+                                        });
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 2:
+                            done_week2.child("Week2_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week2.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week2.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result2 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week2.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result3 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week2.child("kol-vo4").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result4 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week2.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    btn_squat_back.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add.setVisibility(View.INVISIBLE);
+                                                    img_squat_right.setVisibility(View.INVISIBLE);
+                                                    img_squat_left.setVisibility(View.INVISIBLE);
+                                                    edit_result.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back2.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add2.setVisibility(View.INVISIBLE);
+                                                    img_squat_right2.setVisibility(View.INVISIBLE);
+                                                    img_squat_left2.setVisibility(View.INVISIBLE);
+                                                    edit_result2.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat2.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back3.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add3.setVisibility(View.INVISIBLE);
+                                                    img_squat_right3.setVisibility(View.INVISIBLE);
+                                                    img_squat_left3.setVisibility(View.INVISIBLE);
+                                                    edit_result3.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat3.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back4.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add4.setVisibility(View.INVISIBLE);
+                                                    img_squat_right4.setVisibility(View.INVISIBLE);
+                                                    img_squat_left4.setVisibility(View.INVISIBLE);
+                                                    edit_result4.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat4.setVisibility(View.VISIBLE);
+
+
+                                                    layout.setBackgroundResource(R.drawable.done);
+                                                    layout2.setBackgroundResource(R.drawable.done);
+                                                    layout3.setBackgroundResource(R.drawable.done);
+                                                    layout4.setBackgroundResource(R.drawable.done);
+
+                                                    tv_result_squat.setText(ed_result);
+                                                    tv_result_squat2.setText(ed_result2);
+                                                    tv_result_squat3.setText(ed_result3);
+                                                    tv_result_squat4.setText(ed_result4);
+                                                    layout6 = findViewById(R.id.layout_done_deadsn6);
+                                                    layout6.setVisibility(View.INVISIBLE);
+                                                    close_ypr.setVisibility(View.INVISIBLE);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            }
+                                        });
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 3:
+                            done_week3.child("Week3_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week3.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week3.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result2 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week3.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result3 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week3.child("kol-vo4").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result4 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week3.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    btn_squat_back.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add.setVisibility(View.INVISIBLE);
+                                                    img_squat_right.setVisibility(View.INVISIBLE);
+                                                    img_squat_left.setVisibility(View.INVISIBLE);
+                                                    edit_result.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back2.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add2.setVisibility(View.INVISIBLE);
+                                                    img_squat_right2.setVisibility(View.INVISIBLE);
+                                                    img_squat_left2.setVisibility(View.INVISIBLE);
+                                                    edit_result2.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat2.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back3.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add3.setVisibility(View.INVISIBLE);
+                                                    img_squat_right3.setVisibility(View.INVISIBLE);
+                                                    img_squat_left3.setVisibility(View.INVISIBLE);
+                                                    edit_result3.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat3.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back4.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add4.setVisibility(View.INVISIBLE);
+                                                    img_squat_right4.setVisibility(View.INVISIBLE);
+                                                    img_squat_left4.setVisibility(View.INVISIBLE);
+                                                    edit_result4.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat4.setVisibility(View.VISIBLE);
+
+
+                                                    layout.setBackgroundResource(R.drawable.done);
+                                                    layout2.setBackgroundResource(R.drawable.done);
+                                                    layout3.setBackgroundResource(R.drawable.done);
+                                                    layout4.setBackgroundResource(R.drawable.done);
+
+                                                    tv_result_squat.setText(ed_result);
+                                                    tv_result_squat2.setText(ed_result2);
+                                                    tv_result_squat3.setText(ed_result3);
+                                                    tv_result_squat4.setText(ed_result4);
+                                                    layout6 = findViewById(R.id.layout_done_deadsn6);
+                                                    layout6.setVisibility(View.INVISIBLE);
+                                                    close_ypr.setVisibility(View.INVISIBLE);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            }
+                                        });
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 4:
+                            done_week4.child("Week4_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week4.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week4.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result2 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week4.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result3 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week4.child("kol-vo4").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result4 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week4.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    btn_squat_back.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add.setVisibility(View.INVISIBLE);
+                                                    img_squat_right.setVisibility(View.INVISIBLE);
+                                                    img_squat_left.setVisibility(View.INVISIBLE);
+                                                    edit_result.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back2.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add2.setVisibility(View.INVISIBLE);
+                                                    img_squat_right2.setVisibility(View.INVISIBLE);
+                                                    img_squat_left2.setVisibility(View.INVISIBLE);
+                                                    edit_result2.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat2.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back3.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add3.setVisibility(View.INVISIBLE);
+                                                    img_squat_right3.setVisibility(View.INVISIBLE);
+                                                    img_squat_left3.setVisibility(View.INVISIBLE);
+                                                    edit_result3.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat3.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back4.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add4.setVisibility(View.INVISIBLE);
+                                                    img_squat_right4.setVisibility(View.INVISIBLE);
+                                                    img_squat_left4.setVisibility(View.INVISIBLE);
+                                                    edit_result4.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat4.setVisibility(View.VISIBLE);
+
+
+                                                    layout.setBackgroundResource(R.drawable.done);
+                                                    layout2.setBackgroundResource(R.drawable.done);
+                                                    layout3.setBackgroundResource(R.drawable.done);
+                                                    layout4.setBackgroundResource(R.drawable.done);
+
+                                                    tv_result_squat.setText(ed_result);
+                                                    tv_result_squat2.setText(ed_result2);
+                                                    tv_result_squat3.setText(ed_result3);
+                                                    tv_result_squat4.setText(ed_result4);
+                                                    layout6 = findViewById(R.id.layout_done_deadsn6);
+                                                    layout6.setVisibility(View.INVISIBLE);
+                                                    close_ypr.setVisibility(View.INVISIBLE);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            }
+                                        });
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 5:
+                            done_week5.child("Week5_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week5.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week5.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result2 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week5.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result3 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week5.child("kol-vo4").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result4 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week5.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    btn_squat_back.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add.setVisibility(View.INVISIBLE);
+                                                    img_squat_right.setVisibility(View.INVISIBLE);
+                                                    img_squat_left.setVisibility(View.INVISIBLE);
+                                                    edit_result.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back2.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add2.setVisibility(View.INVISIBLE);
+                                                    img_squat_right2.setVisibility(View.INVISIBLE);
+                                                    img_squat_left2.setVisibility(View.INVISIBLE);
+                                                    edit_result2.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat2.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back3.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add3.setVisibility(View.INVISIBLE);
+                                                    img_squat_right3.setVisibility(View.INVISIBLE);
+                                                    img_squat_left3.setVisibility(View.INVISIBLE);
+                                                    edit_result3.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat3.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back4.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add4.setVisibility(View.INVISIBLE);
+                                                    img_squat_right4.setVisibility(View.INVISIBLE);
+                                                    img_squat_left4.setVisibility(View.INVISIBLE);
+                                                    edit_result4.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat4.setVisibility(View.VISIBLE);
+
+
+                                                    layout.setBackgroundResource(R.drawable.done);
+                                                    layout2.setBackgroundResource(R.drawable.done);
+                                                    layout3.setBackgroundResource(R.drawable.done);
+                                                    layout4.setBackgroundResource(R.drawable.done);
+
+                                                    tv_result_squat.setText(ed_result);
+                                                    tv_result_squat2.setText(ed_result2);
+                                                    tv_result_squat3.setText(ed_result3);
+                                                    tv_result_squat4.setText(ed_result4);
+                                                    layout6 = findViewById(R.id.layout_done_deadsn6);
+                                                    layout6.setVisibility(View.INVISIBLE);
+                                                    close_ypr.setVisibility(View.INVISIBLE);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            }
+                                        });
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 6:
+                            done_week6.child("Week6_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week6.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week6.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result2 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week6.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result3 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week6.child("kol-vo4").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result4 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week6.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    btn_squat_back.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add.setVisibility(View.INVISIBLE);
+                                                    img_squat_right.setVisibility(View.INVISIBLE);
+                                                    img_squat_left.setVisibility(View.INVISIBLE);
+                                                    edit_result.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back2.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add2.setVisibility(View.INVISIBLE);
+                                                    img_squat_right2.setVisibility(View.INVISIBLE);
+                                                    img_squat_left2.setVisibility(View.INVISIBLE);
+                                                    edit_result2.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat2.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back3.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add3.setVisibility(View.INVISIBLE);
+                                                    img_squat_right3.setVisibility(View.INVISIBLE);
+                                                    img_squat_left3.setVisibility(View.INVISIBLE);
+                                                    edit_result3.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat3.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back4.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add4.setVisibility(View.INVISIBLE);
+                                                    img_squat_right4.setVisibility(View.INVISIBLE);
+                                                    img_squat_left4.setVisibility(View.INVISIBLE);
+                                                    edit_result4.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat4.setVisibility(View.VISIBLE);
+
+
+                                                    layout.setBackgroundResource(R.drawable.done);
+                                                    layout2.setBackgroundResource(R.drawable.done);
+                                                    layout3.setBackgroundResource(R.drawable.done);
+                                                    layout4.setBackgroundResource(R.drawable.done);
+
+                                                    tv_result_squat.setText(ed_result);
+                                                    tv_result_squat2.setText(ed_result2);
+                                                    tv_result_squat3.setText(ed_result3);
+                                                    tv_result_squat4.setText(ed_result4);
+                                                    layout6 = findViewById(R.id.layout_done_deadsn6);
+                                                    layout6.setVisibility(View.INVISIBLE);
+                                                    close_ypr.setVisibility(View.INVISIBLE);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            }
+                                        });
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 7:
+                            done_week7.child("Week7_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week7.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week7.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result2 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week7.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result3 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week7.child("kol-vo4").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result4 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week7.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    btn_squat_back.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add.setVisibility(View.INVISIBLE);
+                                                    img_squat_right.setVisibility(View.INVISIBLE);
+                                                    img_squat_left.setVisibility(View.INVISIBLE);
+                                                    edit_result.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back2.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add2.setVisibility(View.INVISIBLE);
+                                                    img_squat_right2.setVisibility(View.INVISIBLE);
+                                                    img_squat_left2.setVisibility(View.INVISIBLE);
+                                                    edit_result2.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat2.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back3.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add3.setVisibility(View.INVISIBLE);
+                                                    img_squat_right3.setVisibility(View.INVISIBLE);
+                                                    img_squat_left3.setVisibility(View.INVISIBLE);
+                                                    edit_result3.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat3.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back4.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add4.setVisibility(View.INVISIBLE);
+                                                    img_squat_right4.setVisibility(View.INVISIBLE);
+                                                    img_squat_left4.setVisibility(View.INVISIBLE);
+                                                    edit_result4.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat4.setVisibility(View.VISIBLE);
+
+
+                                                    layout.setBackgroundResource(R.drawable.done);
+                                                    layout2.setBackgroundResource(R.drawable.done);
+                                                    layout3.setBackgroundResource(R.drawable.done);
+                                                    layout4.setBackgroundResource(R.drawable.done);
+
+                                                    tv_result_squat.setText(ed_result);
+                                                    tv_result_squat2.setText(ed_result2);
+                                                    tv_result_squat3.setText(ed_result3);
+                                                    tv_result_squat4.setText(ed_result4);
+                                                    layout6 = findViewById(R.id.layout_done_deadsn6);
+                                                    layout6.setVisibility(View.INVISIBLE);
+                                                    close_ypr.setVisibility(View.INVISIBLE);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            }
+                                        });
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 8:
+                            done_week8.child("Week8_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week8.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week8.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result2 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week8.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result3 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week8.child("kol-vo4").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result4 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week8.child("deadsn_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    btn_squat_back.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add.setVisibility(View.INVISIBLE);
+                                                    img_squat_right.setVisibility(View.INVISIBLE);
+                                                    img_squat_left.setVisibility(View.INVISIBLE);
+                                                    edit_result.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back2.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add2.setVisibility(View.INVISIBLE);
+                                                    img_squat_right2.setVisibility(View.INVISIBLE);
+                                                    img_squat_left2.setVisibility(View.INVISIBLE);
+                                                    edit_result2.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat2.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back3.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add3.setVisibility(View.INVISIBLE);
+                                                    img_squat_right3.setVisibility(View.INVISIBLE);
+                                                    img_squat_left3.setVisibility(View.INVISIBLE);
+                                                    edit_result3.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat3.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back4.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add4.setVisibility(View.INVISIBLE);
+                                                    img_squat_right4.setVisibility(View.INVISIBLE);
+                                                    img_squat_left4.setVisibility(View.INVISIBLE);
+                                                    edit_result4.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat4.setVisibility(View.VISIBLE);
+
+
+                                                    layout.setBackgroundResource(R.drawable.done);
+                                                    layout2.setBackgroundResource(R.drawable.done);
+                                                    layout3.setBackgroundResource(R.drawable.done);
+                                                    layout4.setBackgroundResource(R.drawable.done);
+
+                                                    tv_result_squat.setText(ed_result);
+                                                    tv_result_squat2.setText(ed_result2);
+                                                    tv_result_squat3.setText(ed_result3);
+                                                    tv_result_squat4.setText(ed_result4);
+                                                    layout6 = findViewById(R.id.layout_done_deadsn6);
+                                                    layout6.setVisibility(View.INVISIBLE);
+                                                    close_ypr.setVisibility(View.INVISIBLE);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            }
+                                        });
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                    }
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }

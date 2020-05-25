@@ -120,7 +120,7 @@ public class Shil extends AppCompatActivity {
                 String weight = dataSnapshot.getValue(String.class);
                 if (weight != null){
                     pos = Integer.parseInt(weight);
-                    switch (pos2){
+                    switch (pos){
                         case 1: resultsList_week1.child("day2_done").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
