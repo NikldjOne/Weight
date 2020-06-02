@@ -2089,9 +2089,15 @@ public class Squat extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
-                weight_dec = Double.parseDouble(weight) * 0.85;
-                stringdouble = Double.toString(weight_dec);
-                tv_weight.setText(stringdouble);
+                if(weight == "0") {
+                    tv_weight.setText("20");
+                }
+                else
+                {
+                    weight_dec = Double.parseDouble(weight) * 0.85;
+                    stringdouble = Double.toString(weight_dec);
+                    tv_weight.setText(stringdouble);
+                }
             }
 
             @Override

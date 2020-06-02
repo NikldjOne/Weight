@@ -39,7 +39,7 @@ public class Shil3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shil3);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar_layout_10);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout_12);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView = findViewById(R.id.img_shil3_window);
         closeypr_shil = findViewById(R.id.close_ypr_shil3);

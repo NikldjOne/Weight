@@ -26,7 +26,7 @@ import com.squareup.picasso.Picasso;
 public class Bench extends AppCompatActivity {
     private ImageView imageView, img_Bench_left, img_Bench_right, img_Bench_left2, img_Bench_left3, img_Bench_left4,
             img_Bench_left5, img_Bench_right2, img_Bench_right3, img_Bench_right4, img_Bench_right5, img_Bench_done;
-    private LinearLayout layout, layout2, layout3, layout4, layout5,layout6;
+    private LinearLayout layout, layout2, layout3, layout4, layout5, layout6;
     private TextView tv_weight, tv_result_Bench, tv_result_Bench2, tv_result_Bench3, tv_result_Bench4, tv_result_Bench5;
     private Button btn_Bench_back, btn_Bench_back2, btn_Bench_back3, btn_Bench_back4, btn_Bench_back5,
             btn_Bench_add, btn_Bench_add2, btn_Bench_add3, btn_Bench_add4, btn_Bench_add5, close_ypr,
@@ -46,6 +46,7 @@ public class Bench extends AppCompatActivity {
     private Boolean podhod = false, podhod2 = false, podhod3 = false, podhod4 = false, podhod5 = false;
     String stringdouble;
     int position, position2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,11 +97,9 @@ public class Bench extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -142,11 +141,9 @@ public class Bench extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -188,11 +185,9 @@ public class Bench extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -234,11 +229,9 @@ public class Bench extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -280,11 +273,9 @@ public class Bench extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -326,11 +317,9 @@ public class Bench extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -372,11 +361,9 @@ public class Bench extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -418,11 +405,9 @@ public class Bench extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -1304,7 +1289,6 @@ public class Bench extends AppCompatActivity {
     }
 
 
-
     private void BenchPodhod3() {
         tv_result_Bench3 = findViewById(R.id.tv_result_bench3);
         edit_result3 = findViewById(R.id.ed_result_bench3);
@@ -1396,7 +1380,6 @@ public class Bench extends AppCompatActivity {
             }
         });
     }
-
 
 
     private void podhodDone3() {
@@ -1496,7 +1479,6 @@ public class Bench extends AppCompatActivity {
     }
 
 
-
     private void edAdd2() {
         result2 = Integer.parseInt(edit_result2.getText().toString());
         result2++;
@@ -1559,18 +1541,17 @@ public class Bench extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
-                if(weight!=null) {
-                    if(weight == "0"){
+                if (weight != null) {
+                    if (weight != "0") {
                         tv_weight.setText("20");
-                    }
-                    else {
+
+                    } else {
                         weight_dec = Double.parseDouble(weight) * 0.80;
                         stringdouble = Double.toString(weight_dec);
                         tv_weight.setText(stringdouble);
+
                     }
                 }
-                else tv_weight.setText("20");
-
             }
 
             @Override

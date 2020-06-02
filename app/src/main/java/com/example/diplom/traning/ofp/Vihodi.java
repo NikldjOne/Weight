@@ -26,7 +26,7 @@ import com.squareup.picasso.Picasso;
 public class Vihodi extends AppCompatActivity {
     private ImageView imageView, img_vihodi_left, img_vihodi_right, img_vihodi_left2, img_vihodi_left3,
             img_vihodi_right2, img_vihodi_right3;
-    private LinearLayout layout, layout2, layout3,layout6;
+    private LinearLayout layout, layout2, layout3, layout6;
     private TextView tv_weight, tv_result_vihodi, tv_result_vihodi2, tv_result_vihodi3;
     private Button btn_vihodi_back, btn_vihodi_back2, btn_vihodi_back3,
             btn_vihodi_add, btn_vihodi_add2, btn_vihodi_add3,
@@ -39,7 +39,7 @@ public class Vihodi extends AppCompatActivity {
     private DatabaseReference weightList, resultsList, resultsList2, resultsList3, resultsList_week2,
             resultsList_week3, resultsList_week4, resultsList_week5, resultsList_week6, resultsList_week7, resultsList_week8,
             done_week1, done_week2, done_week3, done_week4, done_week5, done_week6, done_week7, done_week8;
-    int position,position2;
+    int position, position2;
     String stringdouble;
     private Double weight_dec;
     private Integer result = 0, result2 = 0, result3 = 0;
@@ -100,11 +100,9 @@ public class Vihodi extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -146,11 +144,9 @@ public class Vihodi extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -192,11 +188,9 @@ public class Vihodi extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -238,11 +232,9 @@ public class Vihodi extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -284,11 +276,9 @@ public class Vihodi extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -330,11 +320,9 @@ public class Vihodi extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -376,11 +364,9 @@ public class Vihodi extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -422,11 +408,9 @@ public class Vihodi extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -1554,9 +1538,13 @@ public class Vihodi extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
-                weight_dec = Double.parseDouble(weight) * 0.70;
-                stringdouble = Double.toString(weight_dec);
-                tv_weight.setText(stringdouble);
+                if (weight != "0") {
+                    tv_weight.setText("20");
+                } else {
+                    weight_dec = Double.parseDouble(weight) * 0.70;
+                    stringdouble = Double.toString(weight_dec);
+                    tv_weight.setText(stringdouble);
+                }
             }
 
             @Override

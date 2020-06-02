@@ -506,8 +506,6 @@ public class IntellectFragment extends Fragment {
         vv_triceps.setVisibility(View.INVISIBLE);
         vv_scr.setVisibility(View.INVISIBLE);
         vv_planka.setVisibility(View.INVISIBLE);
-
-
     }
 
     @Override

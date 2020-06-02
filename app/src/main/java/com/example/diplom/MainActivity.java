@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         models = new ArrayList<>();
         models.add(new Model("ТРАНСФОРМАЦИЯ ТЕЛА", "Тренировки нового уровня. Наращивай\n" +
                 "мышцы и пали жир, построй тело атлета."));
-        models.add(new Model("Test2", "TEST_TEST_TEST_TEST_TEST"));
-        models.add(new Model("Test2", "TEST_TEST_TEST_TEST_TEST"));
-        models.add(new Model("Test2", "TEST_TEST_TEST_TEST_TEST"));
+        models.add(new Model("ПОСТОЯННЫЙ ПРОГРЕСС", "Каждая тренировка - новый вызов твоему телу и  воле"));
+        models.add(new Model("СТАНЬ НАСТОЯЩИМ АТЛЕТОМ", "Становись сильнее, выносливее, рельефнее, наращивай мышечную массу"));
+        models.add(new Model("ПИТАНИЕ, ТРЕНИРОВКИ", "2 раздела,которые помогут тебе взять максимум от тренировок"));
 
         adapter = new Adapter(models, this);
         viewPager = findViewById(R.id.viewPager);

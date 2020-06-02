@@ -227,7 +227,7 @@ public class HomeFragment extends Fragment {
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.getWindow().setBackgroundDrawableResource(R.color.colorBack);
-        alertDialog.setTitle("Добавить цель");
+        alertDialog.setTitle("Создать цель");
         alertDialog.show();
 
     }

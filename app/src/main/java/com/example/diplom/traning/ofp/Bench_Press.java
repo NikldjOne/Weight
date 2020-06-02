@@ -1558,8 +1558,7 @@ public class Bench_Press extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
-                if(weight!=null) {
-                    if(weight == "0"){
+                    if(weight != "0"){
                         tv_weight.setText("20");
                     }
                     else {
@@ -1568,9 +1567,6 @@ public class Bench_Press extends AppCompatActivity {
                         tv_weight.setText(stringdouble);
                     }
                 }
-                else tv_weight.setText("20");
-
-            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

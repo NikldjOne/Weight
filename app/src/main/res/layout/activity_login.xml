@@ -106,7 +106,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginLeft="20dp"
             android:textSize="13.5dp"
-            android:textColor="@color/colorHint"
+            android:textColor="@color/colorText"
             android:fontFamily="@font/light"/>
 
         <TextView
@@ -117,7 +117,7 @@
             android:text="пользовательским"
             android:id="@+id/tvpol"
             android:onClick="tvpol"
-            android:textColor="@color/colorHint2"
+            android:textColor="@color/colorHint"
             android:fontFamily="@font/light"
             android:textSize="13.5dp" />
     </LinearLayout>
@@ -131,7 +131,7 @@
             android:onClick="tvpol2"
             android:layout_marginLeft="40dp"
             android:textSize="13.5dp"
-            android:textColor="@color/colorHint2"
+            android:textColor="@color/colorHint"
             android:fontFamily="@font/light"/>
         <TextView
             android:layout_width="wrap_content"
@@ -139,7 +139,7 @@
             android:text="и "
             android:layout_marginLeft="121dp"
             android:textSize="13.5dp"
-            android:textColor="@color/colorHint"
+            android:textColor="@color/colorText"
             android:fontFamily="@font/light"/>
         <TextView
             android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
 android:onClick="konf"
             android:layout_marginLeft="131dp"
             android:textSize="13.5dp"
-            android:textColor="@color/colorHint2"
+            android:textColor="@color/colorHint"
             android:fontFamily="@font/light"/>
     </RelativeLayout>
     <Button

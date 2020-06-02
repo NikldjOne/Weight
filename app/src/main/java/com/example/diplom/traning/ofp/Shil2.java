@@ -38,7 +38,7 @@ public class Shil2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shil2);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar_layout_10);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout_12);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView = findViewById(R.id.img_shil2_window);
         closeypr_shil = findViewById(R.id.close_ypr_shil2);

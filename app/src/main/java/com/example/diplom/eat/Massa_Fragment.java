@@ -56,7 +56,7 @@ public class Massa_Fragment extends Fragment {
         imageView5 =  view.findViewById(R.id.obed_2);
         imageView6 =  view.findViewById(R.id.yjin_2);
         syhka =  view.findViewById(R.id.textviewmassa);
-        syhka.setText("Если твоя цель набрать вес и создать оптимальные условия для построения мышц - этот");
+        syhka.setText("Если твоя цель набрать вес и создать в организме оптимальные условия для построения мышц - этот ");
         bt_massa =  view.findViewById(R.id.about_massa);
         btn_zavtrak = view.findViewById(R.id.btn_zavtrak_2);
         btn_perekys = view.findViewById(R.id.btn_perekys_2);
@@ -67,10 +67,11 @@ public class Massa_Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 bt_massa.setVisibility(View.INVISIBLE);
-                syhka.setText("Если твоя цель набрать вес и создать оптимальные условия для построения мышц - этот" +
-                        " Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight" +
-                        "Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight" +
-                        "Если твоя цель сжечь жир и добавиться максимального рельефа мышц - этот рацион для тебя. Питание Weight" );
+                syhka.setText("Если твоя цель набрать вес и создать в организме оптимальные условия для построения мышц - этот" +
+                        " рацион для тебя. Питание WEIGHT на массе включает в себя сбалансированный рацион из 5ти приемов" +
+                        "пищи. Общая калорийность рациона варьируется от 2900 до 3700 калорий.Этот рацион даст твоему организму" +
+                        "все необходимые вещества для качественного восстановления после тренировки и создаст оптимальные условия для построения" +
+                        "мышечной массы");
             }
         });
         btn_perekys.setOnClickListener(new View.OnClickListener() {

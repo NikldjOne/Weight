@@ -237,7 +237,8 @@ public class Traning extends Fragment {
         btn_day3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                resultsList3.child("Week_done").addValueEventListener(new ValueEventListener() {
+                resultsList3.child("Week_done")
+                        .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         String weight = dataSnapshot.getValue(String.class);
@@ -1249,12 +1250,13 @@ public class Traning extends Fragment {
                     position = Integer.parseInt(weight);
                     switch (position) {
                         case 1:
-                            resultsList.child("Week1_done").addValueEventListener(new ValueEventListener() {
-                                @Override
+                            resultsList.child("Week1_done")
+                                    .addValueEventListener(new ValueEventListener() {@Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
-                                        resultsList.child("day1_done").addValueEventListener(new ValueEventListener() {
+                                        resultsList.child("day1_done")
+                                                .addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 day1_done = dataSnapshot.getValue(String.class);

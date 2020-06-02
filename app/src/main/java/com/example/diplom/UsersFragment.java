@@ -1,5 +1,7 @@
 package com.example.diplom;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -27,9 +29,27 @@ public class UsersFragment extends Fragment {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                getActivity().finish();
-                startActivity(new Intent(getActivity().getApplicationContext(), MainActivity.class));
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setCancelable(false);
+                builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseAuth.getInstance().signOut();
+                        getActivity().finish();
+                        startActivity(new Intent(getActivity().getApplicationContext(), MainActivity.class));
+                    }
+                });
+                builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.getWindow().setBackgroundDrawableResource(R.color.colorBack);
+                alertDialog.setTitle("Вы уверены что хотите выйти?");
+                alertDialog.show();
+
             }
         });
 

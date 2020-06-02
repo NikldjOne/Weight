@@ -38,7 +38,6 @@ public class EatFragment extends Fragment {
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setSelectedTabIndicatorHeight((int) (5 * getResources().getDisplayMetrics().density));
         tabLayout.setTabTextColors(Color.parseColor("#80778899"), Color.parseColor("#008577"));
-
         return view;
     }
 }

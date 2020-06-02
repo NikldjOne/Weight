@@ -38,7 +38,7 @@ public class Traning_vvedenie extends Fragment {
         View view = inflater.inflate(R.layout.traning_vvedenie, container, false);
         btn_save = view.findViewById(R.id.btn_save);
         ed_sqaut = view.findViewById(R.id.edit_squat);
-        ed_clean_jerk = view.findViewById(R.id.ed_clean_jerk);
+//        ed_clean_jerk = view.findViewById(R.id.ed_clean_jerk);
         ed_nakloni = view.findViewById(R.id.edit_nakloni);
         ed_front_squat = view.findViewById(R.id.edit_front_squat);
         ed_bench = view.findViewById(R.id.edit_bench);
@@ -75,7 +75,7 @@ public class Traning_vvedenie extends Fragment {
 
     private void loadFront() {
         if (ed_front_squat.getText().toString().equals("")) {
-            nakloni = "0";
+            front = "0";
         } else
             front = ed_front_squat.getText().toString();
         ListFront.child("max_front").setValue(front);
@@ -84,7 +84,7 @@ public class Traning_vvedenie extends Fragment {
 
     private void loadBench() {
         if (ed_bench.getText().toString().equals("")) {
-            nakloni = "0";
+            bench = "0";
         } else
             bench = ed_bench.getText().toString();
         ListFront.child("max_bench").setValue(bench);
@@ -92,7 +92,7 @@ public class Traning_vvedenie extends Fragment {
 
     private void loadBenchPress() {
         if (edit_bench_press.getText().toString().equals("")) {
-            nakloni = "0";
+            bench_press = "0";
         } else
             bench_press = edit_bench_press.getText().toString();
         ListFront.child("max_benchpr").setValue(bench_press);
@@ -100,7 +100,7 @@ public class Traning_vvedenie extends Fragment {
 
     private void loadBiceps() {
         if (edit_biceps.getText().toString().equals("")) {
-            nakloni = "0";
+            biceps = "0";
         } else
             biceps = edit_biceps.getText().toString();
         ListFront.child("max_biceps").setValue(biceps);
@@ -108,7 +108,7 @@ public class Traning_vvedenie extends Fragment {
 
     private void loadTriceps() {
         if (edit_triceps.getText().toString().equals("")) {
-            nakloni = "0";
+            triceps = "0";
         } else
             triceps = edit_triceps.getText().toString();
         ListFront.child("max_triceps").setValue(triceps);
@@ -217,6 +217,9 @@ public class Traning_vvedenie extends Fragment {
     }
 
     private void loadSquat() {
+        if (ed_sqaut.getText().toString().equals("")) {
+            squat = "0";
+        } else
         squat = ed_sqaut.getText().toString();
         Recordlist.child("max_squat").setValue(squat);
     }

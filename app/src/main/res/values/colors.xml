@@ -3,8 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorBack">#16141F</color>
-    <color name="colorText">#FDF5E6</color>
+    <color name="colorBack">#1E1B2C</color>
+    <color name="colorText">#FAFAFA</color>
     <color name="colorHint">#778899</color>
     <color name="colorHintOpacity">#80778899</color>
     <color name="colorHint2">#BEBEBE</color>

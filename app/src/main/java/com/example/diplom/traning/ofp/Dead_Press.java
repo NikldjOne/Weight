@@ -1540,17 +1540,15 @@ public class Dead_Press extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
-                if (weight != null) {
-                    if (weight == "0") {
+                    if (weight != "0" ) {
                         tv_weight.setText("20");
                     } else {
                         weight_dec = Double.parseDouble(weight) * 0.80;
                         stringdouble = Double.toString(weight_dec);
                         tv_weight.setText(stringdouble);
-                    }
-                } else tv_weight.setText("20");
 
-            }
+                    }
+                }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

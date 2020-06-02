@@ -53,7 +53,7 @@ public class Jerk extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jerk);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar_layout_10);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout_11);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView = findViewById(R.id.img_jerk2);
         tv_weight = findViewById(R.id.tv_weight5);

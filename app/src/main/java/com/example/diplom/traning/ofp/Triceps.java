@@ -27,7 +27,7 @@ public class Triceps extends AppCompatActivity {
 
     private ImageView imageView, img_squat_left, img_squat_right, img_squat_left2, img_squat_left3, img_squat_left4,
             img_squat_left5, img_squat_right2, img_squat_right3, img_squat_right4, img_squat_right5, img_squat_done;
-    private LinearLayout layout, layout2, layout3, layout4, layout5,layout6;
+    private LinearLayout layout, layout2, layout3, layout4, layout5, layout6;
     private TextView tv_weight, tv_result_squat, tv_result_squat2, tv_result_squat3, tv_result_squat4, tv_result_squat5;
     private Button btn_squat_back, btn_squat_back2, btn_squat_back3, btn_squat_back4, btn_squat_back5,
             btn_squat_add, btn_squat_add2, btn_squat_add3, btn_squat_add4, btn_squat_add5, close_ypr,
@@ -47,6 +47,7 @@ public class Triceps extends AppCompatActivity {
     private Boolean podhod = false, podhod2 = false, podhod3 = false, podhod4 = false, podhod5 = false;
     String stringdouble;
     int position, position2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,11 +97,9 @@ public class Triceps extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -143,11 +142,9 @@ public class Triceps extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -190,11 +187,9 @@ public class Triceps extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -237,11 +232,9 @@ public class Triceps extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -284,11 +277,9 @@ public class Triceps extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -331,11 +322,9 @@ public class Triceps extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -378,11 +367,9 @@ public class Triceps extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -425,11 +412,9 @@ public class Triceps extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             String weight = dataSnapshot.getValue(String.class);
-                                                            if(weight==null) {
-                                                                position=0;
-                                                            }
-                                                            else
-                                                            if(weight!=null) {
+                                                            if (weight == null) {
+                                                                position = 0;
+                                                            } else if (weight != null) {
                                                                 position = Integer.parseInt(weight);
                                                             }
                                                             if (position == 1) {
@@ -1312,7 +1297,6 @@ public class Triceps extends AppCompatActivity {
     }
 
 
-
     private void SquatPodhod3() {
         tv_result_squat3 = findViewById(R.id.tv_result_triceps3);
         edit_result3 = findViewById(R.id.ed_result_triceps3);
@@ -1404,7 +1388,6 @@ public class Triceps extends AppCompatActivity {
             }
         });
     }
-
 
 
     private void podhodDone3() {
@@ -1504,7 +1487,6 @@ public class Triceps extends AppCompatActivity {
     }
 
 
-
     private void edAdd2() {
         result2 = Integer.parseInt(edit_result2.getText().toString());
         result2++;
@@ -1567,17 +1549,17 @@ public class Triceps extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
-                if(weight!=null) {
-                    if(weight == "0"){
+                if (weight != null) {
+                    if (weight != "0") {
                         tv_weight.setText("20");
-                    }
-                    else {
+
+                    } else {
                         weight_dec = Double.parseDouble(weight) * 0.70;
                         stringdouble = Double.toString(weight_dec);
                         tv_weight.setText(stringdouble);
+
                     }
                 }
-                else tv_weight.setText("20");
 
             }
 
