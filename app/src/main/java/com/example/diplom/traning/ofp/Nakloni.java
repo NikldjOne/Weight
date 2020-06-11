@@ -1555,15 +1555,16 @@ public class Nakloni extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
-                if(weight != "0") {
-                    tv_weight.setText("20");
+                Integer weight2 = null;
+                if(weight !=null) {
+                    weight2 = Integer.parseInt(weight);
                 }
-                else
-                {
+                if (weight == null || weight2 == 0) {
+                    tv_weight.setText("20.0");
+                } else {
                     weight_dec = Double.parseDouble(weight) * 0.60;
                     stringdouble = Double.toString(weight_dec);
                     tv_weight.setText(stringdouble);
-
                 }
             }
 

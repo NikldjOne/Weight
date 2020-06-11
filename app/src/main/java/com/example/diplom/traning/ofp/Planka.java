@@ -53,7 +53,7 @@ public class Planka extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planka);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar_layout_7);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout_22);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView = findViewById(R.id.img_planka2);
         tv_weight = findViewById(R.id.tv_weight_planka);

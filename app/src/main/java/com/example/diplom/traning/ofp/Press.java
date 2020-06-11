@@ -52,7 +52,7 @@ public class Press extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_press);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar_layout_7);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout_21);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView = findViewById(R.id.img_press2);
         tv_weight = findViewById(R.id.tv_weight_press);

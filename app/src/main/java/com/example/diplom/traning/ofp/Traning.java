@@ -48,8 +48,8 @@ public class Traning extends Fragment {
 
     private FirebaseDatabase firebaseDatabase2 = FirebaseDatabase.getInstance();
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    DatabaseReference resultsList, resultsList2, resultsList3, resultsList_1,resultsList_week3,resultsList_week4,resultsList_week5,
-            resultsList_week6,resultsList_week7,resultsList_week8;
+    DatabaseReference resultsList, resultsList2, resultsList3, resultsList_1, resultsList_week3, resultsList_week4, resultsList_week5,
+            resultsList_week6, resultsList_week7, resultsList_week8;
 
     @Nullable
     @Override
@@ -74,12 +74,12 @@ public class Traning extends Fragment {
         resultsList_1 = firebaseDatabase2.getReference("Results").child(user.getUid());
         resultsList = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week1");
         resultsList2 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week2");
-        resultsList_week3= firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week3");
-        resultsList_week4= firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week4");
-        resultsList_week5= firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week5");
-        resultsList_week6= firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week6");
-        resultsList_week7= firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week7");
-        resultsList_week8= firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week8");
+        resultsList_week3 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week3");
+        resultsList_week4 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week4");
+        resultsList_week5 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week5");
+        resultsList_week6 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week6");
+        resultsList_week7 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week7");
+        resultsList_week8 = firebaseDatabase2.getReference("Results").child(user.getUid()).child("Week8");
         resultsList3 = firebaseDatabase2.getReference("Results").child(user.getUid());
         buttonSwipe();
         btn_day1.setOnClickListener(new View.OnClickListener() {
@@ -221,8 +221,8 @@ public class Traning extends Fragment {
                                     });
                                     break;
                             }
-                            }
                         }
+                    }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -237,8 +237,7 @@ public class Traning extends Fragment {
         btn_day3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                resultsList3.child("Week_done")
-                        .addValueEventListener(new ValueEventListener() {
+                resultsList3.child("Week_done").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         String weight = dataSnapshot.getValue(String.class);
@@ -1251,200 +1250,201 @@ public class Traning extends Fragment {
                     switch (position) {
                         case 1:
                             resultsList.child("Week1_done")
-                                    .addValueEventListener(new ValueEventListener() {@Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    String weight = dataSnapshot.getValue(String.class);
-                                    if (weight != null) {
-                                        resultsList.child("day1_done")
-                                                .addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                day1_done = dataSnapshot.getValue(String.class);
-                                                if (day1_done != null) {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(250, 0);
+                                    .addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                            String weight = dataSnapshot.getValue(String.class);
+                                            if (weight != null) {
+                                                resultsList.child("day1_done")
+                                                        .addValueEventListener(new ValueEventListener() {
+                                                            @Override
+                                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                                day1_done = dataSnapshot.getValue(String.class);
+                                                                if (day1_done != null) {
+                                                                    sv.postDelayed(new Runnable() {
+                                                                        public void run() {
+                                                                            sv.smoothScrollBy(250, 0);
+                                                                        }
+                                                                    }, 100L);
+                                                                    Day_shil();
+                                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                                    rel_day1.setBackgroundResource(R.drawable.inset_inactive);
+                                                                } else {
+                                                                    sv.postDelayed(new Runnable() {
+                                                                        public void run() {
+                                                                            sv.smoothScrollBy(-250, 0);
+                                                                        }
+                                                                    }, 100L);
+                                                                    Day1Btn();
+                                                                    inactive();
+                                                                    rel_day1.setBackgroundResource(R.drawable.inset);
+                                                                }
+                                                            }
+
+                                                            @Override
+                                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                            }
+                                                        });
+                                                resultsList.child("day2_done").addValueEventListener(new ValueEventListener() {
+                                                    @Override
+                                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                        day2_done = dataSnapshot.getValue(String.class);
+                                                        if (day2_done != null) {
+                                                            sv.postDelayed(new Runnable() {
+                                                                public void run() {
+                                                                    sv.smoothScrollBy(250, 0);
+                                                                }
+                                                            }, 100L);
+                                                            Day3();
+                                                            inactive();
+                                                            rel_day3.setBackgroundResource(R.drawable.inset);
+                                                        } else if (day1_done != null) {
+                                                            sv.postDelayed(new Runnable() {
+                                                                public void run() {
+                                                                    sv.smoothScrollBy(-250, 0);
+                                                                }
+                                                            }, 100L);
+                                                            Day_shil();
+                                                            inactive();
+                                                            rel_day2.setBackgroundResource(R.drawable.inset);
                                                         }
-                                                    }, 100L);
-                                                    Day_shil();
-                                                    rel_day2.setBackgroundResource(R.drawable.inset);
-                                                    rel_day1.setBackgroundResource(R.drawable.inset_inactive);
-                                                } else {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(-250, 0);
+                                                    }
+
+                                                    @Override
+                                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                    }
+                                                });
+                                                resultsList.child("day3_done").addValueEventListener(new ValueEventListener() {
+                                                    @Override
+                                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                        day3_done = dataSnapshot.getValue(String.class);
+                                                        if (day3_done != null) {
+                                                            sv.postDelayed(new Runnable() {
+                                                                public void run() {
+                                                                    sv.smoothScrollBy(250, 0);
+                                                                }
+                                                            }, 100L);
+                                                            Day_shil2();
+                                                            inactive();
+                                                            rel_day4.setBackgroundResource(R.drawable.inset);
+                                                        } else if (day2_done != null) {
+                                                            sv.postDelayed(new Runnable() {
+                                                                public void run() {
+                                                                    sv.smoothScrollBy(-250, 0);
+                                                                }
+                                                            }, 100L);
+
+                                                            Day3();
+                                                            inactive();
+                                                            rel_day3.setBackgroundResource(R.drawable.inset);
                                                         }
-                                                    }, 100L);
-                                                    Day1Btn();
-                                                    inactive();
-                                                    rel_day1.setBackgroundResource(R.drawable.inset);
-                                                }
-                                            }
+                                                    }
 
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                                    @Override
+                                                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                            }
-                                        });
-                                        resultsList.child("day2_done").addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                day2_done = dataSnapshot.getValue(String.class);
-                                                if (day2_done != null) {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(250, 0);
+                                                    }
+                                                });
+                                                resultsList.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                                    @Override
+                                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                        day4_done = dataSnapshot.getValue(String.class);
+                                                        if (day4_done != null) {
+                                                            sv.postDelayed(new Runnable() {
+                                                                public void run() {
+                                                                    sv.smoothScrollBy(200, 0);
+                                                                }
+                                                            }, 100L);
+                                                            Day5();
+                                                            inactive();
+                                                            rel_day5.setBackgroundResource(R.drawable.inset);
+                                                        } else if (day3_done != null) {
+                                                            sv.postDelayed(new Runnable() {
+                                                                public void run() {
+                                                                    sv.smoothScrollBy(-200, 0);
+                                                                }
+                                                            }, 100L);
+                                                            Day_shil2();
+                                                            inactive();
+                                                            rel_day4.setBackgroundResource(R.drawable.inset);
                                                         }
-                                                    }, 100L);
-                                                    Day3();
-                                                    inactive();
-                                                    rel_day3.setBackgroundResource(R.drawable.inset);
-                                                } else if (day1_done != null) {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(-250, 0);
+                                                    }
+
+                                                    @Override
+                                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                    }
+                                                });
+                                                resultsList.child("day5_done").addValueEventListener(new ValueEventListener() {
+                                                    @Override
+                                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                        day5_done = dataSnapshot.getValue(String.class);
+                                                        if (day5_done != null) {
+                                                            sv.postDelayed(new Runnable() {
+                                                                public void run() {
+                                                                    sv.smoothScrollBy(200, 0);
+                                                                }
+                                                            }, 100L);
+                                                            Day_shil3();
+                                                            inactive();
+                                                            rel_day6.setBackgroundResource(R.drawable.inset);
+                                                        } else if (day3_done != null) {
+                                                            sv.postDelayed(new Runnable() {
+                                                                public void run() {
+                                                                    sv.smoothScrollBy(-200, 0);
+                                                                }
+                                                            }, 100L);
+                                                            Day5();
+                                                            inactive();
+                                                            rel_day5.setBackgroundResource(R.drawable.inset);
                                                         }
-                                                    }, 100L);
-                                                    Day_shil();
-                                                    inactive();
-                                                    rel_day2.setBackgroundResource(R.drawable.inset);
-                                                }
-                                            }
+                                                    }
 
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                                    @Override
+                                                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                            }
-                                        });
-                                        resultsList.child("day3_done").addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                day3_done = dataSnapshot.getValue(String.class);
-                                                if (day3_done != null) {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(250, 0);
+                                                    }
+                                                });
+                                                resultsList.child("day6_done").addValueEventListener(new ValueEventListener() {
+                                                    @Override
+                                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                        day6_done = dataSnapshot.getValue(String.class);
+                                                        if (day6_done != null) {
+                                                            sv.postDelayed(new Runnable() {
+                                                                public void run() {
+                                                                    sv.smoothScrollBy(200, 0);
+                                                                }
+                                                            }, 100L);
+                                                            Day7();
+                                                            inactive();
+                                                            rel_day7.setBackgroundResource(R.drawable.inset);
+                                                        } else if (day5_done != null) {
+                                                            sv.postDelayed(new Runnable() {
+                                                                public void run() {
+                                                                    sv.smoothScrollBy(-200, 0);
+                                                                }
+                                                            }, 100L);
+                                                            Day_shil3();
+                                                            inactive();
+                                                            rel_day6.setBackgroundResource(R.drawable.inset);
                                                         }
-                                                    }, 100L);
-                                                    Day_shil2();
-                                                    inactive();
-                                                    rel_day4.setBackgroundResource(R.drawable.inset);
-                                                } else if (day2_done != null) {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(-250, 0);
-                                                        }
-                                                    }, 100L);
+                                                    }
 
-                                                    Day3();
-                                                    inactive();
-                                                    rel_day3.setBackgroundResource(R.drawable.inset);
-                                                }
+                                                    @Override
+                                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                    }
+                                                });
                                             }
+                                        }
 
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                            }
-                                        });
-                                        resultsList.child("day4_done").addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                day4_done = dataSnapshot.getValue(String.class);
-                                                if (day4_done != null) {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(200, 0);
-                                                        }
-                                                    }, 100L);
-                                                    Day5();
-                                                    inactive();
-                                                    rel_day5.setBackgroundResource(R.drawable.inset);
-                                                } else if (day3_done != null) {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(-200, 0);
-                                                        }
-                                                    }, 100L);
-                                                    Day_shil2();
-                                                    inactive();
-                                                    rel_day4.setBackgroundResource(R.drawable.inset);
-                                                }
-                                            }
-
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                            }
-                                        });
-                                        resultsList.child("day5_done").addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                day5_done = dataSnapshot.getValue(String.class);
-                                                if (day5_done != null) {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(200, 0);
-                                                        }
-                                                    }, 100L);
-                                                    Day_shil3();
-                                                    inactive();
-                                                    rel_day6.setBackgroundResource(R.drawable.inset);
-                                                } else if (day3_done != null) {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(-200, 0);
-                                                        }
-                                                    }, 100L);
-                                                    Day5();
-                                                    inactive();
-                                                    rel_day5.setBackgroundResource(R.drawable.inset);
-                                                }
-                                            }
-
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                            }
-                                        });
-                                        resultsList.child("day6_done").addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                day6_done = dataSnapshot.getValue(String.class);
-                                                if (day6_done != null) {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(200, 0);
-                                                        }
-                                                    }, 100L);
-                                                    Day7();
-                                                    inactive();
-                                                    rel_day7.setBackgroundResource(R.drawable.inset);
-                                                } else if (day5_done != null) {
-                                                    sv.postDelayed(new Runnable() {
-                                                        public void run() {
-                                                            sv.smoothScrollBy(-200, 0);
-                                                        }
-                                                    }, 100L);
-                                                    Day_shil3();
-                                                    inactive();
-                                                    rel_day6.setBackgroundResource(R.drawable.inset);
-                                                }
-                                            }
-
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                            }
-                                        });
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                }
-                            });
+                                        }
+                                    });
                             break;
                         case 2:
                             resultsList2.child("Week2_done").addValueEventListener(new ValueEventListener() {
@@ -1633,8 +1633,7 @@ public class Traning extends Fragment {
 
                                             }
                                         });
-                                    }
-                                    else
+                                    } else
                                         block_day();
                                 }
 
@@ -1644,1187 +1643,1187 @@ public class Traning extends Fragment {
                                 }
                             });
                             break;
-                        case 3: resultsList_week3.child("Week3_done").addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                String weight = dataSnapshot.getValue(String.class);
-                                if (weight != null) {
-                                    resultsList_week3.child("day1_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day1_done2 = dataSnapshot.getValue(String.class);
-                                            if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
-                                                rel_day1.setBackgroundResource(R.drawable.inset_inactive);
-                                            } else {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day1Btn();
-                                                inactive();
-                                                rel_day1.setBackgroundResource(R.drawable.inset);
+                        case 3:
+                            resultsList_week3.child("Week3_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week3.child("day1_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day1_done2 = dataSnapshot.getValue(String.class);
+                                                if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                    rel_day1.setBackgroundResource(R.drawable.inset_inactive);
+                                                } else {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day1Btn();
+                                                    inactive();
+                                                    rel_day1.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week3.child("day2_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day2_done2 = dataSnapshot.getValue(String.class);
-                                            if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
-                                            } else if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                inactive();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week3.child("day3_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day3_done2 = dataSnapshot.getValue(String.class);
-                                            if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
-                                            } else if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
+                                        });
+                                        resultsList_week3.child("day2_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day2_done2 = dataSnapshot.getValue(String.class);
+                                                if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                } else if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    inactive();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week3.child("day4_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day4_done2 = dataSnapshot.getValue(String.class);
-                                            if (day4_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week3.child("day3_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day3_done2 = dataSnapshot.getValue(String.class);
+                                                if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                } else if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week3.child("day5_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day5_done2 = dataSnapshot.getValue(String.class);
-                                            if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week3.child("day6_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day6_done2 = dataSnapshot.getValue(String.class);
-                                            if (day6_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day7();
-                                                inactive();
-                                                rel_day7.setBackgroundResource(R.drawable.inset);
-                                            } else if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week3.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day4_done2 = dataSnapshot.getValue(String.class);
+                                                if (day4_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
+                                            }
+                                        });
+                                        resultsList_week3.child("day5_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day5_done2 = dataSnapshot.getValue(String.class);
+                                                if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week3.child("day6_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day6_done2 = dataSnapshot.getValue(String.class);
+                                                if (day6_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day7();
+                                                    inactive();
+                                                    rel_day7.setBackgroundResource(R.drawable.inset);
+                                                } else if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    } else
+                                        block_day();
                                 }
-                                else
-                                    block_day();
-                            }
 
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                            }
-                        });
+                                }
+                            });
                             break;
-                        case 4: resultsList_week4.child("Week4_done").addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                String weight = dataSnapshot.getValue(String.class);
-                                if (weight != null) {
-                                    resultsList_week4.child("day1_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day1_done2 = dataSnapshot.getValue(String.class);
-                                            if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
-                                                rel_day1.setBackgroundResource(R.drawable.inset_inactive);
-                                            } else {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day1Btn();
-                                                inactive();
-                                                rel_day1.setBackgroundResource(R.drawable.inset);
+                        case 4:
+                            resultsList_week4.child("Week4_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week4.child("day1_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day1_done2 = dataSnapshot.getValue(String.class);
+                                                if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                    rel_day1.setBackgroundResource(R.drawable.inset_inactive);
+                                                } else {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day1Btn();
+                                                    inactive();
+                                                    rel_day1.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week4.child("day2_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day2_done2 = dataSnapshot.getValue(String.class);
-                                            if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
-                                            } else if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                inactive();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week4.child("day3_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day3_done2 = dataSnapshot.getValue(String.class);
-                                            if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
-                                            } else if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
+                                        });
+                                        resultsList_week4.child("day2_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day2_done2 = dataSnapshot.getValue(String.class);
+                                                if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                } else if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    inactive();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week4.child("day4_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day4_done2 = dataSnapshot.getValue(String.class);
-                                            if (day4_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week4.child("day3_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day3_done2 = dataSnapshot.getValue(String.class);
+                                                if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                } else if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week4.child("day5_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day5_done2 = dataSnapshot.getValue(String.class);
-                                            if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week4.child("day6_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day6_done2 = dataSnapshot.getValue(String.class);
-                                            if (day6_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day7();
-                                                inactive();
-                                                rel_day7.setBackgroundResource(R.drawable.inset);
-                                            } else if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week4.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day4_done2 = dataSnapshot.getValue(String.class);
+                                                if (day4_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
+                                            }
+                                        });
+                                        resultsList_week4.child("day5_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day5_done2 = dataSnapshot.getValue(String.class);
+                                                if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week4.child("day6_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day6_done2 = dataSnapshot.getValue(String.class);
+                                                if (day6_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day7();
+                                                    inactive();
+                                                    rel_day7.setBackgroundResource(R.drawable.inset);
+                                                } else if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    } else
+                                        block_day();
                                 }
-                                else
-                                    block_day();
-                            }
 
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                            }
-                        });
+                                }
+                            });
                             break;
-                        case 5: resultsList_week5.child("Week5_done").addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                String weight = dataSnapshot.getValue(String.class);
-                                if (weight != null) {
-                                    resultsList_week5.child("day1_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day1_done2 = dataSnapshot.getValue(String.class);
-                                            if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
-                                                rel_day1.setBackgroundResource(R.drawable.inset_inactive);
-                                            } else {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day1Btn();
-                                                inactive();
-                                                rel_day1.setBackgroundResource(R.drawable.inset);
+                        case 5:
+                            resultsList_week5.child("Week5_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week5.child("day1_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day1_done2 = dataSnapshot.getValue(String.class);
+                                                if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                    rel_day1.setBackgroundResource(R.drawable.inset_inactive);
+                                                } else {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day1Btn();
+                                                    inactive();
+                                                    rel_day1.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week5.child("day2_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day2_done2 = dataSnapshot.getValue(String.class);
-                                            if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
-                                            } else if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                inactive();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week5.child("day3_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day3_done2 = dataSnapshot.getValue(String.class);
-                                            if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
-                                            } else if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
+                                        });
+                                        resultsList_week5.child("day2_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day2_done2 = dataSnapshot.getValue(String.class);
+                                                if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                } else if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    inactive();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week5.child("day4_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day4_done2 = dataSnapshot.getValue(String.class);
-                                            if (day4_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week5.child("day3_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day3_done2 = dataSnapshot.getValue(String.class);
+                                                if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                } else if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week5.child("day5_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day5_done2 = dataSnapshot.getValue(String.class);
-                                            if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week5.child("day6_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day6_done2 = dataSnapshot.getValue(String.class);
-                                            if (day6_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day7();
-                                                inactive();
-                                                rel_day7.setBackgroundResource(R.drawable.inset);
-                                            } else if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week5.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day4_done2 = dataSnapshot.getValue(String.class);
+                                                if (day4_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
+                                            }
+                                        });
+                                        resultsList_week5.child("day5_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day5_done2 = dataSnapshot.getValue(String.class);
+                                                if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week5.child("day6_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day6_done2 = dataSnapshot.getValue(String.class);
+                                                if (day6_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day7();
+                                                    inactive();
+                                                    rel_day7.setBackgroundResource(R.drawable.inset);
+                                                } else if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    } else
+                                        block_day();
                                 }
-                                else
-                                    block_day();
-                            }
 
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                            }
-                        });
+                                }
+                            });
                             break;
-                        case 6: resultsList_week6.child("Week6_done").addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                String weight = dataSnapshot.getValue(String.class);
-                                if (weight != null) {
-                                    resultsList_week6.child("day1_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day1_done2 = dataSnapshot.getValue(String.class);
-                                            if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
-                                                rel_day1.setBackgroundResource(R.drawable.inset_inactive);
-                                            } else {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day1Btn();
-                                                inactive();
-                                                rel_day1.setBackgroundResource(R.drawable.inset);
+                        case 6:
+                            resultsList_week6.child("Week6_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week6.child("day1_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day1_done2 = dataSnapshot.getValue(String.class);
+                                                if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                    rel_day1.setBackgroundResource(R.drawable.inset_inactive);
+                                                } else {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day1Btn();
+                                                    inactive();
+                                                    rel_day1.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week6.child("day2_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day2_done2 = dataSnapshot.getValue(String.class);
-                                            if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
-                                            } else if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                inactive();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week6.child("day3_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day3_done2 = dataSnapshot.getValue(String.class);
-                                            if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
-                                            } else if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
+                                        });
+                                        resultsList_week6.child("day2_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day2_done2 = dataSnapshot.getValue(String.class);
+                                                if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                } else if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    inactive();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week6.child("day4_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day4_done2 = dataSnapshot.getValue(String.class);
-                                            if (day4_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week6.child("day3_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day3_done2 = dataSnapshot.getValue(String.class);
+                                                if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                } else if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week6.child("day5_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day5_done2 = dataSnapshot.getValue(String.class);
-                                            if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week6.child("day6_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day6_done2 = dataSnapshot.getValue(String.class);
-                                            if (day6_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day7();
-                                                inactive();
-                                                rel_day7.setBackgroundResource(R.drawable.inset);
-                                            } else if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week6.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day4_done2 = dataSnapshot.getValue(String.class);
+                                                if (day4_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
+                                            }
+                                        });
+                                        resultsList_week6.child("day5_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day5_done2 = dataSnapshot.getValue(String.class);
+                                                if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week6.child("day6_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day6_done2 = dataSnapshot.getValue(String.class);
+                                                if (day6_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day7();
+                                                    inactive();
+                                                    rel_day7.setBackgroundResource(R.drawable.inset);
+                                                } else if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    } else
+                                        block_day();
                                 }
-                                else
-                                    block_day();
-                            }
 
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                            }
-                        });
+                                }
+                            });
                             break;
-                        case 7: resultsList_week7.child("Week7_done").addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                String weight = dataSnapshot.getValue(String.class);
-                                if (weight != null) {
-                                    resultsList_week7.child("day1_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day1_done2 = dataSnapshot.getValue(String.class);
-                                            if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
-                                                rel_day1.setBackgroundResource(R.drawable.inset_inactive);
-                                            } else {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day1Btn();
-                                                inactive();
-                                                rel_day1.setBackgroundResource(R.drawable.inset);
+                        case 7:
+                            resultsList_week7.child("Week7_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week7.child("day1_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day1_done2 = dataSnapshot.getValue(String.class);
+                                                if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                    rel_day1.setBackgroundResource(R.drawable.inset_inactive);
+                                                } else {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day1Btn();
+                                                    inactive();
+                                                    rel_day1.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week7.child("day2_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day2_done2 = dataSnapshot.getValue(String.class);
-                                            if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
-                                            } else if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                inactive();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week7.child("day3_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day3_done2 = dataSnapshot.getValue(String.class);
-                                            if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
-                                            } else if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
+                                        });
+                                        resultsList_week7.child("day2_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day2_done2 = dataSnapshot.getValue(String.class);
+                                                if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                } else if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    inactive();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week7.child("day4_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day4_done2 = dataSnapshot.getValue(String.class);
-                                            if (day4_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week7.child("day3_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day3_done2 = dataSnapshot.getValue(String.class);
+                                                if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                } else if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week7.child("day5_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day5_done2 = dataSnapshot.getValue(String.class);
-                                            if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week7.child("day6_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day6_done2 = dataSnapshot.getValue(String.class);
-                                            if (day6_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day7();
-                                                inactive();
-                                                rel_day7.setBackgroundResource(R.drawable.inset);
-                                            } else if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week7.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day4_done2 = dataSnapshot.getValue(String.class);
+                                                if (day4_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
+                                            }
+                                        });
+                                        resultsList_week7.child("day5_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day5_done2 = dataSnapshot.getValue(String.class);
+                                                if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week7.child("day6_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day6_done2 = dataSnapshot.getValue(String.class);
+                                                if (day6_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day7();
+                                                    inactive();
+                                                    rel_day7.setBackgroundResource(R.drawable.inset);
+                                                } else if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    } else
+                                        block_day();
                                 }
-                                else
-                                    block_day();
-                            }
 
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                            }
-                        });
+                                }
+                            });
                             break;
-                        case 8: resultsList_week8.child("Week8_done").addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                String weight = dataSnapshot.getValue(String.class);
-                                if (weight != null) {
-                                    resultsList_week8.child("day1_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day1_done2 = dataSnapshot.getValue(String.class);
-                                            if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
-                                                rel_day1.setBackgroundResource(R.drawable.inset_inactive);
-                                            } else {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day1Btn();
-                                                inactive();
-                                                rel_day1.setBackgroundResource(R.drawable.inset);
+                        case 8:
+                            resultsList_week8.child("Week8_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week8.child("day1_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day1_done2 = dataSnapshot.getValue(String.class);
+                                                if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                    rel_day1.setBackgroundResource(R.drawable.inset_inactive);
+                                                } else {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day1Btn();
+                                                    inactive();
+                                                    rel_day1.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week8.child("day2_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day2_done2 = dataSnapshot.getValue(String.class);
-                                            if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
-                                            } else if (day1_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil();
-                                                inactive();
-                                                rel_day2.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week8.child("day3_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day3_done2 = dataSnapshot.getValue(String.class);
-                                            if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(250, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
-                                            } else if (day2_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-250, 0);
-                                                    }
-                                                }, 100L);
-
-                                                Day3();
-                                                inactive();
-                                                rel_day3.setBackgroundResource(R.drawable.inset);
+                                        });
+                                        resultsList_week8.child("day2_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day2_done2 = dataSnapshot.getValue(String.class);
+                                                if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                } else if (day1_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil();
+                                                    inactive();
+                                                    rel_day2.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week8.child("day4_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day4_done2 = dataSnapshot.getValue(String.class);
-                                            if (day4_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil2();
-                                                inactive();
-                                                rel_day4.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week8.child("day3_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day3_done2 = dataSnapshot.getValue(String.class);
+                                                if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(250, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                } else if (day2_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-250, 0);
+                                                        }
+                                                    }, 100L);
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    resultsList_week8.child("day5_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day5_done2 = dataSnapshot.getValue(String.class);
-                                            if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
-                                            } else if (day3_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day5();
-                                                inactive();
-                                                rel_day5.setBackgroundResource(R.drawable.inset);
+                                                    Day3();
+                                                    inactive();
+                                                    rel_day3.setBackgroundResource(R.drawable.inset);
+                                                }
                                             }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
-                                    resultsList_week8.child("day6_done").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            day6_done2 = dataSnapshot.getValue(String.class);
-                                            if (day6_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day7();
-                                                inactive();
-                                                rel_day7.setBackgroundResource(R.drawable.inset);
-                                            } else if (day5_done2 != null) {
-                                                sv.postDelayed(new Runnable() {
-                                                    public void run() {
-                                                        sv.smoothScrollBy(-200, 0);
-                                                    }
-                                                }, 100L);
-                                                Day_shil3();
-                                                inactive();
-                                                rel_day6.setBackgroundResource(R.drawable.inset);
                                             }
-                                        }
+                                        });
+                                        resultsList_week8.child("day4_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day4_done2 = dataSnapshot.getValue(String.class);
+                                                if (day4_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil2();
+                                                    inactive();
+                                                    rel_day4.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    });
+                                            }
+                                        });
+                                        resultsList_week8.child("day5_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day5_done2 = dataSnapshot.getValue(String.class);
+                                                if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                } else if (day3_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day5();
+                                                    inactive();
+                                                    rel_day5.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week8.child("day6_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                day6_done2 = dataSnapshot.getValue(String.class);
+                                                if (day6_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day7();
+                                                    inactive();
+                                                    rel_day7.setBackgroundResource(R.drawable.inset);
+                                                } else if (day5_done2 != null) {
+                                                    sv.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            sv.smoothScrollBy(-200, 0);
+                                                        }
+                                                    }, 100L);
+                                                    Day_shil3();
+                                                    inactive();
+                                                    rel_day6.setBackgroundResource(R.drawable.inset);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    } else
+                                        block_day();
                                 }
-                                else
-                                    block_day();
-                            }
 
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                            }
-                        });
+                                }
+                            });
                             break;
                     }
                 }

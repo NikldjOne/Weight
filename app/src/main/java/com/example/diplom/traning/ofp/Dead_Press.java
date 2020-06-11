@@ -52,7 +52,7 @@ public class Dead_Press extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dead_press);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar_layout_7);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout_17);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView = findViewById(R.id.img_deadpr2);
         tv_weight = findViewById(R.id.tv_weight_deadpr);
@@ -1540,15 +1540,18 @@ public class Dead_Press extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
-                    if (weight != "0" ) {
-                        tv_weight.setText("20");
-                    } else {
-                        weight_dec = Double.parseDouble(weight) * 0.80;
-                        stringdouble = Double.toString(weight_dec);
-                        tv_weight.setText(stringdouble);
-
-                    }
+                Integer weight2 = null;
+                if(weight !=null) {
+                    weight2 = Integer.parseInt(weight);
                 }
+                if (weight == null || weight2 == 0) {
+                    tv_weight.setText("20.0");
+                } else {
+                    weight_dec = Double.parseDouble(weight) * 0.80;
+                    stringdouble = Double.toString(weight_dec);
+                    tv_weight.setText(stringdouble);
+                }
+            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

@@ -25,8 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Traning_vvedenie extends Fragment {
     Button btn_save;
-    EditText ed_sqaut, ed_clean_jerk, ed_nakloni, ed_front_squat, ed_bench, edit_bench_press, edit_biceps, edit_triceps;
-    String squat, nakloni, front, bench, bench_press, biceps, triceps;
+    EditText ed_sqaut, ed_clean_jerk, ed_nakloni, ed_front_squat, ed_bench, edit_bench_press, edit_biceps, edit_triceps,edit_deadpr;
+    String squat, nakloni, front, bench, bench_press, biceps, triceps,deadpr;
     LinearLayout layout;
     private FirebaseDatabase mDatabase;
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -45,6 +45,7 @@ public class Traning_vvedenie extends Fragment {
         edit_biceps = view.findViewById(R.id.edit_biceps);
         edit_triceps = view.findViewById(R.id.edit_triceps);
         edit_bench_press = view.findViewById(R.id.edit_bench_press);
+        edit_deadpr = view.findViewById(R.id.edit_deadpr);
         mDatabase = FirebaseDatabase.getInstance();
         Recordlist = mDatabase.getReference("Records").child(user.getUid());
         ListNakloni = mDatabase.getReference("Records").child(user.getUid());
@@ -60,9 +61,31 @@ public class Traning_vvedenie extends Fragment {
                 loadBenchPress();
                 loadBiceps();
                 loadTriceps();
+                loadDeadPr();
+                CloseEdit();
             }
         });
         return view;
+    }
+
+    private void CloseEdit() {
+        ed_sqaut.setVisibility(View.INVISIBLE);
+        ed_nakloni.setVisibility(View.INVISIBLE);
+        ed_front_squat.setVisibility(View.INVISIBLE);
+        ed_bench.setVisibility(View.INVISIBLE);
+        edit_biceps.setVisibility(View.INVISIBLE);
+        edit_triceps.setVisibility(View.INVISIBLE);
+        edit_bench_press.setVisibility(View.INVISIBLE);
+        edit_deadpr.setVisibility(View.INVISIBLE);
+
+        ed_sqaut.setVisibility(View.VISIBLE);
+        ed_nakloni.setVisibility(View.VISIBLE);
+        ed_front_squat.setVisibility(View.VISIBLE);
+        ed_bench.setVisibility(View.VISIBLE);
+        edit_biceps.setVisibility(View.VISIBLE);
+        edit_triceps.setVisibility(View.VISIBLE);
+        edit_bench_press.setVisibility(View.VISIBLE);
+        edit_deadpr.setVisibility(View.VISIBLE);
     }
 
     private void loadNakloni() {
@@ -112,6 +135,13 @@ public class Traning_vvedenie extends Fragment {
         } else
             triceps = edit_triceps.getText().toString();
         ListFront.child("max_triceps").setValue(triceps);
+    }
+    private void loadDeadPr() {
+        if (edit_deadpr.getText().toString().equals("")) {
+            deadpr = "0";
+        } else
+            deadpr = edit_deadpr.getText().toString();
+        ListFront.child("max_deadpr").setValue(deadpr);
     }
 
 
@@ -212,7 +242,20 @@ public class Traning_vvedenie extends Fragment {
 
             }
         });
+        ListNakloni.child("max_deadpr").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String weight = dataSnapshot.getValue(String.class);
+                if (weight != null) {
+                    edit_deadpr.setText(weight);
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
     }
 
