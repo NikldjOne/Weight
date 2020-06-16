@@ -182,6 +182,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_static_triceps"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"
@@ -284,6 +285,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_static_triceps2"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"
@@ -386,6 +388,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_static_triceps3"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"

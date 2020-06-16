@@ -183,6 +183,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_static_squat"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"
@@ -285,6 +286,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_static_squat2"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"
@@ -387,6 +389,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_static_squat3"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"
@@ -489,6 +492,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_static_squat4"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"
@@ -591,6 +595,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_static_squat5"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"

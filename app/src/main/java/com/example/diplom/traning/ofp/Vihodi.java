@@ -27,7 +27,7 @@ public class Vihodi extends AppCompatActivity {
     private ImageView imageView, img_vihodi_left, img_vihodi_right, img_vihodi_left2, img_vihodi_left3,
             img_vihodi_right2, img_vihodi_right3;
     private LinearLayout layout, layout2, layout3, layout6;
-    private TextView tv_weight, tv_result_vihodi, tv_result_vihodi2, tv_result_vihodi3;
+    private TextView tv_weight, tv_result_vihodi, tv_result_vihodi2, tv_result_vihodi3,tv_static_vih,tv_static_vih2,tv_static_vih3;
     private Button btn_vihodi_back, btn_vihodi_back2, btn_vihodi_back3,
             btn_vihodi_add, btn_vihodi_add2, btn_vihodi_add3,
             btn_vihodi_done, btn_vihodi_done2, btn_vihodi_done3, close_ypr;
@@ -43,7 +43,8 @@ public class Vihodi extends AppCompatActivity {
     String stringdouble;
     private Double weight_dec;
     private Integer result = 0, result2 = 0, result3 = 0;
-    private String ed_result, ed_result2, ed_result3;
+    private String ed_result, ed_result2, ed_result3,ed_result6, ed_result7, ed_result8 ,weight_st,
+            weight_work;
     private EditText edit_result, edit_result2, edit_result3;
     private Boolean podhod = false, podhod2 = false, podhod3 = false;
 
@@ -79,6 +80,9 @@ public class Vihodi extends AppCompatActivity {
         vihodiPodhod();
         vihodiPodhod2();
         vihodiPodhod3();
+        tv_static_vih = findViewById(R.id.tv_static_vih);
+        tv_static_vih2 = findViewById(R.id.tv_static_vih2);
+        tv_static_vih3 = findViewById(R.id.tv_static_vih3);
         close_ypr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1278,6 +1282,641 @@ public class Vihodi extends AppCompatActivity {
                             break;
                     }
                 }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        resultsList2.child("Week_done").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String weight = dataSnapshot.getValue(String.class);
+                if (weight != null) {
+                    position2 = Integer.parseInt(weight);
+                    switch (position2) {
+                        case 2:
+                            done_week1.child("Week1_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    weight_st = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result6 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result7 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result8 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                        resultsList.child("vihodi_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String g = dataSnapshot.getValue(String.class);
+                                                if (g != null) {
+                                                    tv_static_vih.setText(weight_st + " на " + ed_result6);
+                                                    tv_static_vih2.setText(weight_st + " на " + ed_result7);
+                                                    tv_static_vih3.setText(weight_st + " на " + ed_result8);
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 3:
+                            done_week2.child("Week2_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week2.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    weight_st = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week2.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result6 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week2.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result7 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week2.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result8 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week2.child("vihodi_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String g = dataSnapshot.getValue(String.class);
+                                                if (g != null) {
+                                                    tv_static_vih.setText(weight_st + " на " + ed_result6);
+                                                    tv_static_vih2.setText(weight_st + " на " + ed_result7);
+                                                    tv_static_vih3.setText(weight_st + " на " + ed_result8);
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 4:
+                            done_week3.child("Week3_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week3.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    weight_st = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week3.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result6 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week3.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result7 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week3.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result8 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week3.child("vihodi_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String g = dataSnapshot.getValue(String.class);
+                                                if (g != null) {
+                                                    tv_static_vih.setText(weight_st + " на " + ed_result6);
+                                                    tv_static_vih2.setText(weight_st + " на " + ed_result7);
+                                                    tv_static_vih3.setText(weight_st + " на " + ed_result8);
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 5:
+                            done_week4.child("Week4_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week4.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    weight_st = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week4.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result6 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week4.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result7 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week4.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result8 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                        resultsList_week4.child("vihodi_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String g = dataSnapshot.getValue(String.class);
+                                                if (g != null) {
+                                                    tv_static_vih.setText(weight_st + " на " + ed_result6);
+                                                    tv_static_vih2.setText(weight_st + " на " + ed_result7);
+                                                    tv_static_vih3.setText(weight_st + " на " + ed_result8);
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 6:
+                            done_week5.child("Week5_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week5.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    weight_st = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week5.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result6 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week5.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result7 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week5.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result8 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                        resultsList_week5.child("vihodi_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String g = dataSnapshot.getValue(String.class);
+                                                if (g != null) {
+                                                    tv_static_vih.setText(weight_st + " на " + ed_result6);
+                                                    tv_static_vih2.setText(weight_st + " на " + ed_result7);
+                                                    tv_static_vih3.setText(weight_st + " на " + ed_result8);
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 7:
+                            done_week6.child("Week6_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week6.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    weight_st = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week6.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result6 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week6.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result7 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week6.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result8 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week6.child("vihodi_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String g = dataSnapshot.getValue(String.class);
+                                                if (g != null) {
+                                                    tv_static_vih.setText(weight_st + " на " + ed_result6);
+                                                    tv_static_vih2.setText(weight_st + " на " + ed_result7);
+                                                    tv_static_vih3.setText(weight_st + " на " + ed_result8);
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                        case 8:
+                            done_week7.child("Week7_done").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String weight = dataSnapshot.getValue(String.class);
+                                    if (weight != null) {
+                                        resultsList_week7.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    weight_st = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week7.child("kol-vo").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result6 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week7.child("kol-vo2").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result7 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week7.child("kol-vo3").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String povtor = dataSnapshot.getValue(String.class);
+                                                if (povtor != null) {
+                                                    ed_result8 = povtor;
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        resultsList_week7.child("vihodi_done").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String g = dataSnapshot.getValue(String.class);
+                                                if (g != null) {
+                                                    tv_static_vih.setText(weight_st + " на " + ed_result6);
+                                                    tv_static_vih2.setText(weight_st + " на " + ed_result7);
+                                                    tv_static_vih3.setText(weight_st + " на " + ed_result8);
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            break;
+                    }
+                }
+
             }
 
             @Override
