@@ -503,6 +503,7 @@ public class Squat extends AppCompatActivity {
                                                 String weight = dataSnapshot.getValue(String.class);
                                                 if (weight != null) {
                                                     weight_work = weight;
+                                                    tv_weight.setText(weight_work);
                                                 }
                                             }
 
@@ -517,6 +518,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -531,6 +533,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -545,6 +548,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -559,6 +563,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -573,6 +578,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result5 = povtor;
+                                                    tv_result_squat5.setText(ed_result5);
                                                 }
                                             }
 
@@ -586,7 +592,51 @@ public class Squat extends AppCompatActivity {
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String s = dataSnapshot.getValue(String.class);
                                                 if(s!=null) {
-                                                    tv_weight.setText(weight_work);
+                                                    btn_squat_back.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add.setVisibility(View.INVISIBLE);
+                                                    img_squat_right.setVisibility(View.INVISIBLE);
+                                                    img_squat_left.setVisibility(View.INVISIBLE);
+                                                    edit_result.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat.setVisibility(View.VISIBLE);
+                                                    btn_squat_back2.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add2.setVisibility(View.INVISIBLE);
+                                                    img_squat_right2.setVisibility(View.INVISIBLE);
+                                                    img_squat_left2.setVisibility(View.INVISIBLE);
+                                                    edit_result2.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat2.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back3.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add3.setVisibility(View.INVISIBLE);
+                                                    img_squat_right3.setVisibility(View.INVISIBLE);
+                                                    img_squat_left3.setVisibility(View.INVISIBLE);
+                                                    edit_result3.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat3.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back4.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add4.setVisibility(View.INVISIBLE);
+                                                    img_squat_right4.setVisibility(View.INVISIBLE);
+                                                    img_squat_left4.setVisibility(View.INVISIBLE);
+                                                    edit_result4.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat4.setVisibility(View.VISIBLE);
+
+                                                    btn_squat_back5.setVisibility(View.INVISIBLE);
+                                                    btn_squat_add5.setVisibility(View.INVISIBLE);
+                                                    img_squat_right5.setVisibility(View.INVISIBLE);
+                                                    img_squat_left5.setVisibility(View.INVISIBLE);
+                                                    edit_result5.setVisibility(View.INVISIBLE);
+                                                    tv_result_squat5.setVisibility(View.VISIBLE);
+
+                                                    layout.setBackgroundResource(R.drawable.done);
+                                                    layout5.setBackgroundResource(R.drawable.done);
+                                                    layout2.setBackgroundResource(R.drawable.done);
+                                                    layout3.setBackgroundResource(R.drawable.done);
+                                                    layout4.setBackgroundResource(R.drawable.done);
+
+
+                                                    layout6 = findViewById(R.id.layout_done6);
+                                                    layout6.setVisibility(View.INVISIBLE);
+                                                    close_ypr.setVisibility(View.INVISIBLE);
                                                 }
                                             }
 
@@ -609,12 +659,28 @@ public class Squat extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week2.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week2.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -629,6 +695,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -643,6 +710,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -657,6 +725,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -671,6 +740,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result5 = povtor;
+                                                    tv_result_squat5.setText(ed_result5);
                                                 }
                                             }
 
@@ -725,11 +795,6 @@ public class Squat extends AppCompatActivity {
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
-                                                    tv_result_squat5.setText(ed_result5);
                                                     layout6 = findViewById(R.id.layout_done6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -755,12 +820,28 @@ public class Squat extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week3.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week3.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -775,6 +856,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -789,6 +871,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -803,6 +886,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -817,6 +901,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result5 = povtor;
+                                                    tv_result_squat5.setText(ed_result5);
                                                 }
                                             }
 
@@ -870,12 +955,6 @@ public class Squat extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
-
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
-                                                    tv_result_squat5.setText(ed_result5);
                                                     layout6 = findViewById(R.id.layout_done6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -901,12 +980,28 @@ public class Squat extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week4.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week4.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -921,6 +1016,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -935,6 +1031,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -949,6 +1046,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -963,6 +1061,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result5 = povtor;
+                                                    tv_result_squat5.setText(ed_result5);
                                                 }
                                             }
 
@@ -1017,11 +1116,6 @@ public class Squat extends AppCompatActivity {
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
-                                                    tv_result_squat5.setText(ed_result5);
                                                     layout6 = findViewById(R.id.layout_done6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1047,12 +1141,28 @@ public class Squat extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week5.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week5.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1067,6 +1177,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1081,6 +1192,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1095,6 +1207,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1109,6 +1222,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result5 = povtor;
+                                                    tv_result_squat5.setText(ed_result5);
                                                 }
                                             }
 
@@ -1163,11 +1277,6 @@ public class Squat extends AppCompatActivity {
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
-                                                    tv_result_squat5.setText(ed_result5);
                                                     layout6 = findViewById(R.id.layout_done6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1193,12 +1302,28 @@ public class Squat extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week6.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week6.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1213,6 +1338,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1227,6 +1353,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1241,6 +1368,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1255,6 +1383,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result5 = povtor;
+                                                    tv_result_squat5.setText(ed_result5);
                                                 }
                                             }
 
@@ -1309,11 +1438,6 @@ public class Squat extends AppCompatActivity {
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
-                                                    tv_result_squat5.setText(ed_result5);
                                                     layout6 = findViewById(R.id.layout_done6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1339,12 +1463,28 @@ public class Squat extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week7.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week7.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1359,6 +1499,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1373,6 +1514,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1387,6 +1529,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1401,6 +1544,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result5 = povtor;
+                                                    tv_result_squat5.setText(ed_result5);
                                                 }
                                             }
 
@@ -1455,11 +1599,6 @@ public class Squat extends AppCompatActivity {
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
-                                                    tv_result_squat5.setText(ed_result5);
                                                     layout6 = findViewById(R.id.layout_done6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1485,12 +1624,28 @@ public class Squat extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week8.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week8.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1505,6 +1660,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1519,6 +1675,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1533,6 +1690,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1547,6 +1705,7 @@ public class Squat extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result5 = povtor;
+                                                    tv_result_squat5.setText(ed_result5);
                                                 }
                                             }
 
@@ -1601,11 +1760,6 @@ public class Squat extends AppCompatActivity {
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
-                                                    tv_result_squat5.setText(ed_result5);
                                                     layout6 = findViewById(R.id.layout_done6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1741,58 +1895,6 @@ public class Squat extends AppCompatActivity {
                                                     tv_static_squat3.setText(weight_st + " на " + ed_result8);
                                                     tv_static_squat4.setText(weight_st + " на " + ed_result9);
                                                     tv_static_squat5.setText(weight_st + " на " + ed_result10);
-
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
-                                                    tv_result_squat5.setText(ed_result5);
-                                                    tv_weight.setText(weight_work);
-                                                    btn_squat_back.setVisibility(View.INVISIBLE);
-                                                    btn_squat_add.setVisibility(View.INVISIBLE);
-                                                    img_squat_right.setVisibility(View.INVISIBLE);
-                                                    img_squat_left.setVisibility(View.INVISIBLE);
-                                                    edit_result.setVisibility(View.INVISIBLE);
-                                                    tv_result_squat.setVisibility(View.VISIBLE);
-
-                                                    btn_squat_back2.setVisibility(View.INVISIBLE);
-                                                    btn_squat_add2.setVisibility(View.INVISIBLE);
-                                                    img_squat_right2.setVisibility(View.INVISIBLE);
-                                                    img_squat_left2.setVisibility(View.INVISIBLE);
-                                                    edit_result2.setVisibility(View.INVISIBLE);
-                                                    tv_result_squat2.setVisibility(View.VISIBLE);
-
-                                                    btn_squat_back3.setVisibility(View.INVISIBLE);
-                                                    btn_squat_add3.setVisibility(View.INVISIBLE);
-                                                    img_squat_right3.setVisibility(View.INVISIBLE);
-                                                    img_squat_left3.setVisibility(View.INVISIBLE);
-                                                    edit_result3.setVisibility(View.INVISIBLE);
-                                                    tv_result_squat3.setVisibility(View.VISIBLE);
-
-                                                    btn_squat_back4.setVisibility(View.INVISIBLE);
-                                                    btn_squat_add4.setVisibility(View.INVISIBLE);
-                                                    img_squat_right4.setVisibility(View.INVISIBLE);
-                                                    img_squat_left4.setVisibility(View.INVISIBLE);
-                                                    edit_result4.setVisibility(View.INVISIBLE);
-                                                    tv_result_squat4.setVisibility(View.VISIBLE);
-
-                                                    btn_squat_back5.setVisibility(View.INVISIBLE);
-                                                    btn_squat_add5.setVisibility(View.INVISIBLE);
-                                                    img_squat_right5.setVisibility(View.INVISIBLE);
-                                                    img_squat_left5.setVisibility(View.INVISIBLE);
-                                                    edit_result5.setVisibility(View.INVISIBLE);
-                                                    tv_result_squat5.setVisibility(View.VISIBLE);
-
-                                                    layout.setBackgroundResource(R.drawable.done);
-                                                    layout5.setBackgroundResource(R.drawable.done);
-                                                    layout2.setBackgroundResource(R.drawable.done);
-                                                    layout3.setBackgroundResource(R.drawable.done);
-                                                    layout4.setBackgroundResource(R.drawable.done);
-
-
-                                                    layout6 = findViewById(R.id.layout_done6);
-                                                    layout6.setVisibility(View.INVISIBLE);
-                                                    close_ypr.setVisibility(View.INVISIBLE);
                                                 }
                                             }
 
@@ -2945,6 +3047,7 @@ public class Squat extends AppCompatActivity {
                 }
                 if (weight == null || weight2 == 0) {
                     tv_weight.setText("20.0");
+                    stringdouble  = "20.0";
                 } else {
                     weight_dec = Double.parseDouble(weight) * 0.85;
                     stringdouble = Double.toString(weight_dec);

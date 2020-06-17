@@ -489,6 +489,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_jerk.setText(ed_result);
                                                 }
                                             }
 
@@ -503,6 +504,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_jerk2.setText(ed_result2);
                                                 }
                                             }
 
@@ -517,6 +519,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_jerk3.setText(ed_result3);
                                                 }
                                             }
 
@@ -556,9 +559,6 @@ public class Jerk extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_jerk.setText(ed_result);
-                                                    tv_result_jerk2.setText(ed_result2);
-                                                    tv_result_jerk3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_jerk6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -591,6 +591,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_jerk.setText(ed_result);
                                                 }
                                             }
 
@@ -605,6 +606,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_jerk2.setText(ed_result2);
                                                 }
                                             }
 
@@ -619,6 +621,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_jerk3.setText(ed_result3);
                                                 }
                                             }
 
@@ -657,9 +660,6 @@ public class Jerk extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_jerk.setText(ed_result);
-                                                    tv_result_jerk2.setText(ed_result2);
-                                                    tv_result_jerk3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_jerk6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -692,6 +692,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_jerk.setText(ed_result);
                                                 }
                                             }
 
@@ -706,6 +707,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_jerk2.setText(ed_result2);
                                                 }
                                             }
 
@@ -720,6 +722,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_jerk3.setText(ed_result3);
                                                 }
                                             }
 
@@ -759,9 +762,6 @@ public class Jerk extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_jerk.setText(ed_result);
-                                                    tv_result_jerk2.setText(ed_result2);
-                                                    tv_result_jerk3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_jerk6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -793,6 +793,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_jerk.setText(ed_result);
                                                 }
                                             }
 
@@ -807,6 +808,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_jerk2.setText(ed_result2);
                                                 }
                                             }
 
@@ -821,6 +823,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_jerk3.setText(ed_result3);
                                                 }
                                             }
 
@@ -859,9 +862,6 @@ public class Jerk extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_jerk.setText(ed_result);
-                                                    tv_result_jerk2.setText(ed_result2);
-                                                    tv_result_jerk3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_jerk6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -894,6 +894,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_jerk.setText(ed_result);
                                                 }
                                             }
 
@@ -908,6 +909,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_jerk2.setText(ed_result2);
                                                 }
                                             }
 
@@ -922,6 +924,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_jerk3.setText(ed_result3);
                                                 }
                                             }
 
@@ -960,9 +963,6 @@ public class Jerk extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_jerk.setText(ed_result);
-                                                    tv_result_jerk2.setText(ed_result2);
-                                                    tv_result_jerk3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_jerk6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -995,6 +995,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_jerk.setText(ed_result);
                                                 }
                                             }
 
@@ -1009,6 +1010,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_jerk2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1023,6 +1025,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_jerk3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1062,9 +1065,6 @@ public class Jerk extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_jerk.setText(ed_result);
-                                                    tv_result_jerk2.setText(ed_result2);
-                                                    tv_result_jerk3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_jerk6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1097,6 +1097,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_jerk.setText(ed_result);
                                                 }
                                             }
 
@@ -1111,6 +1112,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_jerk2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1125,6 +1127,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_jerk3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1163,9 +1166,6 @@ public class Jerk extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_jerk.setText(ed_result);
-                                                    tv_result_jerk2.setText(ed_result2);
-                                                    tv_result_jerk3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_jerk6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1198,6 +1198,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_jerk.setText(ed_result);
                                                 }
                                             }
 
@@ -1212,6 +1213,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_jerk2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1226,6 +1228,7 @@ public class Jerk extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_jerk3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1265,9 +1268,6 @@ public class Jerk extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_jerk.setText(ed_result);
-                                                    tv_result_jerk2.setText(ed_result2);
-                                                    tv_result_jerk3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_jerk6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);

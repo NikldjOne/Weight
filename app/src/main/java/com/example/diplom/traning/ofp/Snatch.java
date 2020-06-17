@@ -497,6 +497,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_snatch.setText(ed_result);
                                                 }
                                             }
 
@@ -511,6 +512,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_snatch2.setText(ed_result2);
                                                 }
                                             }
 
@@ -525,6 +527,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_snatch3.setText(ed_result3);
                                                 }
                                             }
 
@@ -564,9 +567,6 @@ public class Snatch extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_snatch.setText(ed_result);
-                                                    tv_result_snatch2.setText(ed_result2);
-                                                    tv_result_snatch3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_snatch6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -585,7 +585,6 @@ public class Snatch extends AppCompatActivity {
 
                                 }
                             });
-
                             break;
                         case 2:
                             done_week2.child("Week2_done").addValueEventListener(new ValueEventListener() {
@@ -599,6 +598,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_snatch.setText(ed_result);
                                                 }
                                             }
 
@@ -613,6 +613,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_snatch2.setText(ed_result2);
                                                 }
                                             }
 
@@ -627,6 +628,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_snatch3.setText(ed_result3);
                                                 }
                                             }
 
@@ -665,9 +667,6 @@ public class Snatch extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_snatch.setText(ed_result);
-                                                    tv_result_snatch2.setText(ed_result2);
-                                                    tv_result_snatch3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_snatch6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -700,6 +699,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_snatch.setText(ed_result);
                                                 }
                                             }
 
@@ -714,6 +714,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_snatch2.setText(ed_result2);
                                                 }
                                             }
 
@@ -728,6 +729,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_snatch3.setText(ed_result3);
                                                 }
                                             }
 
@@ -767,9 +769,6 @@ public class Snatch extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_snatch.setText(ed_result);
-                                                    tv_result_snatch2.setText(ed_result2);
-                                                    tv_result_snatch3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_snatch6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -801,6 +800,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_snatch.setText(ed_result);
                                                 }
                                             }
 
@@ -815,6 +815,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_snatch2.setText(ed_result2);
                                                 }
                                             }
 
@@ -829,6 +830,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_snatch3.setText(ed_result3);
                                                 }
                                             }
 
@@ -867,9 +869,6 @@ public class Snatch extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_snatch.setText(ed_result);
-                                                    tv_result_snatch2.setText(ed_result2);
-                                                    tv_result_snatch3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_snatch6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -902,6 +901,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_snatch.setText(ed_result);
                                                 }
                                             }
 
@@ -916,6 +916,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_snatch2.setText(ed_result2);
                                                 }
                                             }
 
@@ -930,6 +931,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_snatch3.setText(ed_result3);
                                                 }
                                             }
 
@@ -968,9 +970,6 @@ public class Snatch extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_snatch.setText(ed_result);
-                                                    tv_result_snatch2.setText(ed_result2);
-                                                    tv_result_snatch3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_snatch6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1003,6 +1002,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_snatch.setText(ed_result);
                                                 }
                                             }
 
@@ -1017,6 +1017,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_snatch2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1031,6 +1032,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_snatch3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1070,9 +1072,6 @@ public class Snatch extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_snatch.setText(ed_result);
-                                                    tv_result_snatch2.setText(ed_result2);
-                                                    tv_result_snatch3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_snatch6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1105,6 +1104,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_snatch.setText(ed_result);
                                                 }
                                             }
 
@@ -1119,6 +1119,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_snatch2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1133,6 +1134,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_snatch3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1171,9 +1173,6 @@ public class Snatch extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_snatch.setText(ed_result);
-                                                    tv_result_snatch2.setText(ed_result2);
-                                                    tv_result_snatch3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_snatch6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1206,6 +1205,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_snatch.setText(ed_result);
                                                 }
                                             }
 
@@ -1220,6 +1220,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_snatch2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1234,6 +1235,7 @@ public class Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_snatch3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1273,9 +1275,6 @@ public class Snatch extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_snatch.setText(ed_result);
-                                                    tv_result_snatch2.setText(ed_result2);
-                                                    tv_result_snatch3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_snatch6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);

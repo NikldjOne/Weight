@@ -475,12 +475,28 @@ public class Vihodi extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_vihodi.setText(ed_result);
                                                 }
                                             }
 
@@ -495,6 +511,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_vihodi2.setText(ed_result2);
                                                 }
                                             }
 
@@ -509,6 +526,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_vihodi3.setText(ed_result3);
                                                 }
                                             }
 
@@ -548,9 +566,6 @@ public class Vihodi extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_vihodi.setText(ed_result);
-                                                    tv_result_vihodi2.setText(ed_result2);
-                                                    tv_result_vihodi3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_vihodi6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -577,12 +592,28 @@ public class Vihodi extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week2.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week2.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_vihodi.setText(ed_result);
                                                 }
                                             }
 
@@ -597,6 +628,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_vihodi2.setText(ed_result2);
                                                 }
                                             }
 
@@ -611,6 +643,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_vihodi3.setText(ed_result3);
                                                 }
                                             }
 
@@ -649,9 +682,6 @@ public class Vihodi extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_vihodi.setText(ed_result);
-                                                    tv_result_vihodi2.setText(ed_result2);
-                                                    tv_result_vihodi3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_vihodi6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -678,12 +708,28 @@ public class Vihodi extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week3.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week3.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_vihodi.setText(ed_result);
                                                 }
                                             }
 
@@ -698,6 +744,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_vihodi2.setText(ed_result2);
                                                 }
                                             }
 
@@ -712,6 +759,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_vihodi3.setText(ed_result3);
                                                 }
                                             }
 
@@ -751,9 +799,6 @@ public class Vihodi extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_vihodi.setText(ed_result);
-                                                    tv_result_vihodi2.setText(ed_result2);
-                                                    tv_result_vihodi3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_vihodi6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -779,12 +824,28 @@ public class Vihodi extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week4.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week4.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_vihodi.setText(ed_result);
                                                 }
                                             }
 
@@ -799,6 +860,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_vihodi2.setText(ed_result2);
                                                 }
                                             }
 
@@ -813,6 +875,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_vihodi3.setText(ed_result3);
                                                 }
                                             }
 
@@ -850,10 +913,6 @@ public class Vihodi extends AppCompatActivity {
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
-
-                                                    tv_result_vihodi.setText(ed_result);
-                                                    tv_result_vihodi2.setText(ed_result2);
-                                                    tv_result_vihodi3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_vihodi6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -880,12 +939,28 @@ public class Vihodi extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week5.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week5.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_vihodi.setText(ed_result);
                                                 }
                                             }
 
@@ -900,6 +975,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_vihodi2.setText(ed_result2);
                                                 }
                                             }
 
@@ -914,6 +990,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_vihodi3.setText(ed_result3);
                                                 }
                                             }
 
@@ -952,9 +1029,6 @@ public class Vihodi extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_vihodi.setText(ed_result);
-                                                    tv_result_vihodi2.setText(ed_result2);
-                                                    tv_result_vihodi3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_vihodi6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -981,12 +1055,28 @@ public class Vihodi extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week6.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week6.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_vihodi.setText(ed_result);
                                                 }
                                             }
 
@@ -1001,6 +1091,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_vihodi2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1015,6 +1106,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_vihodi3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1054,9 +1146,6 @@ public class Vihodi extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_vihodi.setText(ed_result);
-                                                    tv_result_vihodi2.setText(ed_result2);
-                                                    tv_result_vihodi3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_vihodi6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1083,12 +1172,28 @@ public class Vihodi extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week7.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week7.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_vihodi.setText(ed_result);
                                                 }
                                             }
 
@@ -1103,6 +1208,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_vihodi2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1117,6 +1223,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_vihodi3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1155,9 +1262,6 @@ public class Vihodi extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_vihodi.setText(ed_result);
-                                                    tv_result_vihodi2.setText(ed_result2);
-                                                    tv_result_vihodi3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_vihodi6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1184,12 +1288,28 @@ public class Vihodi extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week8.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week8.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_vihodi.setText(ed_result);
                                                 }
                                             }
 
@@ -1204,6 +1324,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_vihodi2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1218,6 +1339,7 @@ public class Vihodi extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_vihodi3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1257,9 +1379,6 @@ public class Vihodi extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_vihodi.setText(ed_result);
-                                                    tv_result_vihodi2.setText(ed_result2);
-                                                    tv_result_vihodi3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_vihodi6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -2178,11 +2297,12 @@ public class Vihodi extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
                 Integer weight2 = null;
-                if(weight !=null) {
+                if (weight != null) {
                     weight2 = Integer.parseInt(weight);
                 }
                 if (weight == null || weight2 == 0) {
                     tv_weight.setText("20.0");
+                    stringdouble  = "20.0";
                 } else {
                     weight_dec = Double.parseDouble(weight) * 0.70;
                     stringdouble = Double.toString(weight_dec);

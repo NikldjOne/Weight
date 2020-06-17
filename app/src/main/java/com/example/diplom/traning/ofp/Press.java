@@ -496,6 +496,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -510,6 +511,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -524,6 +526,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -563,9 +566,6 @@ public class Press extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_press6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -598,6 +598,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -612,6 +613,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -626,6 +628,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -664,9 +667,6 @@ public class Press extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_press6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -699,6 +699,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -713,6 +714,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -727,6 +729,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -766,9 +769,6 @@ public class Press extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_press6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -800,6 +800,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -814,6 +815,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -828,6 +830,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -865,10 +868,6 @@ public class Press extends AppCompatActivity {
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
-
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_press6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -901,6 +900,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -915,6 +915,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -929,6 +930,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -967,9 +969,6 @@ public class Press extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_press6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1002,6 +1001,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1016,6 +1016,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1030,6 +1031,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1069,9 +1071,6 @@ public class Press extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_press6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1104,6 +1103,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1118,6 +1118,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1132,6 +1133,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1170,9 +1172,6 @@ public class Press extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_press6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1205,6 +1204,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1219,6 +1219,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1233,6 +1234,7 @@ public class Press extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1272,9 +1274,6 @@ public class Press extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_press6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);

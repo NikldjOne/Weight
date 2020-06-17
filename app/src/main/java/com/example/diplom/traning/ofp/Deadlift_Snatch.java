@@ -25,13 +25,13 @@ import com.squareup.picasso.Picasso;
 
 public class Deadlift_Snatch extends AppCompatActivity {
     private ImageView imageView, img_squat_left, img_squat_right, img_squat_left2, img_squat_left3, img_squat_left4,
-            img_squat_left5, img_squat_right2, img_squat_right3, img_squat_right4, img_squat_right5, img_squat_done;
+            img_squat_left5, img_squat_right2, img_squat_right3, img_squat_right4, img_squat_right5, img_deadsn_done;
     private LinearLayout layout, layout2, layout3, layout4, layout5, layout6;
     private TextView tv_weight, tv_result_squat, tv_result_squat2, tv_result_squat3, tv_result_squat4, tv_result_squat5,
             tv_static_deadsn, tv_static_deadsn2, tv_static_deadsn3, tv_static_deadsn4, tv_static_deadsn5;
     private Button btn_squat_back, btn_squat_back2, btn_squat_back3, btn_squat_back4, btn_squat_back5,
             btn_squat_add, btn_squat_add2, btn_squat_add3, btn_squat_add4, btn_squat_add5, close_ypr,
-            btn_squat_done, btn_squat_done2, btn_squat_done3, btn_squat_done4, btn_squat_done5;
+            btn_deadsn_done, btn_deadsn_done2, btn_deadsn_done3, btn_deadsn_done4, btn_deadsn_done5;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private FirebaseDatabase firebaseDatabase2 = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference().child("Image");
@@ -488,12 +488,28 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -508,6 +524,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -522,6 +539,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -536,6 +554,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -577,16 +596,11 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                     edit_result4.setVisibility(View.INVISIBLE);
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
-
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_deadsn6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -612,12 +626,28 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week2.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week2.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -632,6 +662,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -646,6 +677,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -660,6 +692,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -707,10 +740,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
+
                                                     layout6 = findViewById(R.id.layout_done_deadsn6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -736,12 +766,28 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week3.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week3.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -756,6 +802,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -770,6 +817,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -784,6 +832,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -826,15 +875,13 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
+
                                                     layout6 = findViewById(R.id.layout_done_deadsn6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -860,12 +907,28 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week4.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week4.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -880,6 +943,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -894,6 +958,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -908,6 +973,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -950,15 +1016,12 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_deadsn6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -984,12 +1047,28 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week5.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week5.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1004,6 +1083,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1018,6 +1098,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1032,6 +1113,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1074,15 +1156,12 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_deadsn6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1108,12 +1187,28 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week6.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week6.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1128,6 +1223,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1142,6 +1238,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1156,6 +1253,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1198,15 +1296,12 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_deadsn6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1232,12 +1327,28 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week7.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week7.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1252,6 +1363,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1266,6 +1378,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1280,6 +1393,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1322,15 +1436,12 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_deadsn6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1356,12 +1467,28 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week8.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week8.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1376,6 +1503,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1390,6 +1518,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1404,6 +1533,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1446,15 +1576,12 @@ public class Deadlift_Snatch extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_deadsn6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -2205,7 +2332,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
         edit_result4 = findViewById(R.id.ed_result_deadsn4);
         btn_squat_add4 = findViewById(R.id.btn_deadsn_add4);
         btn_squat_back4 = findViewById(R.id.btn_deadsn_back4);
-        btn_squat_done4 = findViewById(R.id.btn_deadsn_done4);
+        btn_deadsn_done4 = findViewById(R.id.btn_deadsn_done4);
         layout4 = findViewById(R.id.layout_done_deadsn4);
         img_squat_left4 = findViewById(R.id.img_deadsn_left4);
         img_squat_right4 = findViewById(R.id.img_deadsn_right4);
@@ -2223,7 +2350,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                 edBack4();
             }
         });
-        btn_squat_done4.setOnClickListener(new View.OnClickListener() {
+        btn_deadsn_done4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 podhodDone4();
@@ -2236,7 +2363,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
         edit_result3 = findViewById(R.id.ed_result_deadsn3);
         btn_squat_add3 = findViewById(R.id.btn_deadsn_add3);
         btn_squat_back3 = findViewById(R.id.btn_deadsn_back3);
-        btn_squat_done3 = findViewById(R.id.btn_deadsn_done3);
+        btn_deadsn_done3 = findViewById(R.id.btn_deadsn_done3);
         layout3 = findViewById(R.id.layout_done_deadsn3);
         img_squat_left3 = findViewById(R.id.img_deadsn_left3);
         img_squat_right3 = findViewById(R.id.img_deadsn_right3);
@@ -2254,7 +2381,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                 edBack3();
             }
         });
-        btn_squat_done3.setOnClickListener(new View.OnClickListener() {
+        btn_deadsn_done3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 podhodDone3();
@@ -2267,7 +2394,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
         edit_result2 = findViewById(R.id.ed_result_deadsn2);
         btn_squat_add2 = findViewById(R.id.btn_deadsn_add2);
         btn_squat_back2 = findViewById(R.id.btn_deadsn_back2);
-        btn_squat_done2 = findViewById(R.id.btn_deadsn_done2);
+        btn_deadsn_done2 = findViewById(R.id.btn_deadsn_done2);
         layout2 = findViewById(R.id.layout_done_deadsn2);
         img_squat_left2 = findViewById(R.id.img_deadsn_left2);
         img_squat_right2 = findViewById(R.id.img_deadsn_right2);
@@ -2285,7 +2412,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                 edBack2();
             }
         });
-        btn_squat_done2.setOnClickListener(new View.OnClickListener() {
+        btn_deadsn_done2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 podhodDone2();
@@ -2298,7 +2425,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
         edit_result = findViewById(R.id.ed_result_deadsn);
         btn_squat_add = findViewById(R.id.btn_deadsn_add);
         btn_squat_back = findViewById(R.id.btn_deadsn_back);
-        btn_squat_done = findViewById(R.id.btn_deadsn_done);
+        btn_deadsn_done = findViewById(R.id.btn_deadsn_done);
         layout = findViewById(R.id.layout_done_deadsn);
         img_squat_left = findViewById(R.id.img_deadsn_left);
         img_squat_right = findViewById(R.id.img_deadsn_right);
@@ -2315,7 +2442,7 @@ public class Deadlift_Snatch extends AppCompatActivity {
                 edBack();
             }
         });
-        btn_squat_done.setOnClickListener(new View.OnClickListener() {
+        btn_deadsn_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 podhodDone();

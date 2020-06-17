@@ -25,12 +25,12 @@ import com.squareup.picasso.Picasso;
 
 public class Bench extends AppCompatActivity {
     private ImageView imageView, img_Bench_left, img_Bench_right, img_Bench_left2, img_Bench_left3, img_Bench_left4,
-            img_Bench_left5, img_Bench_right2, img_Bench_right3, img_Bench_right4, img_Bench_right5, img_Bench_done;
+            img_Bench_left5, img_Bench_right2, img_Bench_right3, img_Bench_right4, img_Bench_right5, img_bench_done;
     private LinearLayout layout, layout2, layout3, layout4, layout5, layout6;
     private TextView tv_weight, tv_result_Bench, tv_result_Bench2, tv_result_Bench3,tv_static_bench,tv_static_bench2,tv_static_bench3;
     private Button btn_Bench_back, btn_Bench_back2, btn_Bench_back3, btn_Bench_back4, btn_Bench_back5,
             btn_Bench_add, btn_Bench_add2, btn_Bench_add3, btn_Bench_add4, btn_Bench_add5, close_ypr,
-            btn_Bench_done, btn_Bench_done2, btn_Bench_done3, btn_Bench_done4, btn_Bench_done5;
+            btn_bench_done, btn_bench_done2, btn_bench_done3, btn_bench_done4, btn_bench_done5;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private FirebaseDatabase firebaseDatabase2 = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference().child("Image");
@@ -476,12 +476,28 @@ public class Bench extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_Bench.setText(ed_result);
                                                 }
                                             }
 
@@ -496,6 +512,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_Bench2.setText(ed_result2);
                                                 }
                                             }
 
@@ -510,6 +527,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_Bench3.setText(ed_result3);
                                                 }
                                             }
 
@@ -549,9 +567,6 @@ public class Bench extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_Bench.setText(ed_result);
-                                                    tv_result_Bench2.setText(ed_result2);
-                                                    tv_result_Bench3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_bench6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -578,12 +593,28 @@ public class Bench extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week2.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week2.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_Bench.setText(ed_result);
                                                 }
                                             }
 
@@ -598,6 +629,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_Bench2.setText(ed_result2);
                                                 }
                                             }
 
@@ -612,6 +644,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_Bench3.setText(ed_result3);
                                                 }
                                             }
 
@@ -650,9 +683,6 @@ public class Bench extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_Bench.setText(ed_result);
-                                                    tv_result_Bench2.setText(ed_result2);
-                                                    tv_result_Bench3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_bench6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -679,12 +709,28 @@ public class Bench extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week3.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week3.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_Bench.setText(ed_result);
                                                 }
                                             }
 
@@ -699,6 +745,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_Bench2.setText(ed_result2);
                                                 }
                                             }
 
@@ -713,6 +760,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_Bench3.setText(ed_result3);
                                                 }
                                             }
 
@@ -752,9 +800,6 @@ public class Bench extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_Bench.setText(ed_result);
-                                                    tv_result_Bench2.setText(ed_result2);
-                                                    tv_result_Bench3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_bench6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -780,12 +825,28 @@ public class Bench extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week4.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week4.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_Bench.setText(ed_result);
                                                 }
                                             }
 
@@ -800,6 +861,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_Bench2.setText(ed_result2);
                                                 }
                                             }
 
@@ -814,6 +876,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_Bench3.setText(ed_result3);
                                                 }
                                             }
 
@@ -851,10 +914,6 @@ public class Bench extends AppCompatActivity {
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
-
-                                                    tv_result_Bench.setText(ed_result);
-                                                    tv_result_Bench2.setText(ed_result2);
-                                                    tv_result_Bench3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_bench6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -881,12 +940,28 @@ public class Bench extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week5.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week5.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_Bench.setText(ed_result);
                                                 }
                                             }
 
@@ -901,6 +976,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_Bench2.setText(ed_result2);
                                                 }
                                             }
 
@@ -915,6 +991,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_Bench3.setText(ed_result3);
                                                 }
                                             }
 
@@ -953,9 +1030,6 @@ public class Bench extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_Bench.setText(ed_result);
-                                                    tv_result_Bench2.setText(ed_result2);
-                                                    tv_result_Bench3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_bench6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -982,12 +1056,28 @@ public class Bench extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week6.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week6.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_Bench.setText(ed_result);
                                                 }
                                             }
 
@@ -1002,6 +1092,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_Bench2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1016,6 +1107,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_Bench3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1055,9 +1147,6 @@ public class Bench extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_Bench.setText(ed_result);
-                                                    tv_result_Bench2.setText(ed_result2);
-                                                    tv_result_Bench3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_bench6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1084,12 +1173,28 @@ public class Bench extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week7.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week7.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_Bench.setText(ed_result);
                                                 }
                                             }
 
@@ -1104,6 +1209,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_Bench2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1118,6 +1224,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_Bench3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1156,9 +1263,6 @@ public class Bench extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_Bench.setText(ed_result);
-                                                    tv_result_Bench2.setText(ed_result2);
-                                                    tv_result_Bench3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_bench6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1185,12 +1289,28 @@ public class Bench extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week8.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week8.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_Bench.setText(ed_result);
                                                 }
                                             }
 
@@ -1205,6 +1325,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_Bench2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1219,6 +1340,7 @@ public class Bench extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_Bench3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1258,9 +1380,6 @@ public class Bench extends AppCompatActivity {
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_Bench.setText(ed_result);
-                                                    tv_result_Bench2.setText(ed_result2);
-                                                    tv_result_Bench3.setText(ed_result3);
                                                     layout6 = findViewById(R.id.layout_done_bench6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1932,7 +2051,7 @@ public class Bench extends AppCompatActivity {
         edit_result3 = findViewById(R.id.ed_result_bench3);
         btn_Bench_add3 = findViewById(R.id.btn_bench_add3);
         btn_Bench_back3 = findViewById(R.id.btn_bench_back3);
-        btn_Bench_done3 = findViewById(R.id.btn_bench_done3);
+        btn_bench_done3 = findViewById(R.id.btn_bench_done3);
         layout3 = findViewById(R.id.layout_done_bench3);
         img_Bench_left3 = findViewById(R.id.img_bench_left3);
         img_Bench_right3 = findViewById(R.id.img_bench_right3);
@@ -1950,7 +2069,7 @@ public class Bench extends AppCompatActivity {
                 edBack3();
             }
         });
-        btn_Bench_done3.setOnClickListener(new View.OnClickListener() {
+        btn_bench_done3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 podhodDone3();
@@ -1963,7 +2082,7 @@ public class Bench extends AppCompatActivity {
         edit_result2 = findViewById(R.id.ed_result_bench2);
         btn_Bench_add2 = findViewById(R.id.btn_bench_add2);
         btn_Bench_back2 = findViewById(R.id.btn_bench_back2);
-        btn_Bench_done2 = findViewById(R.id.btn_bench_done2);
+        btn_bench_done2 = findViewById(R.id.btn_bench_done2);
         layout2 = findViewById(R.id.layout_done_bench2);
         img_Bench_left2 = findViewById(R.id.img_bench_left2);
         img_Bench_right2 = findViewById(R.id.img_bench_right2);
@@ -1981,7 +2100,7 @@ public class Bench extends AppCompatActivity {
                 edBack2();
             }
         });
-        btn_Bench_done2.setOnClickListener(new View.OnClickListener() {
+        btn_bench_done2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 podhodDone2();
@@ -1994,7 +2113,7 @@ public class Bench extends AppCompatActivity {
         edit_result = findViewById(R.id.ed_result_bench);
         btn_Bench_add = findViewById(R.id.btn_bench_add);
         btn_Bench_back = findViewById(R.id.btn_bench_back);
-        btn_Bench_done = findViewById(R.id.btn_bench_done);
+        btn_bench_done = findViewById(R.id.btn_bench_done);
         layout = findViewById(R.id.layout_done_bench);
         img_Bench_left = findViewById(R.id.img_bench_left);
         img_Bench_right = findViewById(R.id.img_bench_right);
@@ -2011,7 +2130,7 @@ public class Bench extends AppCompatActivity {
                 edBack();
             }
         });
-        btn_Bench_done.setOnClickListener(new View.OnClickListener() {
+        btn_bench_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 podhodDone();
@@ -2180,11 +2299,12 @@ public class Bench extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String weight = dataSnapshot.getValue(String.class);
                 Integer weight2 = null;
-                if(weight !=null) {
+                if (weight != null) {
                     weight2 = Integer.parseInt(weight);
                 }
                 if (weight == null || weight2 == 0) {
                     tv_weight.setText("20.0");
+                    stringdouble  = "20.0";
                 } else {
                     weight_dec = Double.parseDouble(weight) * 0.80;
                     stringdouble = Double.toString(weight_dec);

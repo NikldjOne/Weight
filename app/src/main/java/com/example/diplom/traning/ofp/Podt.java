@@ -496,12 +496,28 @@ public class Podt extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -516,6 +532,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -530,6 +547,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -544,6 +562,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -585,16 +604,11 @@ public class Podt extends AppCompatActivity {
                                                     edit_result4.setVisibility(View.INVISIBLE);
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
-
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_podt6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -620,12 +634,28 @@ public class Podt extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week2.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week2.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -640,6 +670,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -654,6 +685,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -668,6 +700,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -715,10 +748,7 @@ public class Podt extends AppCompatActivity {
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
+
                                                     layout6 = findViewById(R.id.layout_done_podt6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -744,12 +774,28 @@ public class Podt extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week3.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week3.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -764,6 +810,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -778,6 +825,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -792,6 +840,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -834,15 +883,13 @@ public class Podt extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
+
                                                     layout6 = findViewById(R.id.layout_done_podt6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -868,12 +915,28 @@ public class Podt extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week4.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week4.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -888,6 +951,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -902,6 +966,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -916,6 +981,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -958,15 +1024,12 @@ public class Podt extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_podt6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -992,12 +1055,28 @@ public class Podt extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week5.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week5.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1012,6 +1091,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1026,6 +1106,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1040,6 +1121,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1082,15 +1164,12 @@ public class Podt extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_podt6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1116,12 +1195,28 @@ public class Podt extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week6.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week6.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1136,6 +1231,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1150,6 +1246,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1164,6 +1261,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1206,15 +1304,12 @@ public class Podt extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_podt6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1240,12 +1335,28 @@ public class Podt extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week7.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week7.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1260,6 +1371,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1274,6 +1386,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1288,6 +1401,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1330,15 +1444,12 @@ public class Podt extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_podt6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
@@ -1364,12 +1475,28 @@ public class Podt extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String weight = dataSnapshot.getValue(String.class);
                                     if (weight != null) {
+                                        resultsList_week8.child("weight").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String weight = dataSnapshot.getValue(String.class);
+                                                if (weight != null) {
+                                                    weight_work = weight;
+                                                    tv_weight.setText(weight_work);
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         resultsList_week8.child("kol-vo").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result = povtor;
+                                                    tv_result_squat.setText(ed_result);
                                                 }
                                             }
 
@@ -1384,6 +1511,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result2 = povtor;
+                                                    tv_result_squat2.setText(ed_result2);
                                                 }
                                             }
 
@@ -1398,6 +1526,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result3 = povtor;
+                                                    tv_result_squat3.setText(ed_result3);
                                                 }
                                             }
 
@@ -1412,6 +1541,7 @@ public class Podt extends AppCompatActivity {
                                                 String povtor = dataSnapshot.getValue(String.class);
                                                 if (povtor != null) {
                                                     ed_result4 = povtor;
+                                                    tv_result_squat4.setText(ed_result4);
                                                 }
                                             }
 
@@ -1454,15 +1584,12 @@ public class Podt extends AppCompatActivity {
                                                     tv_result_squat4.setVisibility(View.VISIBLE);
 
 
+
                                                     layout.setBackgroundResource(R.drawable.done);
                                                     layout2.setBackgroundResource(R.drawable.done);
                                                     layout3.setBackgroundResource(R.drawable.done);
                                                     layout4.setBackgroundResource(R.drawable.done);
 
-                                                    tv_result_squat.setText(ed_result);
-                                                    tv_result_squat2.setText(ed_result2);
-                                                    tv_result_squat3.setText(ed_result3);
-                                                    tv_result_squat4.setText(ed_result4);
                                                     layout6 = findViewById(R.id.layout_done_podt6);
                                                     layout6.setVisibility(View.INVISIBLE);
                                                     close_ypr.setVisibility(View.INVISIBLE);
