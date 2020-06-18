@@ -47,6 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-20dp"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <TextView
@@ -95,6 +96,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <TextView
@@ -143,12 +145,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
-                android:background="@color/colorHint2Opacity">
+                android:background="@color/colorHint2Opacity"
+                android:gravity="center">
 
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="10dp"
                     android:fontFamily="@font/light"
                     android:gravity="center"
                     android:text="Последний результат"
@@ -180,13 +183,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tv_static_squat"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
-                    android:layout_marginLeft="30dp"
                     android:fontFamily="@font/light"
                     android:gravity="center"
                     android:text="0"
@@ -259,7 +262,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="53dp"
-                    android:layout_marginTop="12dp"
                     android:background="@drawable/round2">
 
                     <Button
@@ -283,13 +285,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tv_static_squat2"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
-                    android:layout_marginLeft="30dp"
                     android:fontFamily="@font/light"
                     android:gravity="center"
                     android:text="0"
@@ -362,7 +364,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="53dp"
-                    android:layout_marginTop="12dp"
                     android:background="@drawable/round2">
 
                     <Button
@@ -386,13 +387,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tv_static_squat3"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
-                    android:layout_marginLeft="30dp"
                     android:fontFamily="@font/light"
                     android:gravity="center"
                     android:text="0"
@@ -465,7 +466,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="53dp"
-                    android:layout_marginTop="12dp"
                     android:background="@drawable/round2">
 
                     <Button
@@ -489,13 +489,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tv_static_squat4"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
-                    android:layout_marginLeft="30dp"
                     android:fontFamily="@font/light"
                     android:gravity="center"
                     android:text="0"
@@ -568,7 +568,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="53dp"
-                    android:layout_marginTop="12dp"
                     android:background="@drawable/round2">
 
                     <Button
@@ -592,13 +591,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tv_static_squat5"
                     android:layout_width="80dp"
                     android:layout_height="45dp"
-                    android:layout_marginLeft="30dp"
                     android:fontFamily="@font/light"
                     android:gravity="center"
                     android:text="0"
@@ -671,7 +670,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="53dp"
-                    android:layout_marginTop="12dp"
                     android:background="@drawable/round2">
 
                     <Button
@@ -692,13 +690,14 @@
                 android:background="#7b7b7b" />
 
             <LinearLayout
+                android:id="@+id/layout_done6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:id="@+id/layout_done6"
-                android:background="@drawable/inset">
+                android:background="@drawable/inset"
+                android:gravity="center">
 
                 <Button
                     android:id="@+id/close_ypr"
@@ -706,9 +705,9 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/ripple_effect"
                     android:fontFamily="@font/light"
-                    android:textAllCaps="false"
                     android:gravity="center"
                     android:text="Завершить упражнение"
+                    android:textAllCaps="false"
                     android:textColor="@color/colorText"
                     android:textSize="20sp" />
             </LinearLayout>

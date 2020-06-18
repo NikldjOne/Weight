@@ -1,64 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="25dp"
     android:orientation="vertical">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Профиль"
-            android:gravity="center_horizontal"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            android:fontFamily="@font/light"
-            android:layout_marginTop="10dp"/>
 
-    <Button
-
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/exitApp"
-        android:background="@drawable/ripple_effect"
-        android:layout_marginTop="-30dp"
-        android:layout_marginLeft="150dp"
-        android:drawableLeft="@drawable/ic_exit"
-        />
-</LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/light"
+            android:text="Профиль"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/exitApp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="-30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/ripple_effect"
+            android:drawableLeft="@drawable/ic_exit" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="57dp"
         android:background="@drawable/round">
+
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:srcCompat="@drawable/ic_person_black_24dp"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/ic_person_black_24dp" />
+
         <TextView
             android:id="@+id/email_user"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="name@gmail.com"
-            android:textSize="20sp"
-            android:gravity="center|left"
-            android:fontFamily="@font/light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            />
+            android:fontFamily="@font/light"
+            android:text="name@gmail.com"
+            android:textSize="20sp" />
     </LinearLayout>
 
 
@@ -66,97 +65,104 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:orientation="horizontal"
-        android:background="@drawable/round">
+        android:background="@drawable/round"
+        android:gravity="center"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Политика конфиденциальности"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:fontFamily="@font/light"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="12dp"
-            />
+            android:fontFamily="@font/light"
+            android:gravity="center"
+            android:text="Политика конфиденциальности"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/polkonf"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/ripple_effect_kryg"
-            android:layout_marginLeft="-360dp"
-            />
+            android:layout_marginTop="-55dp"
+            android:background="@drawable/ripple_effect_kryg" />
     </LinearLayout>
+
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="185dp"
-    android:orientation="horizontal"
-    android:background="@drawable/round">
-    <TextView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Пользовательское соглашение"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:fontFamily="@font/light"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="12dp"
-        />
-    <Button
-        android:id="@+id/polsogl"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/ripple_effect_kryg"
-        android:layout_marginLeft="-360dp"/>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="185dp"
+        android:background="@drawable/round"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/light"
+            android:gravity="center"
+            android:text="Пользовательское соглашение"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/polsogl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-55dp"
+            android:background="@drawable/ripple_effect_kryg" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="250dp"
-        android:orientation="horizontal"
-        android:background="@drawable/round">
+        android:background="@drawable/round"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:text="Версия:"
-            android:textSize="15sp"
-            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="7dp"
             android:fontFamily="@font/light"
-            />
+            android:gravity="center"
+            android:text="Версия:"
+            android:textSize="15sp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:text="0.0.10"
-            android:textSize="20sp"
-            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/light"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="-360dp"
-            />
+            android:gravity="center"
+            android:text="0.0.10"
+            android:textSize="20sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="314dp"
-        android:orientation="horizontal"
-        android:background="@drawable/round">
+        android:background="@drawable/round"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:text="По всем вопросам и предложениям пишите на:"
-            android:textSize="15sp"
-            android:gravity="center"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/light"
-            />
+            android:gravity="center"
+            android:text="По всем вопросам и предложениям пишите на:"
+            android:textSize="15sp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:text="Weightapphelper@gmail.com"
-            android:textSize="20sp"
-            android:gravity="center"
             android:fontFamily="@font/light"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="-360dp"
-            />
+            android:gravity="center"
+            android:text="Weightapphelper@gmail.com"
+            android:textSize="20sp" />
     </LinearLayout>
 </RelativeLayout>

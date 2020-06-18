@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrool_tehnic"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBack"
     android:layout_marginTop="25dp"
-    android:id="@+id/scrool_tehnic"
+    android:background="@color/colorBack"
     android:orientation="vertical">
 
 
@@ -30,20 +30,42 @@
                 android:textSize="24dp"
                 android:textStyle="bold" />
         </LinearLayout>
-        <androidx.cardview.widget.CardView
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:cardCornerRadius="10dp">
+            android:layout_marginTop="10dp"
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_squat_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <VideoView
-                android:id="@+id/vv_squat"
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/start_squat"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_squat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_squat_video"
@@ -57,30 +79,33 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_squat"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+        </RelativeLayout>
 
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_nakloni_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_nakloni"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_nakloni"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_nakloni_video"
@@ -94,30 +119,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_nakloni"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_nakloni"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_snatch_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_snatch"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_snatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_snatch_video"
@@ -131,30 +172,45 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_snatch"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_snatch"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
+        </RelativeLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_clean_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_clean"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_clean"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_clean_video"
@@ -168,30 +224,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_clean"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_clean"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_jerk_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_jerk"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_jerk"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_jerk_video"
@@ -205,30 +277,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_jerk"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_jerk"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_front_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_front"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_front"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_front_video"
@@ -242,30 +330,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_front"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_front"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_deadsn_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_deadsn"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_deadsn"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_deadsn_video"
@@ -279,30 +383,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_deadsn"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_deadsn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_deadcl_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_deadcl"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_deadcl"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_deadcl_video"
@@ -316,30 +436,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_deadcl"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_deadcl"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_podt_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_podt"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_podt"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_podt_video"
@@ -353,30 +489,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_podt"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_podt"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_bench_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_bench"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_bench"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_bench_video"
@@ -390,30 +542,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_bench"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_bench"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_deadpr_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_deadpr"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_deadpr"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_deadpr_video"
@@ -427,30 +595,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_deadpr"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_deadpr"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_benchpr_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_benchpr"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_benchpr"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_benchpr_video"
@@ -464,30 +648,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_benchpr"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_benchpr"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_biceps_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_biceps"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_biceps"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_biceps_video"
@@ -501,30 +701,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_biceps"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_biceps"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_tripes_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_tripes"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_tripes"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_tripes_video"
@@ -538,30 +754,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_tripes"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_tripes"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_scr_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_scr"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_scr"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_scr_video"
@@ -575,30 +807,46 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_scr"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_scr"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp">
+            android:background="@drawable/inset">
 
             <ImageView
                 android:id="@+id/img_planka_video"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
 
-            <VideoView
-                android:id="@+id/vv_planka"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_planka"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_planka_video"
@@ -612,15 +860,19 @@
                 android:textColor="@color/colorText"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/start_planka"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/play" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/start_planka"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/play" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </RelativeLayout>
     </LinearLayout>
 
 

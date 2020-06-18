@@ -71,7 +71,7 @@ public class Registration extends AppCompatActivity {
                     }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(Registration.this, "Ошибка регистрации" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Registration.this, "Ошибка регистрации: Проверьте правильность почты", Toast.LENGTH_SHORT).show();
                 }
             });
         }

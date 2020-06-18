@@ -32,7 +32,6 @@ public class ForgotPassword extends AppCompatActivity {
 
     public void recoveryPass(View view) {
         recoveryPasswordWithEmail();
-        finish();
     }
 
     private void recoveryPasswordWithEmail() {
@@ -50,7 +49,7 @@ public class ForgotPassword extends AppCompatActivity {
                         finish();
                     } else {
                         String message = task.getException().getMessage();
-                        Toast.makeText(ForgotPassword.this, "Произошла ошибка: " + message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ForgotPassword.this, "Произошла ошибка: Проверьте правильность вашей почты ", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

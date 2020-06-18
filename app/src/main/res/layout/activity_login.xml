@@ -98,13 +98,17 @@
         />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Нажимая Войти, Вы соглашаетесь с "
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
             android:textSize="13.5dp"
             android:textColor="@color/colorText"
             android:fontFamily="@font/light"/>
@@ -112,8 +116,6 @@
         <TextView
             android:layout_width="114dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="22dp"
             android:text="пользовательским"
             android:id="@+id/tvpol"
             android:onClick="tvpol"
@@ -121,15 +123,16 @@
             android:fontFamily="@font/light"
             android:textSize="13.5dp" />
     </LinearLayout>
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="соглашением "
             android:onClick="tvpol2"
-            android:layout_marginLeft="40dp"
             android:textSize="13.5dp"
             android:textColor="@color/colorHint"
             android:fontFamily="@font/light"/>
@@ -137,7 +140,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="и "
-            android:layout_marginLeft="121dp"
             android:textSize="13.5dp"
             android:textColor="@color/colorText"
             android:fontFamily="@font/light"/>
@@ -146,24 +148,28 @@
             android:layout_height="wrap_content"
             android:text="политикой конфиденциальности"
 android:onClick="konf"
-            android:layout_marginLeft="131dp"
             android:textSize="13.5dp"
             android:textColor="@color/colorHint"
             android:fontFamily="@font/light"/>
-    </RelativeLayout>
-    <Button
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/inset">
+        <Button
         android:id="@+id/btnSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btEnter"
-        android:layout_marginTop="15dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:textSize="16sp"
         android:fontFamily="@font/light"
         android:textColor="@color/colorHint2"
-        android:background="@drawable/inset" />
-    <!--        android:background="@android:color/transparent"-->
-
+        android:background="@drawable/ripple_effect" />
+    </LinearLayout>
 </LinearLayout>

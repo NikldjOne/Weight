@@ -69,7 +69,7 @@ public class Login extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(Login.this, "Ошибка авторизации,проверьте данные", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Ошибка авторизации, проверьте данные", Toast.LENGTH_SHORT).show();
             }
         });
     }

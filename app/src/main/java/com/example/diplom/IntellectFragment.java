@@ -148,7 +148,7 @@ public class IntellectFragment extends Fragment {
         start_biceps = view.findViewById(R.id.start_biceps);
         start_triceps = view.findViewById(R.id.start_tripes);
         start_scr = view.findViewById(R.id.start_scr);
-        start_planka = view.findViewById(R.id.start_scr);
+        start_planka = view.findViewById(R.id.start_planka);
         start_podt = view.findViewById(R.id.start_podt);
         Invisble();
         start_squat.setOnClickListener(new View.OnClickListener() {
@@ -379,6 +379,21 @@ public class IntellectFragment extends Fragment {
     }
 
     private void Visible() {
+        start_biceps.setVisibility(View.VISIBLE);
+        start_nakloni.setVisibility(View.VISIBLE);
+        start_triceps.setVisibility(View.VISIBLE);
+        start_scr.setVisibility(View.VISIBLE);
+        start_planka.setVisibility(View.VISIBLE);
+        start_bench.setVisibility(View.VISIBLE);
+        start_deadpr.setVisibility(View.VISIBLE);
+        start_benchpr.setVisibility(View.VISIBLE);
+        start_front.setVisibility(View.VISIBLE);
+        start_podt.setVisibility(View.VISIBLE);
+        start_deadcl.setVisibility(View.VISIBLE);
+        start_deadsn.setVisibility(View.VISIBLE);
+        start_jerk.setVisibility(View.VISIBLE);
+        start_clean.setVisibility(View.VISIBLE);
+        start_snatch.setVisibility(View.VISIBLE);
         tv_biceps_video.setVisibility(View.VISIBLE);
         img_biceps_video.setVisibility(View.VISIBLE);
         tv_triceps_video.setVisibility(View.VISIBLE);
@@ -412,6 +427,7 @@ public class IntellectFragment extends Fragment {
         tv_snatch_video.setVisibility(View.VISIBLE);
         img_snatch_video.setVisibility(View.VISIBLE);
         tv_squat_video.setVisibility(View.VISIBLE);
+        start_squat.setVisibility(View.VISIBLE);
         img_squat_video.setVisibility(View.VISIBLE);
     }
 
